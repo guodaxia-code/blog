@@ -1,0 +1,95 @@
+<!--<!DOCTYPE html>-->
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>关于我</title>
+    <meta id="viewport" name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1,user-scalable=no">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css"/>
+    <link rel="stylesheet" type="text/css"  href="../static/css/index.css" th:href="@{css/index.css}">
+</head>
+<body>
+
+    <div th:replace="common :: header(5)" class="ui segment attached inverted m-padding-tb-1 m-shadow-small">
+    </div>
+
+<!--中间部分-->
+    <div class="m-container m-padding-tb-5">
+        <div class="ui container">
+            <div class="ui grid stackable">
+                <div class="eleven wide column">
+                    <div class="ui segment">
+                        <img class="ui image rounded" src="https://i.picsum.photos/id/1005/800/540.jpg" alt="">
+                    </div>
+                </div>
+                <div class="five wide column ">
+                    <div class="ui top attached segment">
+                       <div class="ui header">关于我</div>
+                    </div>
+                    <div class="ui attached segment">
+                        <p class="m-text">
+                            郭大侠一个java小白,热爱编程,代码可以改变世界,只有学不死就往死里学,人生短短几十年，人活着的意义就是做喜欢做的事情！
+                        </p>
+                        <p class="m-text">
+                            不懂java不懂源码的自由开发者郭大侠,喜欢游戏喜欢代码和喜欢美女.
+                        </p>
+                    </div>
+                    <div class="ui attached segment">
+                        <div class="ui orange label left pointing basic">编程</div>
+                        <div class="ui orange label left pointing basic">游戏</div>
+                        <div class="ui orange label left pointing basic">美女</div>
+                        <div class="ui orange label left pointing basic">运动</div>
+                    </div>
+                    <div class="ui attached segment">
+                        <div class="ui teal label left pointing basic m-margin-tb-2">JAVA</div>
+                        <div class="ui teal label left pointing basic m-margin-tb-2">JavaScript</div>
+                        <div class="ui teal label left pointing basic m-margin-tb-2">MySql</div>
+                        <div class="ui teal label left pointing basic m-margin-tb-2">Linux</div>
+                        <div class="ui teal label left pointing basic m-margin-tb-2">Redis</div>
+                        <div class="ui teal label left pointing basic m-margin-tb-2">SpringBoot</div>
+                    </div>
+                    <div class="ui bottom attached  segment">
+                        <a href="" class="ui circular button  icon "><i class="icon github"></i></a>
+                        <a href="" class="ui circular button  icon " id="wechat"><i class="icon weixin"></i></a>
+                        <a href="#" class="ui circular button  icon qq-show " data-content="1154424892" data-position="bottom center"><i class="icon qq"></i></a>
+                        <a href="" class="ui circular button  icon "><i class="icon weibo"></i></a>
+                    </div>
+
+                    <div class="ui flowing popup top left transition hidden " id="wechat-show">
+                        <img class="ui image rounded" style="width: 100px" src="../static/images/wechat.jpg" th:src="@{images/wechat.jpg}"  alt="">
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+<!--    footer-->
+    <footer th:replace="common::footer(1)">
+    </footer>
+
+
+<!--静态和动态访问都不报错 前面静态 后面动态-->
+    <script src="../static/js/jquery-2.0.2.min.js" th:src="@{js/jquery-2.0.2.min.js}"></script>
+    <script src="../static/js/semantic.min.js" th:src="@{js/semantic.min.js}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.13/vue.min.js"></script>
+<!--    -->
+
+    <script>
+        // 首页导航栏
+        $("#toggle").click(function () {
+            $(".m-item").toggleClass("m-mobile-hide");
+        });
+         //qq-show
+        $(".qq-show").popup();
+        //wechart 联系
+        $("#wechat").popup({
+            popup:$("#wechat-show"),
+            // on: 'hover',
+            position: 'bottom center'
+        });
+
+    </script>
+
+</body>
+</html>

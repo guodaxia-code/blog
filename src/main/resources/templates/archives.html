@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>归档</title>
+    <meta id="viewport" name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1,user-scalable=no">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css"/>
+    <link rel="stylesheet" type="text/css"  href="../static/css/index.css" th:href="@{css/index.css}">
+</head>
+<body>
+
+    <div th:replace="common :: header(4)" class="ui segment attached inverted m-padding-tb-1 m-shadow-small">
+    </div>
+
+<!--中间部分-->
+    <div class="m-container-small m-padding-tb-5">
+        <div class="ui container">
+<!--            heaher-->
+            <div class="ui top attached segment padded">
+                <div class="ui middle aligned two column grid">
+                    <div class="column">
+                        <h3 class="ui teal header">归档</h3>
+                    </div>
+                    <div class="right aligned column">
+                        共 <h2 class="ui orange header m-inline-block m-text-thin">144</h2> 篇博客
+                    </div>
+                </div>
+            </div>
+            <div class="header center aligned ui">2020</div>
+            <div class="ui menu vertical fluid">
+                <a href="#" class="item" target="_blank">
+                    <span>
+                        <i class="mini teal circle icon m-margin-right-mini"></i>博客用来写笔记和分析技术
+                        <div href="#" class="ui teal basic left pointing label m-padded-mini">4月20</div>
+                    </span>
+                    <div href="#" class="ui orange basic left pointing label m-padded-mini">原创</div>
+                </a>
+                <a href="#" class="item" target="_blank">
+                    <span>
+                        <i class="mini teal circle icon m-margin-right-mini"></i>博客用来写笔记和分析技术
+                        <div href="#" class="ui teal basic left pointing label m-padded-mini">4月20</div>
+                    </span>
+                    <div href="#" class="ui orange basic left pointing label m-padded-mini">原创</div>
+                </a>
+                <a href="#" class="item" target="_blank">
+                    <span>
+                        <i class="mini teal circle icon m-margin-right-mini"></i>博客用来写笔记和分析技术
+                        <div href="#" class="ui teal basic left pointing label m-padded-mini">4月20</div>
+                    </span>
+                    <div href="#" class="ui orange basic left pointing label m-padded-mini">原创</div>
+                </a>
+                <a href="#" class="item" target="_blank">
+                    <span>
+                        <i class="mini teal circle icon m-margin-right-mini"></i>博客用来写笔记和分析技术
+                        <div href="#" class="ui teal basic left pointing label m-padded-mini">4月20</div>
+                    </span>
+                    <div href="#" class="ui orange basic left pointing label m-padded-mini">原创</div>
+                </a>
+                <a href="#" class="item" target="_blank">
+                    <span>
+                        <i class="mini teal circle icon m-margin-right-mini"></i>博客用来写笔记和分析技术
+                        <div href="#" class="ui teal basic left pointing label m-padded-mini">4月20</div>
+                    </span>
+                    <div href="#" class="ui orange basic left pointing label m-padded-mini">原创</div>
+                </a>
+
+            </div>
+            <div class="header center aligned ui">2019</div>
+            <div class="ui menu vertical fluid">
+                <a href="#" class="item" target="_blank">
+                    <span>
+                        <i class="mini teal circle icon m-margin-right-mini"></i>博客用来写笔记和分析技术
+                        <div href="#" class="ui teal basic left pointing label m-padded-mini">4月20</div>
+                    </span>
+                    <div href="#" class="ui orange basic left pointing label m-padded-mini">原创</div>
+                </a>
+                <a href="#" class="item" target="_blank">
+                    <span>
+                        <i class="mini teal circle icon m-margin-right-mini"></i>博客用来写笔记和分析技术
+                        <div href="#" class="ui teal basic left pointing label m-padded-mini">4月20</div>
+                    </span>
+                    <div href="#" class="ui orange basic left pointing label m-padded-mini">原创</div>
+                </a>
+                <a href="#" class="item" target="_blank">
+                    <span>
+                        <i class="mini teal circle icon m-margin-right-mini"></i>博客用来写笔记和分析技术
+                        <div href="#" class="ui teal basic left pointing label m-padded-mini">4月20</div>
+                    </span>
+                    <div href="#" class="ui orange basic left pointing label m-padded-mini">原创</div>
+                </a>
+                <a href="#" class="item" target="_blank">
+                    <span>
+                        <i class="mini teal circle icon m-margin-right-mini"></i>博客用来写笔记和分析技术
+                        <div href="#" class="ui teal basic left pointing label m-padded-mini">4月20</div>
+                    </span>
+                    <div href="#" class="ui orange basic left pointing label m-padded-mini">原创</div>
+                </a>
+                <a href="#" class="item" target="_blank">
+                    <span>
+                        <i class="mini teal circle icon m-margin-right-mini"></i>博客用来写笔记和分析技术
+                        <div href="#" class="ui teal basic left pointing label m-padded-mini">4月20</div>
+                    </span>
+                    <div href="#" class="ui orange basic left pointing label m-padded-mini">原创</div>
+                </a>
+
+            </div>
+
+
+
+        </div>
+        </div>
+
+    </div>
+
+<!--    footer-->
+    <footer th:replace="common::footer(1)">
+    </footer>
+
+
+
+    <script src="../static/js/jquery-2.0.2.min.js" th:src="@{js/jquery-2.0.2.min.js}"></script>
+    <script src="../static/js/semantic.min.js" th:src="@{js/semantic.min.js}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.13/vue.min.js"></script>
+
+
+    <script>
+        // 首页导航栏
+        $("#toggle").click(function () {
+            $(".m-item").toggleClass("m-mobile-hide");
+        });
+
+    </script>
+
+</body>
+</html>

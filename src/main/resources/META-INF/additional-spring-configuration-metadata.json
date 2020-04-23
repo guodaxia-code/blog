@@ -1,0 +1,8 @@
+{
+  "properties": [
+    {
+      "name": "mybatis.database.type",
+      "type": "java.lang.String",
+      "description": "Description for mybatis.database.type."
+  }
+] }

@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>博客管理</title>
+    <meta id="viewport" name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1,user-scalable=no">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css"/>
+<!--    单前目录的../../  指resources-->
+    <link rel="stylesheet" type="text/css"  href="../../static/css/index.css" th:href="@{../css/index.css}">
+</head>
+<body>
+
+    <div th:replace="admin/common::header(1)" class="ui segment attached inverted m-padding-tb-1 m-shadow-small">
+        <div class="ui container">
+            <div class="ui inverted secondary menu stackable">
+                <h2 class="ui teal header item">博客管理</h2>
+                <a href="/blog/index" class="item m-mobile-hide m-item active"><i class="icon home"></i>博客</a>
+                <a href="/blog/types" class="item m-mobile-hide m-item"><i class="icon idea"></i>分类</a>
+                <a href="/blog/tags" class="item m-mobile-hide m-item"><i class="icon tags"></i>标签</a>
+                <div class="right menu m-mobile-hide m-item">
+                    <div class="ui dropdown item" >
+                        <div class="text">
+                            <img class="ui image avatar" src="https://i.picsum.photos/id/1005/100/100.jpg" alt="">
+                            郭大侠
+                        </div>
+                        <i class="ui dropdown icon"></i>
+                        <div class="menu">
+                            <a href="#" class="item">注销</a>
+                            <a href="#" class="item">修改密码</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <a class="ui black  icon button m-top-right m-mobile-show" id="toggle">
+                <i href=" " class="icon sidebar  "></i>
+            </a>
+        </div>
+    </div>
+    <!--        二级菜单-->
+    <div th:replace="admin/common::twomenu(1)" class="ui attached pointing menu  ">
+    </div>
+
+
+    <!--中间部分-->
+    <div class="m-container-small m-padding-tb-5">
+        <div class="ui container">
+            <form action="#" method="post" class="ui segment form">
+                <div class="inline fields">
+                    <div class="field">
+                        <input type="text" name="title" placeholder="标题">
+                    </div>
+                    <div class="field">
+                        <div class="ui selection dropdown">
+                            <input type="hidden" name="type">
+                            <i class="ui dropdown icon"></i>
+                            <div class="default text">分类</div>
+                            <div class="menu">
+                                <div class="item" data-value="1">错误日志</div>
+                                <div class="item" data-value="2">开发者手册</div>
+                            </div>
+                        </div>
+                     </div>
+                    <div class="field">
+                        <div class="ui checkbox ">
+                            <input type="checkbox" id="recommend" name="recommend">
+                            <label for="recommend">推荐</label>
+                        </div>
+                    </div>
+                    <div class="field">
+                       <button class="ui mini button teal basic"><i class="search icon"></i>搜索</button>
+                    </div>
+                </div>
+            </form>
+
+            <table class="ui celled table">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>标题</th>
+                        <th>类型</th>
+                        <th>推荐</th>
+                        <th>更新时间</th>
+                        <th>操作</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>程序员写博客的优势</td>
+                        <td>生活</td>
+                        <td>是</td>
+                        <td>2020-3-10 09::25</td>
+                        <td>
+                            <a href="" class="button teal ui basic mini">编辑</a>
+                            <a href="" class="button red ui basic mini">删除</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>程序员写博客的优势</td>
+                        <td>生活</td>
+                        <td>是</td>
+                        <td>2020-3-10 09::25</td>
+                        <td>
+                            <a href="" class="button teal ui basic mini">编辑</a>
+                            <a href="" class="button red ui basic mini">删除</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>程序员写博客的优势</td>
+                        <td>生活</td>
+                        <td>是</td>
+                        <td>2020-3-10 09::25</td>
+                        <td>
+                            <a href="" class="button teal ui basic mini">编辑</a>
+                            <a href="" class="button red ui basic mini">删除</a>
+                        </td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <th colspan="6">
+                            <a th:href="@{/admin/blog-input}" class="button left floated teal ui basic mini">新增</a>
+                            <div class="ui right floated pagination menu">
+                                <a href="" class="iocn item">
+                                    <i class="left chevron icon"></i>
+                                </a>
+                                <a href="" class="item">1</a>
+                                <a href="" class="item">2</a>
+                                <a href="" class="item">3</a>
+                                <a href="" class="item">4</a>
+                                <a href="" class="item">5</a>
+                                <a href="" class="icon item">
+                                    <i class="right chevron icon"></i>
+                                </a>
+                            </div>
+
+                        </th>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+
+
+    </div>
+
+<!--    footer-->
+    <footer th:replace="common::footer(2)">
+    </footer>
+
+
+<!--动态    temolate 直接可以使用js 相当于template与static的js在一层 先把页面退到template-->
+    <script src="../../static/js/jquery-2.0.2.min.js" th:src="@{../js/jquery-2.0.2.min.js}"></script>
+    <script src="../../static/js/semantic.min.js" th:src="@{../js/semantic.min.js}"></script>
+
+    <script>
+        // 首页导航栏
+        $("#toggle").click(function () {
+            $(".m-item").toggleClass("m-mobile-hide");
+        });
+
+        //注销下拉列表
+        $(".ui.dropdown").dropdown({
+            on:"hover",
+        });
+
+
+    </script>
+
+</body>
+</html>
