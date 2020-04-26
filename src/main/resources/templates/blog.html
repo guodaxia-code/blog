@@ -7,14 +7,14 @@
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css"/>
     <script src="https://cdn.jsdelivr.net/gh/stevenjoezhang/live2d-widget@latest/autoload.js"></script>
     <!--    文章排版样式typo.css-->
-    <link rel="stylesheet" type="text/css"  href="../static/css/typo.css" th:href="@{css/typo.css}">
+    <link rel="stylesheet" type="text/css"  href="../static/css/typo.css" th:href="@{/css/typo.css}">
 <!--    css 动画-->
-    <link rel="stylesheet" type="text/css"  href="../static/css/animate.css" th:href="@{css/animate.css}">
+    <link rel="stylesheet" type="text/css"  href="../static/css/animate.css" th:href="@{/css/animate.css}">
 <!--    代码高亮显示-->
-    <link rel="stylesheet" type="text/css"  href="../static/lib/prism/prism.css" th:href="@{lib/prism/prism.css}">
+    <link rel="stylesheet" type="text/css"  href="../static/lib/prism/prism.css" th:href="@{/lib/prism/prism.css}">
 <!--    tocbot 目录插件-->
-    <link rel="stylesheet" type="text/css"  href="../static/lib/tocbot/tocbot.css" th:href="@{lib/tocbot/tocbot.css}">
-    <link rel="stylesheet" type="text/css"  href="../static/css/index.css" th:href="@{css/index.css}">
+    <link rel="stylesheet" type="text/css"  href="../static/lib/tocbot/tocbot.css" th:href="@{/lib/tocbot/tocbot.css}">
+    <link rel="stylesheet" type="text/css"  href="../static/css/index.css" th:href="@{/css/index.css}">
 
 </head>
 <body>
@@ -27,7 +27,7 @@
         <div class="ui container">
             <div class="ui inverted secondary menu stackable">
                 <h2 class="ui teal header item">Blog</h2>
-                <a href="/blog/index" class="item m-mobile-hide m-item"><i class="icon home"></i>首页</a>
+                <a href="/blog/index/1/6" class="item m-mobile-hide m-item"><i class="icon home"></i>首页</a>
                 <a href="/blog/types" class="item m-mobile-hide m-item"><i class="icon idea"></i>分类</a>
                 <a href="/blog/tags" class="item m-mobile-hide m-item"><i class="icon tags"></i>标签</a>
                 <a href="/blog/archives" class="item m-mobile-hide m-item"><i class="icon clone"></i>归档</a>
@@ -48,37 +48,37 @@
     </div>
 
 <!--中间部分-->
-    <div id="waypoint" class="m-container-small m-padding-tb-5 animated fadeIn">
+    <div id="waypoint" class="m-container-small m-padding-tb-5 animated fadeIn" >
         <div class="ui container">
             <div class="ui  segment top attached">
                 <div class="ui  horizontal link list">
                     <div class="item">
-                        <img src="https://i.picsum.photos/id/1005/100/100.jpg" alt="" class="ui image avatar">
-                        <div class="content"><a class="header">郭大侠</a></div>
+                        <img src="https://i.picsum.photos/id/237/100/100.jpg" th:src="${blog.user.avatar}" alt="" class="ui image avatar">
+                        <div class="content"><a class="header" th:text="${blog.user.nickname}">郭大侠</a></div>
                     </div>
                     <div class="item">
-                        <i class="calendar icon"></i><span>2020-04-10</span>
+                        <i class="calendar icon"></i><span th:text="${#dates.format(blog.updateTime,'yyyy-MM-dd HH:mm')}"> 2020-04-10</span>
                     </div>
                     <div class="item">
-                        <i class="eye icon"></i><span>2020</span>
+                        <i class="eye icon"></i><span th:text="${blog.views}">2020</span>
                     </div>
                 </div>
             </div>
             <div class="ui  segment attached">
 <!--                图片-->
-                <img class="ui image fluid rounded" src="https://i.picsum.photos/id/1005/800/450.jpg" alt="">
+                <img class="ui image fluid rounded" src="https://i.picsum.photos/id/237/800/450.jpg" th:src="${blog.firstPicture}" alt="">
             </div>
 
             <div class="ui  segment padded attached">
 <!--                内容-->
                 <div class="ui right aligned segment basic">
-                    <div class="ui label basic orange">
+                    <div class="ui label basic orange" th:src="${blog.flag}">
                         原创
                     </div>
                 </div>
-                <h2 class=" ui header centered aligned">semantic ui布局简单优美</h2>
+                <h2 class=" ui header centered aligned" th:text="${blog.title}">semantic ui布局简单优美</h2>
                 <br>
-                <div id="content" class="m-padded-lr-responsive m-padding-tb-4 typo typo-selection js-toc-content">
+                <div id="content" class="m-padded-lr-responsive m-padding-tb-4 typo typo-selection js-toc-content" th:utext="${blog.content}">
 
                     <pre><code class="language-css">p { color: red }</code></pre>
 
@@ -437,13 +437,14 @@ h5,h6{font-size:1em;}
 
                     <h5 id="appendix2">2、开源许可</h5>
                 </div>
+
 <!--                标签-->
                 <div class="m-padded-lr-responsive">
-                    <div class="ui label  teal basic left pointing">方法论</div>
+                    <div class="ui label  teal basic left pointing" th:each="tag:${blog.tags}" th:text="${tag.name}">Java</div>
                 </div>
 <!--                赞赏-->
                 <div class="ui center aligned segment basic ">
-                    <div id="payButton" class="ui button orange circular basic  ">
+                    <div id="payButton" class="ui button orange circular basic" th:if="${blog.appreciation}">
                         赞赏
                     </div>
                 </div>
@@ -452,11 +453,11 @@ h5,h6{font-size:1em;}
                     <div class="ui orange  basic label">
                         <div class="ui images" style="font-size : inherit !important;">
                             <div class="image">
-                                <img class="ui image rounded bordered" src="../static/images/wechat.jpg" th:src="@{images/wechat.jpg}" style="width: 120px;" alt="">
+                                <img class="ui image rounded bordered" src="../static/images/zhifubaopay.jpg" th:src="@{/images/zhifubaopay.jpg}" style="width: 120px;" alt="">
                                 <div>支付宝支付</div>
                             </div>
                             <div class="image">
-                                <img class="ui image rounded bordered" src="../static/images/wechat.jpg" th:src="@{images/wechat.jpg}" style="width: 120px;" alt="">
+                                <img class="ui image rounded bordered" src="../static/images/weixinpay.jpg" th:src="@{/images/weixinpay.jpg}" style="width: 120px;" alt="">
                                 <div>微信支付</div>
                             </div>
 
@@ -472,26 +473,26 @@ h5,h6{font-size:1em;}
                 <div class="ui grid middle aligned">
                     <div class="eleven wide column">
                         <ul class="ui list">
-                            <li>作者:郭大侠(联系作者)</li>
-                            <li>发布时间</li>
-                            <li>版权声明：梵蒂冈放到个梵蒂冈放到</li>
+                            <li>作者: <span th:text="${blog.user.nickname}"></span> <a th:href="@{/about}" target="_blank">(联系作者)</a> </li>
+                            <li>发布时间: <span th:text="${#dates.format(blog.createTime,'yyyy-MM-dd HH:mm')}">2020-4-10 18:25</span>  </li>
+                            <li>版权声明：自由转载-非商业 </li>
                             <li>关注号转载：梵蒂冈放到个梵蒂冈放到</li>
                         </ul>
 
                     </div>
                     <div class="five wide column">
-                        <img class="ui image rounded bordered right floated" src="../static/images/wechat.jpg" th:src="@{images/wechat.jpg}" alt="" style="width: 110px;">
+                        <img class="ui image rounded bordered right floated" src="../static/images/weixinfriend.jpg" th:src="@{/images/weixinfriend.jpg}" alt="" style="width: 110px;">
                     </div>
                 </div>
             </div>
-            <div id="comment" class="ui   segment bottom attached">
+            <div id="comment" class="ui   segment bottom attached" th:if="${blog.commentabled}">
 <!--                留言区域-->
                 <div class="ui segment teal">
                     <div class="ui comments">
                         <h3 class="ui dividing header">Comments</h3>
                         <div class="comment">
                             <a class="avatar">
-                                <img src="https://i.picsum.photos/id/1005/100/100.jpg">
+                                <img src="https://i.picsum.photos/id/237/100/100.jpg">
                             </a>
                             <div class="content">
                                 <a class="author">Matt</a>
@@ -506,7 +507,7 @@ h5,h6{font-size:1em;}
                         </div>
                         <div class="comment">
                             <a class="avatar">
-                                <img src="https://i.picsum.photos/id/1005/100/100.jpg">
+                                <img src="https://i.picsum.photos/id/237/100/100.jpg">
                             </a>
                             <div class="content">
                                 <a class="author">蔡依婷</a>
@@ -523,7 +524,7 @@ h5,h6{font-size:1em;}
                             <div class="comments">
                                 <div class="comment">
                                     <a class="avatar">
-                                        <img src="https://i.picsum.photos/id/1005/100/100.jpg">
+                                        <img src="https://i.picsum.photos/id/237/100/100.jpg">
                                     </a>
                                     <div class="content">
                                         <a class="author">黃傳欣</a>
@@ -540,7 +541,7 @@ h5,h6{font-size:1em;}
                         </div>
                         <div class="comment">
                             <a class="avatar">
-                                <img src="https://i.picsum.photos/id/1005/100/100.jpg">
+                                <img src="https://i.picsum.photos/id/237/100/100.jpg">
                             </a>
                             <div class="content">
                                 <a class="author">何金銀</a>
@@ -600,31 +601,31 @@ h5,h6{font-size:1em;}
     </div>
 <!--    二维码读博客-->
     <div   class="ui flowing popup top left transition hidden qrcode " id="wechat-show" style="width: 130px">
-<!--        <img class="ui image rounded" style="width: 120px" src="images/wechat.jpg" alt="" >-->
+<!--        <img class="ui image rounded" style="width: 120px" src="images/weixinfriend.jpg" alt="" >-->
     </div>
 
 
 
 <!--    footer-->
-    <footer th:replace="common::footer(1)">
+    <footer th:replace="common::footer">
     </footer>
 
 
-    <script src="../static/js/jquery-2.0.2.min.js" th:src="@{js/jquery-2.0.2.min.js}"></script>
-    <script src="../static/js/semantic.min.js" th:src="@{js/semantic.min.js}"></script>
+    <script src="../static/js/jquery-2.0.2.min.js" th:src="@{/js/jquery-2.0.2.min.js}"></script>
+    <script src="../static/js/semantic.min.js" th:src="@{/js/semantic.min.js}"></script>
     <!--    代码高亮显示-->
-    <script src="../static/lib/prism/prism.js" th:src="@{lib/prism/prism.js}"></script>
+    <script src="../static/lib/prism/prism.js" th:src="@{/lib/prism/prism.js}"></script>
 <!--    目录查找-->
-    <script src="../static/lib/tocbot/tocbot.min.js" th:src="@{lib/tocbot/tocbot.min.js}"></script>
+    <script src="../static/lib/tocbot/tocbot.min.js" th:src="@{/lib/tocbot/tocbot.min.js}"></script>
     <!--    链接生成二维码-->
-    <script src="../static/lib/qrcode/qrcode.min.js" th:src="@{lib/qrcode/qrcode.min.js}"></script>
+    <script src="../static/lib/qrcode/qrcode.min.js" th:src="@{/lib/qrcode/qrcode.min.js}"></script>
 <!--    totop滚动插件-->
     <script src="//cdn.jsdelivr.net/npm/jquery.scrollto@2.1.2/jquery.scrollTo.min.js"></script>
     <!--    waypoints 检测滚动插件-->
-    <script src="../static/lib/waypoints/jquery.waypoints.min.js" th:src="@{lib/waypoints/jquery.waypoints.min.js}"></script>
+    <script src="../static/lib/waypoints/jquery.waypoints.min.js" th:src="@{/lib/waypoints/jquery.waypoints.min.js}"></script>
 
 
-    <script>
+    <script th:inline="javascript">
         // 首页导航栏
         $("#toggle").click(function () {
             $(".m-item").toggleClass("m-mobile-hide");
@@ -660,9 +661,12 @@ h5,h6{font-size:1em;}
             position: 'left center'
         });
         //二维码阅读
+        // var yuming="http://localhost:8080";
+        var yuming="127.0.0.1:80";
+        var url=/*[[@{/blog/{id}(id=${blog.id})}]]*/"";
         var qrcode = new QRCode("wechat-show", {
-            // text: serurl+url,
-            text: "http://localhost/blog/blog#section1",
+            text: yuming+url,
+            // text: "http://localhost/blog/blog#section1",
             width: 110,
             height: 110,
             colorDark : "#000000",

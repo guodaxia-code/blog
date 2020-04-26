@@ -27,7 +27,9 @@ public class LoginController {
     public String getLoginPost(User user, HttpSession session, Model model){
         User getUser = userService.checkUser(user.getUsername(), user.getPassword());
         if (getUser!=null){
+
             session.setAttribute("user",getUser);
+            System.out.println(getUser);
             return "redirect:/admin/index";
         }else {
             model.addAttribute("message","用户名或者密码错误");

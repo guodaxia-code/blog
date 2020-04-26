@@ -14,6 +14,6 @@ public class Type {
     private String name;
 
 
-
+    private Integer count;
     private List<Blog> blogs;
 }

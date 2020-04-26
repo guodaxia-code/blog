@@ -6,7 +6,7 @@
     <meta id="viewport" name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1,user-scalable=no">
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css"/>
 <!--    单前目录的../../  指resources-->
-    <link rel="stylesheet" type="text/css"  href="../../static/css/index.css" th:href="@{../css/index.css}">
+    <link rel="stylesheet" type="text/css"  href="../../static/css/index.css" th:href="@{/css/index.css}">
 </head>
 <body>
 
@@ -20,7 +20,7 @@
                 <div class="right menu m-mobile-hide m-item">
                     <div class="ui dropdown item" >
                         <div class="text">
-                            <img class="ui image avatar" src="https://i.picsum.photos/id/1005/100/100.jpg" alt="">
+                            <img class="ui image avatar" src="https://i.picsum.photos/id/237/100/100.jpg" alt="">
                             郭大侠
                         </div>
                         <i class="ui dropdown icon"></i>
@@ -37,122 +37,120 @@
         </div>
     </div>
     <!--        二级菜单-->
-    <div th:replace="admin/common::twomenu(1)" class="ui attached pointing menu  ">
+    <div  class="ui attached pointing menu  ">
+        <div class="ui container">
+            <div class="right menu">
+                <a th:href="@{/admin/blog-input}" class="item ">发布</a>
+                <a th:href="@{/admin/blogs/1/6}" class="item teal active ">列表</a>
+            </div>
+        </div>
     </div>
 
 
     <!--中间部分-->
     <div class="m-container-small m-padding-tb-5">
         <div class="ui container">
-            <form action="#" method="post" class="ui segment form">
+            <form th:action="@{/admin/blogs/1/6}" method="get" class="ui segment secondary form">
                 <div class="inline fields">
                     <div class="field">
-                        <input type="text" name="title" placeholder="标题">
+                        <input type="text" name="title" placeholder="标题" th:value="${consAfter['title']}">
                     </div>
                     <div class="field">
-                        <div class="ui selection dropdown">
-                            <input type="hidden" name="type">
-                            <i class="ui dropdown icon"></i>
-                            <div class="default text">分类</div>
-                            <div class="menu">
-                                <div class="item" data-value="1">错误日志</div>
-                                <div class="item" data-value="2">开发者手册</div>
+                        <div class="ui labeled action input">
+                            <div class="ui type selection dropdown">
+                                <input type="hidden" name="blog_typeid" th:value="${consAfter['blog_typeid']}">
+                                <i class="ui dropdown icon"></i>
+                                <div class="default text">分类</div>
+                                <div class="menu">
+                                    <div class="item" th:each="type:${types}" th:data-value="${type.id}" th:text="${type.name}">错误日志</div>
+                                </div>
+
                             </div>
+                            <button id="clear" class="ui clear compact button  ">清除</button>
                         </div>
                      </div>
+
+
                     <div class="field">
                         <div class="ui checkbox ">
-                            <input type="checkbox" id="recommend" name="recommend">
+                            <input type="checkbox"  id="recommend" name="recommend"  th:value="${consAfter['recommend']}" onclick="this.value=(this.value==0)?1:0" th:attr="checked=${consAfter['recommend']=='1'}?'checked'">
                             <label for="recommend">推荐</label>
                         </div>
                     </div>
                     <div class="field">
-                       <button class="ui mini button teal basic"><i class="search icon"></i>搜索</button>
+                       <button class="ui mini button submit teal basic"><i class="search icon"></i>搜索</button>
                     </div>
                 </div>
             </form>
 
-            <table class="ui celled table">
+<!--            隐藏域-->
+            <span id="hidden" hidden="hidden" th:text="${conditions}"></span>
+
+            <table class="ui celled teal compact table">
                 <thead>
                     <tr>
                         <th></th>
                         <th>标题</th>
                         <th>类型</th>
                         <th>推荐</th>
+                        <th>状态</th>
                         <th>更新时间</th>
                         <th>操作</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>1</td>
-                        <td>程序员写博客的优势</td>
-                        <td>生活</td>
-                        <td>是</td>
-                        <td>2020-3-10 09::25</td>
+                    <tr th:each="blog,start:${page.list}">
+                        <td th:text="${start.count}">1</td>
+                        <td th:text="${blog.title}">程序员写博客的优势</td>
+                        <td th:text="${blog.type.name}">生活</td>
+                        <td th:text="${blog.recommend eq true}?'是':'否'">是</td>
+                        <td th:text="${blog.published eq true}?'发布':'草稿'">发布</td>
+<!--                        <td th:text="${blog.recommend}">是</td>-->
+                        <td th:text="${#dates.format(blog.updateTime,'yyyy-MM-dd HH:mm')}">2020-3-10 09::25</td>
                         <td>
-                            <a href="" class="button teal ui basic mini">编辑</a>
-                            <a href="" class="button red ui basic mini">删除</a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>1</td>
-                        <td>程序员写博客的优势</td>
-                        <td>生活</td>
-                        <td>是</td>
-                        <td>2020-3-10 09::25</td>
-                        <td>
-                            <a href="" class="button teal ui basic mini">编辑</a>
-                            <a href="" class="button red ui basic mini">删除</a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>1</td>
-                        <td>程序员写博客的优势</td>
-                        <td>生活</td>
-                        <td>是</td>
-                        <td>2020-3-10 09::25</td>
-                        <td>
-                            <a href="" class="button teal ui basic mini">编辑</a>
-                            <a href="" class="button red ui basic mini">删除</a>
+                            <a th:href="@{/admin/blog-editor/{id}(id=${blog.id})}" class="button teal ui basic mini">编辑</a>
+                            <a th:href="@{/admin/{id}/blog-delete(id=${blog.id})}" class="button red ui basic mini">删除</a>
                         </td>
                     </tr>
                 </tbody>
                 <tfoot>
                     <tr>
-                        <th colspan="6">
-                            <a th:href="@{/admin/blog-input}" class="button left floated teal ui basic mini">新增</a>
-                            <div class="ui right floated pagination menu">
-                                <a href="" class="iocn item">
-                                    <i class="left chevron icon"></i>
+                        <th colspan="7">
+                            <a th:href="@{/admin/blog-input}" th:unless="${page.totalPage<1}" class="button left floated teal ui basic mini">新增</a>
+                            <div class="ui right floated pagination menu" th:if="${page.totalPage>1}">
+                                <a th:href="@{/admin/blogs/{page}/6(page=${page.currentPage-1})}" id="previousPage"  class="iocn item">
+                                    <i class="left chevron icon" ></i>
                                 </a>
-                                <a href="" class="item">1</a>
-                                <a href="" class="item">2</a>
-                                <a href="" class="item">3</a>
-                                <a href="" class="item">4</a>
-                                <a href="" class="item">5</a>
-                                <a href="" class="icon item">
+                                <a th:href="@{/admin/blogs/{page}/6(page=${i})}" name="alladd" th:each="i:${#numbers.sequence(page.StartPage,page.EndPage)}" class="item" th:text="${i}" th:classappend="${page.currentPage==i}? 'active'">1</a>
+                                <a th:href="@{/admin/blogs/{page}/6(page=${page.currentPage+1})}" id="nextPage" class="icon item">
+<!--                                    ,cons=${cons['title']}-->
                                     <i class="right chevron icon"></i>
                                 </a>
                             </div>
-
                         </th>
                     </tr>
                 </tfoot>
             </table>
+<!--提示 新增 删除 修改 -->
+            <div class="ui success message"  th:if="${param.message}">
+                <i class="ui icon close"></i>
+                <div class="header">提示：</div>
+                <p th:text="${param.message}">恭喜，操作成功！ </p>
+            </div>
+
         </div>
 
 
     </div>
 
 <!--    footer-->
-    <footer th:replace="common::footer(2)">
+    <footer th:replace="common::footer">
     </footer>
 
 
 <!--动态    temolate 直接可以使用js 相当于template与static的js在一层 先把页面退到template-->
-    <script src="../../static/js/jquery-2.0.2.min.js" th:src="@{../js/jquery-2.0.2.min.js}"></script>
-    <script src="../../static/js/semantic.min.js" th:src="@{../js/semantic.min.js}"></script>
+    <script src="../../static/js/jquery-2.0.2.min.js" th:src="@{/js/jquery-2.0.2.min.js}"></script>
+    <script src="../../static/js/semantic.min.js" th:src="@{/js/semantic.min.js}"></script>
 
     <script>
         // 首页导航栏
@@ -164,6 +162,74 @@
         $(".ui.dropdown").dropdown({
             on:"hover",
         });
+
+        //上下中间页 即recommend
+        var conditions= $("#hidden").html()
+        //获取隐藏域的数据给上一页
+        $("#previousPage").click(
+            function () {
+                var previousPage = $("#previousPage").attr("href");
+                $("#previousPage").attr("href",previousPage+'?'+conditions);
+            }
+        )
+        //获取隐藏域的数据给下一页
+        $("#nextPage").click(
+            function () {
+                var nextPage = $("#nextPage").attr("href");
+                $("#nextPage").attr("href",nextPage+'?'+conditions);
+            }
+        )
+        //中间页
+        $("a[name='alladd']").click(function () {
+            $(this).attr("href",$(this).attr("href")+'?'+conditions);
+        })
+        //添加新增 修改 消息关闭
+        $(".message .close").on('click',function () {
+            $(this).closest('.message').transition('fade');
+        })
+
+
+        //清除条件
+        $('#clear').on('click',function () {
+            $('.type.ui.dropdown').dropdown('clear');
+            return false;
+        })
+
+
+        //JSON转URL参数
+        function parseParams(data) {
+            try {
+                var tempArr = [];
+                for (var i in data) {
+                    var key = encodeURIComponent(i);
+                    var value = encodeURIComponent(data[i]);
+                    tempArr.push(key + '=' + value);
+                }
+                var urlParamsStr = tempArr.join('&');
+                return urlParamsStr;
+            } catch (err) {
+                return '';
+            }
+        }
+        // URL参数转JSON
+        function getParams(url) {
+            try {
+                var index = url.indexOf('?');
+                url = url.match(/\?([^#]+)/)[1];
+                var obj = {}, arr = url.split('&');
+                for (var i = 0; i < arr.length; i++) {
+                    var subArr = arr[i].split('=');
+                    var key = decodeURIComponent(subArr[0]);
+                    var value = decodeURIComponent(subArr[1]);
+                    obj[key] = value;
+                }
+                return obj;
+
+            } catch (err) {
+                return null;
+            }
+        }
+
 
 
     </script>

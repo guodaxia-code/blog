@@ -1,4 +1,4 @@
-package xyz.worldzhile.interceptor;
+package xyz.worldzhile.blog.interceptor;
 
 import org.springframework.web.servlet.HandlerInterceptor;
 import xyz.worldzhile.blog.domain.User;

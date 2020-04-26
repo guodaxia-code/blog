@@ -12,7 +12,7 @@ import java.util.List;
 @AllArgsConstructor
 public class Comment {
     private String id;
-    private String nikename;
+    private String nickname;
     private String email;
     private String content;
     private String avatar;

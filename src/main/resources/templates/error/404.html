@@ -7,7 +7,7 @@
     <meta id="viewport" name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1,user-scalable=no">
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css"/>
     <script src="https://cdn.jsdelivr.net/gh/stevenjoezhang/live2d-widget@latest/autoload.js"></script>
-    <link rel="stylesheet" type="text/css"  href="../../static/css/index.css" th:href="@{../css/index.css}">
+    <link rel="stylesheet" type="text/css"  href="../../static/css/index.css" th:href="@{/css/index.css}">
 </head>
 <body>
     <div th:replace="common :: header(0)">
@@ -50,7 +50,7 @@
 
 
     <!--    footer-->
-    <footer th:replace="common::footer(2)">
+    <footer th:replace="common::footer">
     </footer>
 </body>
 </html>

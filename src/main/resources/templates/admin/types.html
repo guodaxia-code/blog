@@ -6,20 +6,35 @@
     <meta id="viewport" name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1,user-scalable=no">
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css"/>
 <!--    单前目录的../../  指resources-->
-    <link rel="stylesheet" type="text/css"  href="../../static/css/index.css" th:href="@{../css/index.css}">
+    <link rel="stylesheet" type="text/css"  href="../../static/css/index.css" th:href="@{/css/index.css}">
 </head>
 <body>
 
     <div th:replace="admin/common::header(2)" class="ui segment attached inverted m-padding-tb-1 m-shadow-small">
     </div>
     <!--        二级菜单-->
-    <div th:replace="admin/common::twomenu(1)" class="ui attached pointing menu  ">
+<!--    <div th:replace="admin/common::twomenu(1)" class="ui attached pointing menu  ">-->
+<!--    </div>-->
+    <div  class="ui attached pointing menu  ">
+        <div class="ui container">
+            <div class="right menu">
+                <a th:href="@{/admin/type-input}" class="item">发布</a>
+                <a th:href="@{/admin/types/1/6}" class="item teal active">列表</a>
+            </div>
+        </div>
     </div>
 
     <!--中间部分-->
     <div class="m-container-small m-padding-tb-5">
         <div class="ui container">
-            <table class="ui celled table">
+<!--            提示message th:unless="${#strings.isEmpty(message)}" -->
+            <div class="ui success message"  th:if="${param.message}">
+                <i class="ui icon close"></i>
+                <div class="header">提示：</div>
+                <p th:text="${param.message}">恭喜，操作成功！ </p>
+            </div>
+
+            <table class="ui celled teal compact table">
                 <thead>
                     <tr>
                         <th></th>
@@ -28,59 +43,33 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>1</td>
-                        <td>生活</td>
+                    <tr th:each="type,start:${page.list}">
+                        <td th:text="${start.count}">1</td>
+                        <td th:text="${type.name}">生活</td>
                         <td>
-                            <a href="" class="button teal ui basic mini">编辑</a>
-                            <a href="" class="button red ui basic mini">删除</a>
+
+
+                            <a th:href="@{/admin/{id}/type-editor(id=${type.id})}" class="button teal ui basic mini">编辑</a>
+                            <a th:href="@{/admin/{id}/type-delete(id=${type.id})}" class="button red ui basic mini">删除</a>
+
                         </td>
                     </tr>
-                    <tr>
-                        <td>2</td>
-                        <td>工作</td>
-                        <td>
-                            <a href="" class="button teal ui basic mini">编辑</a>
-                            <a href="" class="button red ui basic mini">删除</a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>3</td>
-                        <td>爱情</td>
-                        <td>
-                            <a href="" class="button teal ui basic mini">编辑</a>
-                            <a href="" class="button red ui basic mini">删除</a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>4</td>
-                        <td>美食</td>
-                        <td>
-                            <a href="" class="button teal ui basic mini">编辑</a>
-                            <a href="" class="button red ui basic mini">删除</a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>5</td>
-                        <td>旅游</td>
-                        <td>
-                            <a href="" class="button teal ui basic mini">编辑</a>
-                            <a href="" class="button red ui basic mini">删除</a>
-                        </td>
-                    </tr>
+
 
                 </tbody>
                 <tfoot>
                     <tr>
                         <th colspan="6">
-                            <a th:href="@{/admin/type-input}" class="button left floated teal ui basic mini">新增</a>
-                            <div class="ui right floated pagination menu">
-                                <a href="" class="iocn item">
+                            <a th:href="@{/admin/type-input}" th:unless="${page.totalPage<1}" class="button left floated teal ui basic mini">新增</a>
+
+                            <div class="ui right floated pagination menu" th:if="${page.totalPage>1}">
+                                <a th:href="@{/admin/types/{page}/6(page=${page.currentPage-1})}" class="iocn item">
                                     <i class="left chevron icon"></i>
                                 </a>
-                                <a href="" class="item">1</a>
-                                <a href="" class="item">2</a>
-                                <a href="" class="icon item">
+
+                                <a th:href="@{/admin/types/{page}/6(page=${i})}"  th:each="i:${#numbers.sequence(page.StartPage,page.EndPage)}" class="item" th:text="${i}" th:classappend="${page.currentPage==i}? 'active'">1</a>
+
+                                <a th:href="@{/admin/types/{page}/6(page=${page.currentPage+1})}" class="icon item">
                                     <i class="right chevron icon"></i>
                                 </a>
                             </div>
@@ -89,19 +78,28 @@
                     </tr>
                 </tfoot>
             </table>
+
+            <div class="ui error message" th:if="${message}" th:text="${message}">
+
+            </div>
+
         </div>
 
 
     </div>
 
 <!--    footer-->
-    <footer th:replace="common::footer(2)">
+    <footer th:replace="common::footer">
     </footer>
 
 
+
+
 <!--动态    temolate 直接可以使用js 相当于template与static的js在一层 先把页面退到template-->
-    <script src="../../static/js/jquery-2.0.2.min.js" th:src="@{../js/jquery-2.0.2.min.js}"></script>
-    <script src="../../static/js/semantic.min.js" th:src="@{../js/semantic.min.js}"></script>
+    <script src="https://cdn.bootcss.com/jquery/3.5.0/jquery.js"></script>
+    <script src="../../static/js/jquery-2.0.2.min.js" th:src="@{/js/jquery-2.0.2.min.js}"></script>
+    <script src="../../static/js/semantic.min.js" th:src="@{/js/semantic.min.js}"></script>
+
 
     <script>
         // 首页导航栏
@@ -114,6 +112,10 @@
             on:"hover",
         });
 
+        //添加分类消息关闭
+        $(".message .close").on('click',function () {
+            $(this).closest('.message').transition('fade');
+        })
 
     </script>
 

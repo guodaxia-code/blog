@@ -1,6 +1,17 @@
 
 server:
   port: 80
+
 logging:
   level:
     root: warn
+
+spring:
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: guodaxia
+    url: jdbc:mysql://www.worldzhile.xyz:3306/blog?autoReconnect=true&useUnicode=true&createDatabaseIfNotExist=true&characterEncoding=utf8&useSSL=true&serverTimezone=UTC
+    thymeleaf:
+      cache: false

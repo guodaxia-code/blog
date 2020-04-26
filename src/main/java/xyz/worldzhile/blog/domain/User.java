@@ -13,7 +13,7 @@ import java.util.List;
 
 public class User {
     private String id;
-    private String nikename;
+    private String nickname;
     private String username;
     private String password;
     private String email;
