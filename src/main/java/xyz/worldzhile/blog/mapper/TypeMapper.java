@@ -17,12 +17,12 @@ public interface TypeMapper {
     @Select("select * from type where id=#{id}")
     @Results(id = "TypeMap",value = {
             @Result(id = true,property = "id",column = "id"),
-//            @Result(property = "roles" ,column="uid",many = @Many(select = "xyz.worldzhile.dao.RoleDao.findAllByUid",fetchType = FetchType.EAGER))
+            //@Result(property = "roles" ,column="uid",many = @Many(select = "xyz.worldzhile.dao.RoleDao.findAllByUid",fetchType = FetchType.EAGER))
     })
     Type get(String id);
 
     @Select("select * from type limit #{start},#{pageCount}")
-    List<Type> list(PageBean pageBean);
+    List<Type> list(PageBean<Type> pageBean);
 
     @Select("select * from type ")
     List<Type> all();

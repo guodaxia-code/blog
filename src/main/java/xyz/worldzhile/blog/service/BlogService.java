@@ -6,6 +6,7 @@ import xyz.worldzhile.blog.util.PageBean;
 
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 
 public interface BlogService {
@@ -26,4 +27,15 @@ public interface BlogService {
     List<Blog> indexShow(int newBlogShowCount);
 
     List<Blog> search(PageBean<Blog> blogPageBean, String query);
+
+    void viewCount(int count,String id);
+
+    Integer getCountByType(String typeid);
+
+    Map<String,List<Blog>> archives();
+
+
+    Integer getCount();
+
+    List<Blog> getHotBlogs(Integer hotBlogShowCount);
 }

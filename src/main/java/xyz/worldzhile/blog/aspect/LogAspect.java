@@ -54,8 +54,6 @@ public class LogAspect {
         private String classMethod;
         private Object[] args;
 
-
-
     }
 
 }

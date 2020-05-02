@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <title th:replace="${title}">博客详情</title>
     <meta id="viewport" name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1,user-scalable=no">
+    <link rel="icon"   th:href="@{/images/favicon.ico}">
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css"/>
     <script src="https://cdn.jsdelivr.net/gh/stevenjoezhang/live2d-widget@latest/autoload.js"></script>
     <!--    文章排版样式typo.css-->
@@ -19,15 +20,18 @@
 </head>
 
 <!--头部导航栏-->
-<div th:fragment="header(active)" class="ui segment attached inverted m-padding-tb-1 m-shadow-small">
+<div th:fragment="header(active)" class="ui segment attached inverted m-padding-tb-1 m-shadow-small-nav m-opacity-9  animated  fadeIn" style="background-color: #333">
     <div class="ui container">
         <div class="ui inverted secondary menu stackable">
-            <h2 class="ui teal header item">Blog</h2>
-            <a href="/blog/index/1/6" class="item m-mobile-hide m-item "  th:classappend="${active==1}? 'active'"><i class="icon home"></i>首页</a>
-            <a href="/blog/types" class="item m-mobile-hide m-item" th:classappend="${active==2}? 'active'"><i class="icon idea"></i>分类</a>
-            <a href="/blog/tags" class="item m-mobile-hide m-item" th:classappend="${active==3}? 'active'"><i class="icon tags"></i>标签</a>
-            <a href="/blog/archives" class="item m-mobile-hide m-item" th:classappend="${active==4}? 'active'"><i class="icon clone"></i>归档</a>
-            <a href="/blog/about" class="item m-mobile-hide m-item" th:classappend="${active==5}? 'active'"><i class="info icon"></i>关于我</a>
+            <!--天气-->
+            <div id="tp-weather-widget"></div>
+            <h2 class="ui teal header item">[[#{nav.projectName}]]</h2>
+                <a href="/blog/index/1/6" class="item m-mobile-hide m-item "  th:classappend="${active==1}? 'active'"><i  class="icon home"></i><span th:text="#{nav.home}">首页</span></a>
+            <a href="/blog/types/1/6" class="item m-mobile-hide m-item" th:classappend="${active==2}? 'active'"><i class="icon idea"></i>[[#{nav.classification}]]</a>
+            <a href="/blog/tags/1/6" class="item m-mobile-hide m-item" th:classappend="${active==3}? 'active'"><i class="icon tags"></i>[[#{nav.label}]]</a>
+            <a href="/blog/archives" class="item m-mobile-hide m-item" th:classappend="${active==4}? 'active'"><i class="icon clone"></i>[[#{nav.file}]]</a>
+            <a href="/blog/music" class="item m-mobile-hide m-item" th:classappend="${active==6}? 'active'"><i class="icon music"></i>在线音乐</a>
+            <a href="/blog/about" class="item m-mobile-hide m-item" th:classappend="${active==5}? 'active'"><i class="info icon"></i>[[#{nav.about}]]</a>
             <div class="right item m-mobile-hide m-item">
                 <form name="search" th:action="@{/search/1/6}" method="post" target="_blank">
                     <div class="ui icon inverted transparent input">
@@ -45,7 +49,7 @@
 
 
 <!--    footer-->
-<footer th:fragment="footer" class="ui inverted segment vertical m-padding-tb-7">
+<footer th:fragment="footer" class="ui inverted segment vertical m-padding-tb-5 m-shadow-small-footer m-opacity-9 animated fadeIn" style="background-color: #333">
     <div class="ui center aligned container">
         <div class="ui grid divided inverted stackable">
             <div class="three wide column">
@@ -57,18 +61,24 @@
                 </div>
             </div>
             <div class="three wide column">
-                <h4 class="ui inverted header m-opacity-mini">最新博客</h4>
-                <div class="ui inverted link list">
-                    <a href="" class="item">用户故事</a>
-                    <a href="" class="item">用户故事</a>
-                    <a href="" class="item">用户故事</a>
+                <h4 class="ui inverted header m-opacity-mini">[[#{Hottest.blogs}]]</h4>
+
+                <div id="hotBlogs-container">
+                    <div class="ui inverted link list" th:fragment="hotBlogList">
+                        <a th:href="@{/blog/{id}(id=${blog.id})}" class="item" th:each="blog:${blogs}" th:text="${blog.title}">用户故事</a>
+                        <!--/*-->
+                        <a href="" class="item">用户故事</a>
+                        <a href="" class="item">用户故事</a>
+                        <!--*/-->
+                    </div>
                 </div>
+
             </div>
             <div class="three wide column">
-                <h4 class="ui inverted header m-opacity-mini">联系我</h4>
+                <h4 class="ui inverted header m-opacity-mini">[[#{Contact.me}]]</h4>
                 <div class="ui inverted link list">
-                    <a href="" class="item">QQ: 1154424892</a>
-                    <a href="" class="item">Phone: 15956609697</a>
+                    <a href="" class="item" th:text="#{email}">Email: 1154424892@qq.com</a>
+                    <a href="" class="item" th:text="#{phone}"></a>
                 </div>
             </div>
             <div class="seven wide column">
@@ -79,15 +89,77 @@
 
         <div class="ui inverted section divider"></div>
         <p class="m-opacity-tiny m-text-spaced m-text-thin">Copyright 2019-2020</p>
+        <p id="htmer_time" class="m-opacity-tiny m-text-spaced m-text-thin">2096-6</p> <a style="color: #4183c4!important; cursor: pointer" th:href="@{/admin/login}">后台登录</a>
+
 
     </div>
 
 
 </footer>
 
+<div th:fragment="webTime">
+    <script>
+        function secondToDate(second) {
+            if (!second) {
+                return 0;
+            }
+            var time = new Array(0, 0, 0, 0, 0);
+            if (second >= 365 * 24 * 3600) {
+                time[0] = parseInt(second / (365 * 24 * 3600));
+                second %= 365 * 24 * 3600;
+            }
+            if (second >= 24 * 3600) {
+                time[1] = parseInt(second / (24 * 3600));
+                second %= 24 * 3600;
+            }
+            if (second >= 3600) {
+                time[2] = parseInt(second / 3600);
+                second %= 3600;
+            }
+            if (second >= 60) {
+                time[3] = parseInt(second / 60);
+                second %= 60;
+            }
+            if (second > 0) {
+                time[4] = second;
+            }
+            return time;
+        }
+
+        function setTime() {
+            /*此处为网站的创建时间*/
+            var create_time = Math.round(new Date(Date.UTC(2020, 0, 1, 0, 0, 0)).getTime() / 1000);
+            var timestamp = Math.round((new Date().getTime() + 8 * 60 * 60 * 1000) / 1000);
+            currentTime = secondToDate((timestamp - create_time));
+            currentTimeHtml = '本站已运行：' + currentTime[0] + '年' + currentTime[1] + '天'
+                + currentTime[2] + '时' + currentTime[3] + '分' + currentTime[4]
+                + '秒';
+            document.getElementById("htmer_time").innerHTML = currentTimeHtml;
+        }
+
+        setInterval(setTime, 1000);
+    </script>
+</div>
+
+
+
 <body>
 
-
+<!--心知天气-->
+<script th:fragment="weather">
+    (function(a,h,g,f,e,d,c,b){b=function(){d=h.createElement(g);c=h.getElementsByTagName(g)[0];d.src=e;d.charset="utf-8";d.async=1;c.parentNode.insertBefore(d,c)};a["SeniverseWeatherWidgetObject"]=f;a[f]||(a[f]=function(){(a[f].q=a[f].q||[]).push(arguments)});a[f].l=+new Date();if(a.attachEvent){a.attachEvent("onload",b)}else{a.addEventListener("load",b,false)}}(window,document,"script","SeniverseWeatherWidget","//cdn.sencdn.com/widget2/static/js/bundle.js?t="+parseInt((new Date().getTime() / 100000000).toString(),10)));
+    window.SeniverseWeatherWidget('show', {
+        flavor: "slim",
+        location: "WT7W3R63DQMH",
+        geolocation: true,
+        language: "zh-Hans",
+        unit: "c",
+        theme: "auto",
+        token: "9e1bbe56-e1e0-4bd6-9e8e-bc21994ab146",
+        hover: "enabled",
+        container: "tp-weather-widget"
+    })
+</script>
 
 </body>
 </html>

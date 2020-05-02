@@ -2,6 +2,8 @@ body {
     background: url("../images/bg.png");
 }
 
+
+
 /*padding*/
 .m-padding-tb--1{
     padding: 0.3em!important;
@@ -36,6 +38,10 @@ body {
 .m-padding-tb-7{
     padding-top: 5em !important;
     padding-bottom: 5em!important;
+}
+m-padding-tb-footer{
+    padding-top: 5em !important;
+    padding-bottom: 3em !important;
 }
 /*左右*/
 .m-padding-tb-li{
@@ -132,6 +138,10 @@ body {
     margin-right:  0.5em !important;
 }
 
+.m-margin-lf-6{
+    margin-left: 3em !important;
+    margin-right:  3em !important;
+}
 
 
 
@@ -159,9 +169,13 @@ body {
 
 
 /*shdadow*/
-.m-shadow-small{
+.m-shadow-small-nav{
     -webkit-box-shadow: 0 4px 8px rgba(0,0,0,0.2) !important;
     box-shadow: 0 4px 8px rgba(0,0,0,0.2) !important;
+}
+.m-shadow-small-footer{
+    -webkit-box-shadow: -0 -4px 8px rgba(0,0,0,0.2) !important;
+    box-shadow: -0 -4px 8px rgba(0,0,0,0.2) !important;
 }
 
 
@@ -198,11 +212,26 @@ body {
     line-height: 1.8 !important;
 }
 /*透明度*/
+.m-opacity-9{
+    opacity: 0.9 !important;
+}
+.m-opacity-8{
+    opacity: 0.8 !important;
+}
+.m-opacity-7{
+    opacity: 0.7 !important;
+}
+.m-opacity-6{
+    opacity: 0.6 !important;
+}
 .m-opacity-mini{
     opacity: 0.8 !important;
 }
 .m-opacity-tiny{
     opacity: 0.6 !important;
+}
+.m-opacity-2{
+    opacity: 0.2 !important;
 }
 
 /*主容器*/
@@ -220,7 +249,9 @@ body {
 .m-text-black{
     color: #333;
 }
-
+.m-teal{
+    color: #00B5AD;
+}
 
 /*大屏幕没有*/
 .m-mobile-show{

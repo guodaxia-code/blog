@@ -71,10 +71,9 @@ public class MarkDownUtil {
 
     //test
     public static void main(String[] args) {
-        String s = markDownContentToHtml("**一、首页**\n" +
+        String result = markDownContentToHtml("**一、首页**\n" +
                 "# 1.主页页面\n" +
                 "*首页主要是一些文字描述和个人信息，如果你的显示屏分辨率比较高或者页面缩放的比较小的话，可以看到下面有最新推荐专栏*");
-        System.out.println(s);
     }
 
 }

@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>博客管理登录</title>
     <meta id="viewport" name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1,user-scalable=no">
+    <link rel="icon"   th:href="@{/images/favicon.ico}">
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css"/>
     <!--    单前目录的../../  指resources-->
     <link rel="stylesheet" type="text/css"  href="../../static/css/index.css" th:href="@{/css/index.css}">
@@ -22,7 +23,7 @@
                     <h2 class="ui teal image header">
                         <img src="../../static/images/logo.png" th:src="@{../images/logo.png}" class="image">
                         <div class="content">
-                            登录到博客管理
+                            [[#{login.title}]]
                         </div>
                     </h2>
                     <form class="ui large form" method="post" th:action="@{/admin/login}">
@@ -30,16 +31,16 @@
                             <div class="field">
                                 <div class="ui left icon input">
                                     <i class="user icon"></i>
-                                    <input type="text" name="username" placeholder="用户名">
+                                    <input type="text" name="username" th:placeholder="#{login.username}">
                                 </div>
                             </div>
                             <div class="field">
                                 <div class="ui left icon input">
                                     <i class="lock icon"></i>
-                                    <input type="password" name="password" placeholder="密码">
+                                    <input type="password" name="password" th:placeholder="#{login.password}">
                                 </div>
                             </div>
-                            <button class="ui fluid large teal submit button">登录</button>
+                            <button class="ui fluid large teal submit button">[[#{login.submit}]]</button>
                         </div>
 
                         <div class="ui error mini message" ></div>
@@ -47,6 +48,7 @@
                         </div>
 
                     </form>
+                    <a  th:href="@{/admin/login(language='zh_CN')}" class="ui  label" th:classappend="${flag==1}?'teal'">汉语</a> <a class="ui label" th:classappend="${flag==0}?'teal'" th:href="@{/admin/login(language='en_US')}">英语</a>
 
                 </div>
             </div>

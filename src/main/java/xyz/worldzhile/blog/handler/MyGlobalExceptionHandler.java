@@ -21,14 +21,10 @@ public class MyGlobalExceptionHandler {
     private final Logger logger= LoggerFactory.getLogger(this.getClass());
 
     @ExceptionHandler(Exception.class)
-    public ModelAndView ArithmeticException(HttpServletRequest request,Exception e)  {
+    public ModelAndView ArithmeticException(HttpServletRequest request,Exception e) throws Exception {
         logger.error("Request URL : {}, Expection ： {}",request.getRequestURL(),e.getMessage());
         if (AnnotationUtils.findAnnotation(e.getClass(), ResponseStatus.class)!=null){
-            try {
                 throw  e;
-            } catch (Exception ex) {
-                ex.printStackTrace();
-            }
         }
         ModelAndView modelAndView = new ModelAndView();
         modelAndView.addObject("code",505);

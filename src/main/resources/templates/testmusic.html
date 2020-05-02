@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>音乐</title>
+    <link rel="icon"   th:href="@{/images/favicon.ico}">
+    <link rel="stylesheet" th:href="@{/lib/jquery-emoji/dist/jquery.emoji.css}">
+    <style type="text/css">        body {
+        background-color: aquamarine;
+    }
+
+    #test {
+        width: 360px;
+        height: 50px;
+        margin: 0 auto;
+    }
+    #div-emoji {
+        width: 420px;
+        margin: 0 auto;
+        padding-top: 120px;
+        margin-top: 50px;
+    }
+
+    #div-emoji input:nth-child(1) {
+        width: 100%;
+    }
+
+    #div-emoji button {
+        float: right;
+        margin-left: 3px;
+        color: white;
+        background-color: blue;
+        padding: 5px;
+        height: 30px;
+    }
+    </style>
+</head>
+<body>
+
+
+<form th:action="@{/upload1}" method="post" enctype="multipart/form-data">
+
+    <input type="file" name="file">文件
+    <input type="submit" value="上传">
+</form>
+
+
+<a href="/static/images/jiaozi">jiaozi</a>
+<!--<textarea id="content" >123</textarea>-->
+
+
+<!--<a id="emoji" href="javascript:;">颜文字</a>-->
+
+<div id="test" contenteditable="true" style="border: 1px solid red">
+
+</div>
+<div id="div-emoji">
+    <p>
+        <input id="input" type="text">
+    </p>
+    <p>
+        <button id="send">发送</button>
+        <button id="btn">emojiBtn</button>
+    </p>
+</div>
+
+
+<!--jquery-->
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.js"></script>
+<!--<script th:src="@{/lib/jquery-emoji/dist/jquery.mCustomScrollbar.min.js}"></script>-->
+<!--<script th:src="@{/lib/jquery-emoji/dist/jquery.emoji.js}"></script>-->
+<!--<script src="../static/js/jquery-2.0.2.min.js" th:src="@{/js/emoji_jQuery.min.js}"></script>-->
+<script th:src="@{/lib/jquery-emoji/dist/emoji_jQuery.min.js}"></script>
+
+<script>
+    $.Lemoji({
+        emojiInput: '#test',
+        emojiBtn: '#btn',
+        position: 'LEFTBOTTOM',
+        length: 8,
+        emojis: {
+            qq: {path: 'images/qq/', code: ':', name: 'QQ表情'},
+            tieba: {path: 'images/tieba', code: ';', name: "贴吧表情"},
+            emoji: {path: 'images/emoji', code: ',', name: 'Emoji表情'}
+        },
+
+    });
+    // $('#send').click(function () {
+    //     var content = $('#test').val();
+    //     content = $.emojiParse({
+    //         content: content,
+    //         emojis: [
+    //             {type: 'qq', path: 'images/qq/', code: ':'},
+    //             {path: 'images/tieba/', code: ';', type: 'tieba'},
+    //             {path: 'images/emoji/', code: ',', type: 'emoji'}]
+    //     });
+    //     $('#test').html(content);
+    //
+    //     alert($("#test").val())
+    // });
+</script>
+
+
+
+</body>
+</html>

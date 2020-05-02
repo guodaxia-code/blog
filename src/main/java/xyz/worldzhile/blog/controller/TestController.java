@@ -3,34 +3,28 @@ package xyz.worldzhile.blog.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import xyz.worldzhile.blog.domain.*;
-import xyz.worldzhile.blog.mapper.BlogMapper;
-import xyz.worldzhile.blog.mapper.TagMapper;
-import xyz.worldzhile.blog.mapper.UserMapper;
-
+import xyz.worldzhile.blog.mapper.CommentMapper;
+import java.util.ArrayList;
 import java.util.List;
 
 @Controller
 public class TestController {
 
-    @Autowired
-    private UserMapper userMapper;
-    @Autowired
-    private BlogMapper blogMapper;
-    @Autowired
-    private TagMapper tagMapper;
+//    @RequestMapping("test/{id}")
+//    public  String test(@PathVariable Integer id){
+//        System.out.println(id);
+//        return "testmusic";
+//    }
 
-
-    @ResponseBody
     @RequestMapping("test")
-    public Blog test(){
-        Blog blog = blogMapper.get("92a8d6d99a8b4d85a636eeb95db9e05d");
-        System.out.println(blog);
-        return blog;
-    }
+    public  String test(){
 
+        return "testmusic";
+    }
 
 
 }

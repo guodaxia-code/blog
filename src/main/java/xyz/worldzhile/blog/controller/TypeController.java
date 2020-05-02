@@ -22,7 +22,7 @@ public class TypeController {
     @GetMapping("types/{page}/{pageCount}")
     public String getTypes(@PathVariable Integer page, @PathVariable Integer pageCount, Model model){
 
-        PageBean<Type> typePageBean = new PageBean<Type>(page,pageCount);
+        PageBean<Type> typePageBean = new PageBean(page,pageCount);
         List<Type> types = typeService.listType(typePageBean);
         typePageBean.setList(types);
         model.addAttribute("page",typePageBean);
@@ -59,10 +59,8 @@ public class TypeController {
 
     @GetMapping("{id}/type-editor")
     public String getTypeeditor(@PathVariable String id,Model model){
-        System.out.println(id);
         Type type = typeService.getType(id);
         model.addAttribute("type",type);
-        System.out.println(type);
         return  "admin/type-input";
     }
 

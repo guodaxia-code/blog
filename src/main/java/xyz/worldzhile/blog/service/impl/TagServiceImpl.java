@@ -1,14 +1,18 @@
 package xyz.worldzhile.blog.service.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
+import xyz.worldzhile.blog.domain.Blog;
 import xyz.worldzhile.blog.domain.Tag;
 import xyz.worldzhile.blog.domain.Type;
+import xyz.worldzhile.blog.mapper.BlogMapper;
 import xyz.worldzhile.blog.mapper.TagMapper;
 import xyz.worldzhile.blog.mapper.TypeMapper;
 import xyz.worldzhile.blog.service.TagService;
 import xyz.worldzhile.blog.util.PageBean;
 
+import java.util.HashMap;
 import java.util.List;
 
 @Service
@@ -16,6 +20,9 @@ public class TagServiceImpl implements TagService {
 
     @Autowired
     private TagMapper tagMapper;
+
+    @Autowired
+    private BlogMapper blogMapper;
 
     @Override
     public Tag saveTag(Tag tag) {
@@ -59,6 +66,31 @@ public class TagServiceImpl implements TagService {
     @Override
     public List<Tag> indexShow(int tagShowCount) {
         return tagMapper.indexShow(tagShowCount);
+    }
+
+    @Override
+    public HashMap<String, Object> getAllWithTagID(String tagid, PageBean page) {
+        List<Tag> tags = tagMapper.all();
+        if (tagid.equals("firstValue")){
+            if (tags.get(0)!=null){
+                tagid=tags.get(0).getId();
+            }
+        }
+        for (Tag tag : tags) {
+            Integer total = blogMapper.countWithTagId(tag.getId());
+            List<Blog> blogs = blogMapper.allWithTagId(tag.getId(),page);
+            tag.setCount(blogs.size());
+            if (tag.getId().equals(tagid)){
+                page.setTotalCount(total);
+                page.setList(blogs);
+                tag.setBlogs(blogs);
+            }
+        }
+
+        HashMap<String, Object> result = new HashMap<>(3,1);
+        result.put("tagid",tagid);
+        result.put("tags",tags);
+        return result;
     }
 
 

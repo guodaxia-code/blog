@@ -1,10 +1,5 @@
 package xyz.worldzhile.blog.util;
 
-
-
-
-import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.Random;
 import java.util.UUID;
 
@@ -31,7 +26,7 @@ public final class UuidUtil {
 		String base = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
 		int size = base.length();
 		Random r = new Random();
-		StringBuffer sb = new StringBuffer();
+		StringBuilder sb = new StringBuilder();
 		for(int i=1;i<=4;i++){
 			//产生0到size-1的随机值
 			int index = r.nextInt(size);

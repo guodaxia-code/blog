@@ -1,9 +1,6 @@
 package xyz.worldzhile.blog.util;
 
 import org.apache.commons.lang3.StringUtils;
-
-
-import java.net.URLEncoder;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
@@ -35,7 +32,6 @@ public class MapUrl {
         HashMap<String, String> stringStringHashMap = new HashMap<>();
                 stringStringHashMap.put("title","");
                 stringStringHashMap.put("id","");
-        System.out.println(asUrlParams(stringStringHashMap));
     }
 
 }

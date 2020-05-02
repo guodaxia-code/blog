@@ -4,8 +4,11 @@
     <meta charset="UTF-8">
     <title>归档</title>
     <meta id="viewport" name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1,user-scalable=no">
+    <link rel="icon"   th:href="@{/images/favicon.ico}">
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css"/>
     <link rel="stylesheet" type="text/css"  href="../static/css/index.css" th:href="@{/css/index.css}">
+    <!--    css 动画-->
+    <link rel="stylesheet" type="text/css"  href="../static/css/animate.css" th:href="@{/css/animate.css}">
 </head>
 <body>
 
@@ -13,7 +16,7 @@
     </div>
 
 <!--中间部分-->
-    <div class="m-container-small m-padding-tb-5">
+    <div class="m-container-small m-padding-tb-5 animated fadeInUpBig">
         <div class="ui container">
 <!--            heaher-->
             <div class="ui top attached segment padded">
@@ -22,88 +25,27 @@
                         <h3 class="ui teal header">归档</h3>
                     </div>
                     <div class="right aligned column">
-                        共 <h2 class="ui orange header m-inline-block m-text-thin">144</h2> 篇博客
+                        共 <h2 class="ui orange header m-inline-block m-text-thin" th:text="${count}">144</h2> 篇博客
                     </div>
                 </div>
             </div>
-            <div class="header center aligned ui">2020</div>
-            <div class="ui menu vertical fluid">
-                <a href="#" class="item" target="_blank">
-                    <span>
-                        <i class="mini teal circle icon m-margin-right-mini"></i>博客用来写笔记和分析技术
-                        <div href="#" class="ui teal basic left pointing label m-padded-mini">4月20</div>
-                    </span>
-                    <div href="#" class="ui orange basic left pointing label m-padded-mini">原创</div>
-                </a>
-                <a href="#" class="item" target="_blank">
-                    <span>
-                        <i class="mini teal circle icon m-margin-right-mini"></i>博客用来写笔记和分析技术
-                        <div href="#" class="ui teal basic left pointing label m-padded-mini">4月20</div>
-                    </span>
-                    <div href="#" class="ui orange basic left pointing label m-padded-mini">原创</div>
-                </a>
-                <a href="#" class="item" target="_blank">
-                    <span>
-                        <i class="mini teal circle icon m-margin-right-mini"></i>博客用来写笔记和分析技术
-                        <div href="#" class="ui teal basic left pointing label m-padded-mini">4月20</div>
-                    </span>
-                    <div href="#" class="ui orange basic left pointing label m-padded-mini">原创</div>
-                </a>
-                <a href="#" class="item" target="_blank">
-                    <span>
-                        <i class="mini teal circle icon m-margin-right-mini"></i>博客用来写笔记和分析技术
-                        <div href="#" class="ui teal basic left pointing label m-padded-mini">4月20</div>
-                    </span>
-                    <div href="#" class="ui orange basic left pointing label m-padded-mini">原创</div>
-                </a>
-                <a href="#" class="item" target="_blank">
-                    <span>
-                        <i class="mini teal circle icon m-margin-right-mini"></i>博客用来写笔记和分析技术
-                        <div href="#" class="ui teal basic left pointing label m-padded-mini">4月20</div>
-                    </span>
-                    <div href="#" class="ui orange basic left pointing label m-padded-mini">原创</div>
-                </a>
 
-            </div>
-            <div class="header center aligned ui">2019</div>
-            <div class="ui menu vertical fluid">
-                <a href="#" class="item" target="_blank">
+            <th:block th:each="item:${archives}">
+                <div class="header center aligned ui" th:text="${item.key}">2020</div>
+                <div class="ui menu vertical fluid">
+                    <a th:href="@{/blog/{id}(id=${blog.id})}" class="item" target="_blank" th:each="blog:${item.value}">
                     <span>
-                        <i class="mini teal circle icon m-margin-right-mini"></i>博客用来写笔记和分析技术
-                        <div href="#" class="ui teal basic left pointing label m-padded-mini">4月20</div>
+                        <i class="mini teal circle icon m-margin-right-mini" ></i>
+                        <span th:text="${blog.title}"> 博客用来写笔记和分析技术</span>
+                        <div href="#" class="ui teal basic left pointing label m-padded-mini" th:text="${#dates.format(blog.createTime,'MM-dd')}">4月20</div>
                     </span>
-                    <div href="#" class="ui orange basic left pointing label m-padded-mini">原创</div>
-                </a>
-                <a href="#" class="item" target="_blank">
-                    <span>
-                        <i class="mini teal circle icon m-margin-right-mini"></i>博客用来写笔记和分析技术
-                        <div href="#" class="ui teal basic left pointing label m-padded-mini">4月20</div>
-                    </span>
-                    <div href="#" class="ui orange basic left pointing label m-padded-mini">原创</div>
-                </a>
-                <a href="#" class="item" target="_blank">
-                    <span>
-                        <i class="mini teal circle icon m-margin-right-mini"></i>博客用来写笔记和分析技术
-                        <div href="#" class="ui teal basic left pointing label m-padded-mini">4月20</div>
-                    </span>
-                    <div href="#" class="ui orange basic left pointing label m-padded-mini">原创</div>
-                </a>
-                <a href="#" class="item" target="_blank">
-                    <span>
-                        <i class="mini teal circle icon m-margin-right-mini"></i>博客用来写笔记和分析技术
-                        <div href="#" class="ui teal basic left pointing label m-padded-mini">4月20</div>
-                    </span>
-                    <div href="#" class="ui orange basic left pointing label m-padded-mini">原创</div>
-                </a>
-                <a href="#" class="item" target="_blank">
-                    <span>
-                        <i class="mini teal circle icon m-margin-right-mini"></i>博客用来写笔记和分析技术
-                        <div href="#" class="ui teal basic left pointing label m-padded-mini">4月20</div>
-                    </span>
-                    <div href="#" class="ui orange basic left pointing label m-padded-mini">原创</div>
-                </a>
+                        <div href="#" class="ui orange basic left pointing label m-padded-mini" th:text="${blog.flag}">原创</div>
+                    </a>
 
-            </div>
+                </div>
+            </th:block>
+
+
 
 
 
@@ -128,8 +70,11 @@
         $("#toggle").click(function () {
             $(".m-item").toggleClass("m-mobile-hide");
         });
+        // footer 最新博客
+        $("#hotBlogs-container").load("/blog/hotBlogs");
 
     </script>
-
+    <div th:replace="common::webTime">
+    </div>
 </body>
 </html>

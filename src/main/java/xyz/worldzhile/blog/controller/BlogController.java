@@ -36,7 +36,7 @@ public class BlogController {
     @RequestMapping(value = "blogs/{page}/{pageCount}",method = {RequestMethod.GET,RequestMethod.POST})
     public String getBlogs(@PathVariable Integer page, @PathVariable Integer pageCount, @RequestParam() Map<String,String> cons , Model model){
 
-        if (cons!=null||cons.containsKey("message")){
+        if (cons!=null&&cons.containsKey("message")){
             cons.remove("message");
         }
 
@@ -73,9 +73,8 @@ public class BlogController {
     @PostMapping("blog-input")
     public String saveBloginput(Blog blog, @RequestParam String[] tagids, Model model,RedirectAttributes redirectAttributes, HttpSession session){
         blog.setId(UuidUtil.getUuid());
-//        User user = (User) session.getAttribute("user");
-//        blog.setBlog_userid(user.getId());
-        blog.setBlog_userid("000");
+        User user = (User) session.getAttribute("user");
+        blog.setBlog_userid(user.getId());
         Blog blog1 = blogService.saveBlog(blog, tagids);
         if (blog1!=null){
             redirectAttributes.addAttribute("message","博客新增成功");

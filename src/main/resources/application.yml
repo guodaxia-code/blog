@@ -4,6 +4,16 @@ spring:
   profiles:
     active: pro
 
+  # 国际化 信息和组件
+  messages:
+    basename: i18n/contactMe
+  #文件上传
+  servlet:
+    multipart:
+      #总文件最大值
+      max-request-size: 100MB
+      #单个文件最大值
+      max-file-size: 10MB
 
 
 
@@ -15,6 +25,11 @@ mybatis:
 server:
   servlet:
     context-path: /blog
+
+
+
+
+
 
 
 

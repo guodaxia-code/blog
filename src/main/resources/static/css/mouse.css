@@ -1,0 +1,7 @@
+/*鼠标悬浮移动样式图片*/
+body {
+    cursor: url("../images/nomal.png"), auto;
+}
+a:hover {
+    cursor: url("../images/hover.png"), auto;
+}

@@ -1,9 +1,9 @@
 package xyz.worldzhile.blog.mapper;
 
 import org.apache.ibatis.annotations.*;
+import org.apache.ibatis.mapping.FetchType;
 import org.springframework.stereotype.Repository;
 import xyz.worldzhile.blog.domain.Tag;
-import xyz.worldzhile.blog.domain.Type;
 import xyz.worldzhile.blog.util.PageBean;
 
 import java.util.List;
@@ -17,8 +17,7 @@ public interface TagMapper {
 
     @Select("select * from tag where id=#{id}")
     @Results(id = "TagMap",value = {
-            @Result(id = true,property = "id",column = "id"),
-//            @Result(property = "roles" ,column="uid",many = @Many(select = "xyz.worldzhile.dao.RoleDao.findAllByUid",fetchType = FetchType.EAGER))
+            @Result(id = true,property = "id",column = "id")
     })
     Tag get(String id);
 
@@ -40,7 +39,6 @@ public interface TagMapper {
     @Select("select * from tag ")
     List<Tag> all();
 
-
     @Select(" select tag.*,blogtag.blogid,blogtag.tagid from tag " +
             "    left join blogtag " +
             "    on tag.id=blogtag.tagid " +
@@ -53,4 +51,7 @@ public interface TagMapper {
             " on 1=1 " +
             " where tag.id=new.tagid ")
     List<Tag>  indexShow(int size);
+
+
+
 }

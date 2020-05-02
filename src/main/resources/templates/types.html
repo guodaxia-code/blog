@@ -4,38 +4,19 @@
     <meta charset="UTF-8">
     <title>分类</title>
     <meta id="viewport" name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1,user-scalable=no">
+    <link rel="icon"   th:href="@{/images/favicon.ico}">
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css"/>
     <link rel="stylesheet" type="text/css"  href="../static/css/index.css" th:href="@{/css/index.css}">
+    <!--    css 动画-->
+    <link rel="stylesheet" type="text/css"  href="../static/css/animate.css" th:href="@{/css/animate.css}">
 </head>
 <body>
 
-    <div th:replace="common::header('2')" class="ui segment attached inverted m-padding-tb-1 m-shadow-small">
-
-        <div class="ui container">
-            <div class="ui inverted secondary menu stackable">
-                <h2 class="ui teal header item">Blog</h2>
-                <a href="/blog/index" class="item m-mobile-hide m-item"><i class="icon home"></i>首页</a>
-                <a href="/blog/types" class="item m-mobile-hide m-item"><i class="icon idea"></i>分类</a>
-                <a href="/blog/tags" class="item m-mobile-hide m-item"><i class="icon tags"></i>标签</a>
-                <a href="/blog/archives" class="item m-mobile-hide m-item"><i class="icon clone"></i>归档</a>
-                <a href="/blog/about" class="item m-mobile-hide m-item"><i class="info icon"></i>关于我</a>
-                <div class="right item m-mobile-hide m-item">
-                    <div class="ui icon inverted transparent input">
-                        <input type="text" placeholder="Search...">
-                        <i class="search link icon"></i>
-                    </div>
-                </div>
-            </div>
-            <a class="ui black  icon button m-top-right m-mobile-show" id="toggle">
-                <i href=" " class="icon sidebar  "></i>
-            </a>
-
-        </div>
-
+    <div th:replace="common :: header(2)">
     </div>
 
 <!--中间部分-->
-    <div class="m-container-small m-padding-tb-5">
+    <div class="m-container-small m-padding-tb-5 animated fadeIn">
         <div class="ui container">
 <!--            heaher-->
             <div class="ui top attached segment">
@@ -44,19 +25,17 @@
                         <h3 class="ui teal header">分类</h3>
                     </div>
                     <div class="right aligned column">
-                        共 <h2 class="ui orange header m-inline-block m-text-thin">14</h2> 个
+                        共 <h2 class="ui orange header m-inline-block m-text-thin" th:text="${#arrays.length(types)}">14</h2> 个
                     </div>
                 </div>
             </div>
-            <div class="ui  top segment m-padding-tb-4">
-                <div class="ui  button labeled m-margin-tb-2 ">
-                    <a class="ui  basic teal button ">多线程</a>
-                    <div class="ui  basic teal label left pointing">24</div>
+            <div class="ui  top segment m-padding-tb-4" >
+                <div class="ui  button labeled m-margin-tb-2" th:each="type:${types}" th:if="${type.count>0}"  >
+<!--                 typeid   th:classappend=-->
+                        <a class="ui  basic  button " th:href="@{/types/1/6(typeid=${type.id})}" th:classappend="${typeid eq type.id}?'teal'" th:text="${type.name}">多线程</a>
+                        <div class="ui  basic  label left pointing" th:classappend="${typeid eq type.id}?'teal'"  th:text="${type.count}">24</div>
                 </div>
-                <div class="ui  button labeled m-margin-tb-2 ">
-                    <a class="ui  basic  button ">多线程</a>
-                    <div class="ui  basic  label left pointing">19</div>
-                </div>
+                    <!--/*-->
                 <div class="ui  button labeled m-margin-tb-2 ">
                     <a class="ui  basic  button ">多线程</a>
                     <div class="ui  basic  label left pointing">19</div>
@@ -77,18 +56,47 @@
                     <a class="ui  basic  button ">多线程</a>
                     <div class="ui  basic  label left pointing">19</div>
                 </div>
-                <div class="ui  button labeled m-margin-tb-2 ">
-                    <a class="ui  basic  button ">多线程</a>
-                    <div class="ui  basic  label left pointing">19</div>
-                </div>
-                <div class="ui  button labeled m-margin-tb-2 ">
-                    <a class="ui  basic  button ">多线程</a>
-                    <div class="ui  basic  label left pointing">19</div>
-                </div>
+                    <!--*/-->
 
             </div>
 <!--            列表-->
-            <div class="ui attached segment teal">
+            <div class="ui attached segment teal" >
+                <div class="ui  padded vertical m-container segment m-padding-tb-4 m-padding-tb-li" th:each="blog:${page.list}">
+                    <div class="ui grid middle aligned stackable mobile reversed">
+                        <div class="eleven wide column">
+                            <h3 class="ui header" ><a  th:text="${blog.title}" class="m-text-black" th:href="@{/blog/{id}(id=${blog.id})}">你真的理解什么是财富自由吗?</a></h3>
+                            <p th:text="|${blog.description}......|">打发给对方栅格电饭锅放到水果放到梵蒂冈梵蒂冈梵蒂冈电饭锅梵蒂冈地方栅格梵蒂冈地方栅格地方开了个会回复的梵蒂冈覆盖花开富贵好看冠福股份</p>
+                            <div class="ui stackable grid">
+                                <div class="eleven wide column">
+                                    <div class="ui mini horizontal link list">
+                                        <div class="item">
+                                            <img  src="https://i.picsum.photos/id/237/100/100.jpg" th:src="${blog.user.avatar}" alt="" class="ui image avatar">
+                                            <div class="content"><a class="header" th:text="${blog.user.nickname}">郭大侠</a></div>
+                                        </div>
+                                        <div class="item">
+                                            <i class="calendar icon"></i><span th:text="${#dates.format(blog.updateTime,'yyyy-MM-dd HH:mm')}">2020-04-10</span>
+                                        </div>
+                                        <div class="item">
+                                            <i class="eye icon"></i><span th:text="${blog.views}">2020</span>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="right aligned five wide column">
+                                    <a href="" target="_blank" class="ui teal basic  label m-padding-tb--1 m-text-thin" th:text="${blog.type.name}">认知升级</a>
+                                </div>
+                            </div>
+                        </div>
+                        <!--                            图片-->
+                        <div class="five wide column">
+                            <a th:href="@{/blog/{id}(id=${blog.id})}" target="_blank">
+                                <img class="ui image rounded" th:src="${blog.firstPicture}" src="https://i.picsum.photos/id/237/800/450.jpg" alt="">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!--/*-->
                 <div class="ui  padded m-mobile-lr-clear vertical m-container segment m-padding-tb-4 m-padding-tb-li">
                     <div class="ui grid stackable mobile reversed">
                         <div class="eleven wide column">
@@ -157,42 +165,10 @@
                         </div>
                     </div>
                 </div>
-                <div class="ui  padded m-mobile-lr-clear vertical m-container segment m-padding-tb-4 m-padding-tb-li">
-                    <div class="ui grid stackable mobile reversed">
-                        <div class="eleven wide column">
-                            <h3 class="ui header">你真的理解什么是财富自由吗?</h3>
-                            <p>打发给对方栅格电饭锅放到水果放到梵蒂冈梵蒂冈梵蒂冈电饭锅梵蒂冈地方栅格梵蒂冈地方栅格地方开了个会回复的梵蒂冈覆盖花开富贵好看冠福股份</p>
-                            <div class="ui stackable grid">
-                                <div class="eleven wide column">
-                                    <div class="ui mini horizontal link list">
-                                        <div class="item">
-                                            <img src="https://i.picsum.photos/id/237/100/100.jpg" alt="" class="ui image avatar">
-                                            <div class="content"><a class="header">郭大侠</a></div>
-                                        </div>
-                                        <div class="item">
-                                            <i class="calendar icon"></i><span>2020-04-10</span>
-                                        </div>
-                                        <div class="item">
-                                            <i class="eye icon"></i><span>2020</span>
-                                        </div>
-                                    </div>
-
-                                </div>
-                                <div class="right aligned five wide column">
-                                    <a href="" target="_blank" class="ui teal basic  label m-padding-tb--1 m-text-thin">认知升级</a>
-                                </div>
-                            </div>
-                        </div>
-                        <!--                            图片-->
-                        <div class="five wide column">
-                            <a href="#" target="_blank">
-                                <img class="ui image rounded" src="https://i.picsum.photos/id/237/800/450.jpg" alt="">
-                            </a>
-                        </div>
-                    </div>
-                </div>
+                <!--*/-->
             </div>
             <!--       上下页-->
+            <!--/*-->
             <div class="ui  bottom attached  segment">
                 <div class="ui mini middle grid attached two column ">
                     <div class="column ">
@@ -203,6 +179,18 @@
                     </div>
                 </div>
             </div>
+            <!--*/-->
+            <div class="ui  bottom attached  segment" th:if="${page.totalPage>1}">
+                <div class="ui mini middle grid attached two column ">
+                    <div class="column ">
+                        <div class="item"><a class="button  ui teal basic " th:href="@{/types/{page}/6(page=${page.currentPage-1})}" >上一页</a></div>
+                    </div>
+                    <div class="right aligned column">
+                        <div class="item"><a class="ui  teal basic button" th:href="@{/types/{page}/6(page=${page.currentPage+1})}">下一页</a></div>
+                    </div>
+                </div>
+            </div>
+
 
         </div>
         </div>
@@ -226,8 +214,10 @@
         $("#toggle").click(function () {
             $(".m-item").toggleClass("m-mobile-hide");
         });
-
+        // footer 最新博客
+        $("#hotBlogs-container").load("/blog/hotBlogs");
     </script>
-
+    <div th:replace="common::webTime">
+    </div>
 </body>
 </html>

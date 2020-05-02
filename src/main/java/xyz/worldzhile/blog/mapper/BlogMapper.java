@@ -23,19 +23,20 @@ public interface BlogMapper {
             @Result(id = true,property = "id",column = "id"),
             @Result(property = "user" ,column="blog_userid",one = @One(select = "xyz.worldzhile.blog.mapper.UserMapper.getUserById",fetchType = FetchType.EAGER)),
             @Result(property = "type" ,column="blog_typeid",one = @One(select = "xyz.worldzhile.blog.mapper.TypeMapper.get",fetchType = FetchType.EAGER)),
-            @Result(property = "tags" ,column="id",many = @Many(select = "xyz.worldzhile.blog.mapper.TagMapper.findTagsByBlogId",fetchType = FetchType.EAGER))
+            @Result(property = "tags" ,column="id",many = @Many(select = "xyz.worldzhile.blog.mapper.TagMapper.findTagsByBlogId",fetchType = FetchType.LAZY)),
+            @Result(property = "comments" ,column="id",many = @Many(select = "xyz.worldzhile.blog.mapper.CommentMapper.gets",fetchType = FetchType.LAZY))
     })
     Blog get(String id);
 
-    @Select("<script>"+"SELECT * FROM blog WHERE 1=1"
+    @Select("<script>"+"SELECT * FROM blog WHERE 1=1  "
             +"<if test='map!=null'>"
             +"<foreach collection='map.entrySet()' open='' item='value' index='key' close='' > and ${key} like CONCAT('%',#{value},'%') </foreach> "
             +"</if>"
             +"limit #{page.start},#{page.pageCount}"
             +"</script>"
     )
-    @ResultMap("BlogMap")
-    List<Blog> list(@Param("page") PageBean pageBean,@Param("map") HashMap map);
+    @ResultMap("BlogMap") //分页的时候不查评论不用提高效率
+    List<Blog> list(@Param("page") PageBean<Blog> pageBean,@Param("map") HashMap<String,String> map);
 
     @Update("update blog set title=#{title},content=#{content},firstPicture=#{firstPicture},flag=#{flag},views=#{views},appreciation=#{appreciation},shareStatement=#{shareStatement}," +
             "commentabled=#{commentabled},published=#{published},recommend=#{recommend}," +
@@ -47,9 +48,9 @@ public interface BlogMapper {
     void deleteBlog(String id);
 
 
-    @Select("<script>"+"SELECT count(id) FROM blog WHERE 1=1"
-//            +"<if test='map.title!=null'> and title like CONCAT('%',#{map.title},'%')</if>"
-//            +"<if test='map.content!=null'> and content like CONCAT('%',#{map.content},'%')</if>"
+    @Select("<script>"+"SELECT count(id) FROM blog WHERE 1=1 "
+            //+"<if test='map.title!=null'> and title like CONCAT('%',#{map.title},'%')</if>"
+            //+"<if test='map.content!=null'> and content like CONCAT('%',#{map.content},'%')</if>"
             +"<if test='map!=null'>"
             +"<foreach collection='map.entrySet()' open='' item='value' index='key' close='' > and ${key} like CONCAT('%',#{value},'%') </foreach> "
             +"</if>"
@@ -63,7 +64,7 @@ public interface BlogMapper {
     Blog getBlogByTitle(String title);
 
 
-    @Select("select * from blog order by updateTime desc limit 0,#{newBlogShowCount} ")
+    @Select("select * from blog where published=1 and recommend=1  order by updateTime desc limit 0,#{newBlogShowCount} ")
     List<Blog> indexShow(int newBlogShowCount);
 
 
@@ -82,4 +83,38 @@ public interface BlogMapper {
     )
     @ResultMap("BlogMap")
     List<Blog> searchList(@Param("page") PageBean<Blog> page, @Param("query") String query);
+
+    @Update("update blog set views=#{count} where id=#{id}")
+    void view(@Param("count") Integer count,@Param("id") String id);
+
+    @Select("select count(id) from blog where blog_typeid=#{typeid}")
+    Integer countByType(String typeid);
+
+    @Select("select blog.* from tag "
+            + " left join blogtag "
+            + " on tag.id=blogtag.tagid "
+            + " left join blog "
+            + "on blog.id=blogtag.blogid "
+            + " where tagid=#{tagid} "
+           +  " limit #{page.start},#{page.pageCount}")
+    @ResultMap("BlogMap")
+    List<Blog> allWithTagId(@Param("tagid")String tagid,@Param("page") PageBean<Blog> pageBean);
+
+    @Select("select count(*) from tag " +
+            "left join blogtag " +
+            "on tag.id=blogtag.tagid " +
+            "left join blog " +
+            "on blog.id=blogtag.blogid " +
+            "where tagid=#{tagid}")
+    Integer countWithTagId(String tagid);
+
+
+    @Select("select   DATE_FORMAT(createTime,'%Y') year  from blog GROUP BY year ORDER BY year desc")
+    List<String> getYears();
+
+    @Select("select * from blog where DATE_FORMAT(createTime,'%Y') = #{year} ORDER BY createTime desc ")
+    List<Blog> getBlogsByYear(String year);
+
+    @Select("select * from blog where published=1 and recommend=1 order  by views desc limit 0, #{hotBlogShowCount}")
+    List<Blog> getHot(Integer hotBlogShowCount);
 }

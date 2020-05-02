@@ -9,6 +9,7 @@ import java.util.Date;
 @Mapper
 @Repository
 public interface UserMapper {
+
     @Select("select * from user where username=#{username} and password=#{password}")
     @ResultMap("UserMap")
     User getUser(String username, String password);
@@ -26,4 +27,5 @@ public interface UserMapper {
             @Result(property = "updateTime",column = "updateTime"),
     })
     User getUserById(String id);
+
 }

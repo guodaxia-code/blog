@@ -17,4 +17,5 @@ public interface BlogTagMapper {
 
     @Delete("delete from blogtag where blogid=#{id}")
     void deleteBlogTag(String id);
+
 }

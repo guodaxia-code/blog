@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>在线音乐</title>
+    <link href="https://cdn.bootcss.com/aplayer/1.10.1/APlayer.min.css" rel="stylesheet">
+    <meta id="viewport" name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1,user-scalable=no">
+    <link rel="icon"   th:href="@{/images/favicon.ico}">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css"/>
+    <link rel="stylesheet" type="text/css"  href="../static/css/index.css" th:href="@{/css/index.css}">
+    <!--    音乐播放器-->
+    <link href="https://cdn.bootcss.com/aplayer/1.10.1/APlayer.min.css" rel="stylesheet">
+    <!--    css 动画-->
+    <link rel="stylesheet" type="text/css"  href="../static/css/animate.css" th:href="@{/css/animate.css}">
+
+</head>
+<body>
+
+<div th:replace="common :: header(6)">
+</div>
+
+
+    <div class="m-container-small m-padding-tb-5">
+        <div class="ui container">
+            <div class="ui teal label m-margin-tb-4 m-margin-lf-2 " >
+                网易云音乐
+            </div>
+            <div id="aplayer" class="aplayer">
+
+            </div>
+        </div>
+
+    </div>
+
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<!--    footer-->
+<footer th:replace="common::footer">
+</footer>
+
+
+
+<script src="../static/js/jquery-2.0.2.min.js" th:src="@{/js/jquery-2.0.2.min.js}"></script>
+<script src="../static/js/semantic.min.js" th:src="@{/js/semantic.min.js}"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.13/vue.min.js"></script>
+
+
+<script>
+    // 首页导航栏
+    $("#toggle").click(function () {
+        $(".m-item").toggleClass("m-mobile-hide");
+    });
+    // footer 最新博客
+    $("#hotBlogs-container").load("/blog/hotBlogs");
+</script>
+
+<div th:replace="common::webTime">
+</div>
+<script src="https://cdn.bootcss.com/aplayer/1.10.1/APlayer.min.js"></script>
+<script>
+
+    var ap = new APlayer({
+        container: document.getElementById('aplayer'),
+        autoplay: false,
+        theme: '#FADFA3',
+        loop: 'all',
+        order: 'random',
+        preload: 'auto',
+        volume: 0.7,
+        mutex: true,
+        listFolded: false,
+        listMaxHeight: 90,
+        lrcType: 3,
+        fixed: false,
+        audio: [
+            {
+                name: '有何不可',
+                artist: '蔡非凡',
+                url: 'music/Felicia蔡菲凡 - 有何不可.mp3',
+                cover: 'music/images/有何不可.jpg',
+                lrc: 'music/lrc/有何不可.lrc',
+                theme: '#c20c0c'
+                // theme: 'red'
+            },
+            {
+                name: '下山',
+                artist: '要不要买菜',
+                url: 'music/下山.mp3',
+                cover: 'music/images/下山.jpg',
+                lrc: 'music/lrc/下山.lrc',
+                // theme: '#ebd0c2'
+                theme: '#c20c0c'
+            },
+            {
+                name: '苏喂苏喂苏喂',
+                artist: 'DJ奶小深',
+                url: 'music/ DJ奶小深 - 苏喂苏喂苏喂.mp3',
+                cover: 'music/images/苏喂.jpg',
+                lrc: 'music/lrc/苏喂.lrc',
+                // theme: '#ebd0c2'
+                theme: '#c20c0c'
+            }
+        ]
+    });
+</script>
+</body>
+</html>

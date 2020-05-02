@@ -4,8 +4,11 @@
     <meta charset="UTF-8">
     <title>搜索结构</title>
     <meta id="viewport" name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1,user-scalable=no">
+    <link rel="icon"   th:href="@{/images/favicon.ico}">
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css"/>
     <link rel="stylesheet" type="text/css"  href="../static/css/index.css" th:href="@{/css/index.css}">
+    <!--    css 动画-->
+    <link rel="stylesheet" type="text/css"  href="../static/css/animate.css" th:href="@{/css/animate.css}">
 </head>
 <body>
 
@@ -13,7 +16,7 @@
     </div>
 
 <!--中间部分-->
-    <div class="m-container-small m-padding-tb-5">
+    <div class="m-container-small m-padding-tb-5 animated fadeIn">
         <div class="ui container">
 <!--            heaher-->
             <div class="ui top attached segment">
@@ -85,7 +88,7 @@
                         <div class="item"><a class="button  ui teal basic " th:href="@{/search/{page}/6(page=${page.currentPage-1})}" >上一页</a></div>
                     </div>
                     <div class="right aligned column">
-                        <div class="item"><a class="ui  teal basic button" th:href="@{/search/{page}/6(page=${page.currentPage-1})}">下一页</a></div>
+                        <div class="item"><a class="ui  teal basic button" th:href="@{/search/{page}/6(page=${page.currentPage+1})}">下一页</a></div>
                     </div>
                 </div>
             </div>
@@ -111,8 +114,10 @@
         $("#toggle").click(function () {
             $(".m-item").toggleClass("m-mobile-hide");
         });
-
+        // footer 最新博客
+        $("#hotBlogs-container").load("/blog/hotBlogs");
     </script>
-
+    <div th:replace="common::webTime">
+    </div>
 </body>
 </html>

@@ -1,1227 +1,164 @@
-2020-04-27 00:10:15.500 [http-nio-8080-exec-6] INFO  xyz.worldzhile.blog.aspect.LogAspect - doBefore : LogAspect.RequestLog(url=http://localhost:8080/blog/blog/0f7410eed4d0451398b2c2503355d2f2, ip=0:0:0:0:0:0:0:1, classMethod=xyz.worldzhile.blog.controller.IndexController.toBlog, args=[0f7410eed4d0451398b2c2503355d2f2, {}, {}])
-2020-04-27 00:10:15.519 [http-nio-8080-exec-6] INFO  xyz.worldzhile.blog.aspect.LogAspect - Result : blog
-2020-04-27 00:10:15.571 [http-nio-8080-exec-6] ERROR org.thymeleaf.TemplateEngine - [THYMELEAF][http-nio-8080-exec-6] Exception processing template "blog": An error happened during template parsing (template: "class path resource [templates/blog.html]")
-org.thymeleaf.exceptions.TemplateInputException: An error happened during template parsing (template: "class path resource [templates/blog.html]")
-	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parse(AbstractMarkupTemplateParser.java:241)
-	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parseStandalone(AbstractMarkupTemplateParser.java:100)
-	at org.thymeleaf.engine.TemplateManager.parseAndProcess(TemplateManager.java:666)
-	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1098)
-	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1072)
-	at org.thymeleaf.spring5.view.ThymeleafView.renderFragment(ThymeleafView.java:362)
-	at org.thymeleaf.spring5.view.ThymeleafView.render(ThymeleafView.java:189)
-	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1373)
-	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1118)
-	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1057)
-	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943)
-	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
-	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634)
-	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
-	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
-	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
-	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
-	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
-	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
-	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
-	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
-	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
-	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
-	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
-	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
-	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:373)
-	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
-	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868)
-	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1594)
-	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
-	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
-	at java.lang.Thread.run(Thread.java:748)
-Caused by: org.attoparser.ParseException: An error happened during template rendering
-	at org.attoparser.MarkupParser.parseDocument(MarkupParser.java:393)
-	at org.attoparser.MarkupParser.parse(MarkupParser.java:257)
-	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parse(AbstractMarkupTemplateParser.java:230)
-	... 48 common frames omitted
-Caused by: org.thymeleaf.exceptions.TemplateOutputException: An error happened during template rendering
-	at org.thymeleaf.engine.OutputTemplateHandler.handleText(OutputTemplateHandler.java:75)
-	at org.thymeleaf.engine.ProcessorTemplateHandler.handleText(ProcessorTemplateHandler.java:587)
-	at org.thymeleaf.engine.TemplateHandlerAdapterMarkupHandler.handleText(TemplateHandlerAdapterMarkupHandler.java:218)
-	at org.thymeleaf.templateparser.markup.InlinedOutputExpressionMarkupHandler$InlineMarkupAdapterPreProcessorHandler.handleText(InlinedOutputExpressionMarkupHandler.java:232)
-	at org.thymeleaf.standard.inline.OutputExpressionInlinePreProcessorHandler.handleText(OutputExpressionInlinePreProcessorHandler.java:136)
-	at org.thymeleaf.templateparser.markup.InlinedOutputExpressionMarkupHandler.handleText(InlinedOutputExpressionMarkupHandler.java:80)
-	at org.attoparser.HtmlMarkupHandler.handleText(HtmlMarkupHandler.java:208)
-	at org.attoparser.AbstractChainedMarkupHandler.handleText(AbstractChainedMarkupHandler.java:203)
-	at org.attoparser.MarkupParser.parseBuffer(MarkupParser.java:557)
-	at org.attoparser.MarkupParser.parseDocument(MarkupParser.java:301)
-	... 50 common frames omitted
-Caused by: org.thymeleaf.exceptions.TemplateProcessingException: Could not parse as expression: "@{/blog/{id}(id=${blog.id}})}" (template: "blog" - line 666, col 21)
-	at org.thymeleaf.standard.expression.StandardExpressionParser.parseExpression(StandardExpressionParser.java:131)
-	at org.thymeleaf.standard.expression.StandardExpressionParser.parseExpression(StandardExpressionParser.java:62)
-	at org.thymeleaf.standard.expression.StandardExpressionParser.parseExpression(StandardExpressionParser.java:44)
-	at org.thymeleaf.engine.EngineEventUtils.parseAttributeExpression(EngineEventUtils.java:220)
-	at org.thymeleaf.engine.EngineEventUtils.computeAttributeExpression(EngineEventUtils.java:207)
-	at org.thymeleaf.standard.processor.AbstractStandardExpressionAttributeTagProcessor.doProcess(AbstractStandardExpressionAttributeTagProcessor.java:125)
-	at org.thymeleaf.processor.element.AbstractAttributeTagProcessor.doProcess(AbstractAttributeTagProcessor.java:74)
-	at org.thymeleaf.processor.element.AbstractElementTagProcessor.process(AbstractElementTagProcessor.java:95)
-	at org.thymeleaf.util.ProcessorConfigurationUtils$ElementTagProcessorWrapper.process(ProcessorConfigurationUtils.java:633)
-	at org.thymeleaf.engine.ProcessorTemplateHandler.handleOpenElement(ProcessorTemplateHandler.java:1314)
-	at org.thymeleaf.engine.OpenElementTag.beHandled(OpenElementTag.java:205)
-	at org.thymeleaf.engine.TemplateModel.process(TemplateModel.java:136)
-	at org.thymeleaf.engine.TemplateManager.process(TemplateManager.java:519)
-	at org.thymeleaf.util.LazyProcessingCharSequence.writeUnresolved(LazyProcessingCharSequence.java:85)
-	at org.thymeleaf.util.AbstractLazyCharSequence.write(AbstractLazyCharSequence.java:103)
-	at org.thymeleaf.engine.AbstractTextualTemplateEvent.writeContent(AbstractTextualTemplateEvent.java:224)
-	at org.thymeleaf.engine.Text.write(Text.java:78)
-	at org.thymeleaf.engine.OutputTemplateHandler.handleText(OutputTemplateHandler.java:71)
-	... 59 common frames omitted
-2020-04-27 00:10:15.574 [http-nio-8080-exec-6] ERROR o.a.c.c.C.[.[.[/blog].[dispatcherServlet] - Servlet.service() for servlet [dispatcherServlet] in context with path [/blog] threw exception [Request processing failed; nested exception is org.thymeleaf.exceptions.TemplateInputException: An error happened during template parsing (template: "class path resource [templates/blog.html]")] with root cause
-org.thymeleaf.exceptions.TemplateProcessingException: Could not parse as expression: "@{/blog/{id}(id=${blog.id}})}" (template: "blog" - line 666, col 21)
-	at org.thymeleaf.standard.expression.StandardExpressionParser.parseExpression(StandardExpressionParser.java:131)
-	at org.thymeleaf.standard.expression.StandardExpressionParser.parseExpression(StandardExpressionParser.java:62)
-	at org.thymeleaf.standard.expression.StandardExpressionParser.parseExpression(StandardExpressionParser.java:44)
-	at org.thymeleaf.engine.EngineEventUtils.parseAttributeExpression(EngineEventUtils.java:220)
-	at org.thymeleaf.engine.EngineEventUtils.computeAttributeExpression(EngineEventUtils.java:207)
-	at org.thymeleaf.standard.processor.AbstractStandardExpressionAttributeTagProcessor.doProcess(AbstractStandardExpressionAttributeTagProcessor.java:125)
-	at org.thymeleaf.processor.element.AbstractAttributeTagProcessor.doProcess(AbstractAttributeTagProcessor.java:74)
-	at org.thymeleaf.processor.element.AbstractElementTagProcessor.process(AbstractElementTagProcessor.java:95)
-	at org.thymeleaf.util.ProcessorConfigurationUtils$ElementTagProcessorWrapper.process(ProcessorConfigurationUtils.java:633)
-	at org.thymeleaf.engine.ProcessorTemplateHandler.handleOpenElement(ProcessorTemplateHandler.java:1314)
-	at org.thymeleaf.engine.OpenElementTag.beHandled(OpenElementTag.java:205)
-	at org.thymeleaf.engine.TemplateModel.process(TemplateModel.java:136)
-	at org.thymeleaf.engine.TemplateManager.process(TemplateManager.java:519)
-	at org.thymeleaf.util.LazyProcessingCharSequence.writeUnresolved(LazyProcessingCharSequence.java:85)
-	at org.thymeleaf.util.AbstractLazyCharSequence.write(AbstractLazyCharSequence.java:103)
-	at org.thymeleaf.engine.AbstractTextualTemplateEvent.writeContent(AbstractTextualTemplateEvent.java:224)
-	at org.thymeleaf.engine.Text.write(Text.java:78)
-	at org.thymeleaf.engine.OutputTemplateHandler.handleText(OutputTemplateHandler.java:71)
-	at org.thymeleaf.engine.ProcessorTemplateHandler.handleText(ProcessorTemplateHandler.java:587)
-	at org.thymeleaf.engine.TemplateHandlerAdapterMarkupHandler.handleText(TemplateHandlerAdapterMarkupHandler.java:218)
-	at org.thymeleaf.templateparser.markup.InlinedOutputExpressionMarkupHandler$InlineMarkupAdapterPreProcessorHandler.handleText(InlinedOutputExpressionMarkupHandler.java:232)
-	at org.thymeleaf.standard.inline.OutputExpressionInlinePreProcessorHandler.handleText(OutputExpressionInlinePreProcessorHandler.java:136)
-	at org.thymeleaf.templateparser.markup.InlinedOutputExpressionMarkupHandler.handleText(InlinedOutputExpressionMarkupHandler.java:80)
-	at org.attoparser.HtmlMarkupHandler.handleText(HtmlMarkupHandler.java:208)
-	at org.attoparser.AbstractChainedMarkupHandler.handleText(AbstractChainedMarkupHandler.java:203)
-	at org.attoparser.MarkupParser.parseBuffer(MarkupParser.java:557)
-	at org.attoparser.MarkupParser.parseDocument(MarkupParser.java:301)
-	at org.attoparser.MarkupParser.parse(MarkupParser.java:257)
-	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parse(AbstractMarkupTemplateParser.java:230)
-	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parseStandalone(AbstractMarkupTemplateParser.java:100)
-	at org.thymeleaf.engine.TemplateManager.parseAndProcess(TemplateManager.java:666)
-	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1098)
-	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1072)
-	at org.thymeleaf.spring5.view.ThymeleafView.renderFragment(ThymeleafView.java:362)
-	at org.thymeleaf.spring5.view.ThymeleafView.render(ThymeleafView.java:189)
-	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1373)
-	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1118)
-	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1057)
-	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943)
-	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
-	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634)
-	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
-	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
-	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
-	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
-	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
-	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
-	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
-	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
-	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
-	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
-	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
-	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
-	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:373)
-	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
-	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868)
-	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1594)
-	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
-	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
-	at java.lang.Thread.run(Thread.java:748)
-2020-04-27 00:10:15.588 [http-nio-8080-exec-6] ERROR o.s.b.a.w.s.e.ErrorMvcAutoConfiguration$StaticView - Cannot render error page for request [/blog/blog/0f7410eed4d0451398b2c2503355d2f2] and exception [An error happened during template parsing (template: "class path resource [templates/blog.html]")] as the response has already been committed. As a result, the response may have the wrong status code.
-2020-04-27 00:10:25.859 [http-nio-8080-exec-2] INFO  xyz.worldzhile.blog.aspect.LogAspect - doBefore : LogAspect.RequestLog(url=http://localhost:8080/blog/blog/0f7410eed4d0451398b2c2503355d2f2, ip=0:0:0:0:0:0:0:1, classMethod=xyz.worldzhile.blog.controller.IndexController.toBlog, args=[0f7410eed4d0451398b2c2503355d2f2, {}, {}])
-2020-04-27 00:10:25.868 [http-nio-8080-exec-2] INFO  xyz.worldzhile.blog.aspect.LogAspect - Result : blog
-2020-04-27 00:10:25.882 [http-nio-8080-exec-2] ERROR org.thymeleaf.TemplateEngine - [THYMELEAF][http-nio-8080-exec-2] Exception processing template "blog": An error happened during template parsing (template: "class path resource [templates/blog.html]")
-org.thymeleaf.exceptions.TemplateInputException: An error happened during template parsing (template: "class path resource [templates/blog.html]")
-	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parse(AbstractMarkupTemplateParser.java:241)
-	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parseStandalone(AbstractMarkupTemplateParser.java:100)
-	at org.thymeleaf.engine.TemplateManager.parseAndProcess(TemplateManager.java:666)
-	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1098)
-	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1072)
-	at org.thymeleaf.spring5.view.ThymeleafView.renderFragment(ThymeleafView.java:362)
-	at org.thymeleaf.spring5.view.ThymeleafView.render(ThymeleafView.java:189)
-	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1373)
-	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1118)
-	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1057)
-	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943)
-	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
-	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634)
-	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
-	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
-	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
-	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
-	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
-	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
-	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
-	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
-	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
-	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
-	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
-	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
-	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:373)
-	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
-	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868)
-	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1594)
-	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
-	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
-	at java.lang.Thread.run(Thread.java:748)
-Caused by: org.attoparser.ParseException: An error happened during template rendering
-	at org.attoparser.MarkupParser.parseDocument(MarkupParser.java:393)
-	at org.attoparser.MarkupParser.parse(MarkupParser.java:257)
-	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parse(AbstractMarkupTemplateParser.java:230)
-	... 48 common frames omitted
-Caused by: org.thymeleaf.exceptions.TemplateOutputException: An error happened during template rendering
-	at org.thymeleaf.engine.OutputTemplateHandler.handleText(OutputTemplateHandler.java:75)
-	at org.thymeleaf.engine.ProcessorTemplateHandler.handleText(ProcessorTemplateHandler.java:587)
-	at org.thymeleaf.engine.TemplateHandlerAdapterMarkupHandler.handleText(TemplateHandlerAdapterMarkupHandler.java:218)
-	at org.thymeleaf.templateparser.markup.InlinedOutputExpressionMarkupHandler$InlineMarkupAdapterPreProcessorHandler.handleText(InlinedOutputExpressionMarkupHandler.java:232)
-	at org.thymeleaf.standard.inline.OutputExpressionInlinePreProcessorHandler.handleText(OutputExpressionInlinePreProcessorHandler.java:136)
-	at org.thymeleaf.templateparser.markup.InlinedOutputExpressionMarkupHandler.handleText(InlinedOutputExpressionMarkupHandler.java:80)
-	at org.attoparser.HtmlMarkupHandler.handleText(HtmlMarkupHandler.java:208)
-	at org.attoparser.AbstractChainedMarkupHandler.handleText(AbstractChainedMarkupHandler.java:203)
-	at org.attoparser.MarkupParser.parseBuffer(MarkupParser.java:557)
-	at org.attoparser.MarkupParser.parseDocument(MarkupParser.java:301)
-	... 50 common frames omitted
-Caused by: org.thymeleaf.exceptions.TemplateProcessingException: Could not parse as expression: "@{/blog/{id}(id=${blog.id}})}" (template: "blog" - line 666, col 21)
-	at org.thymeleaf.standard.expression.StandardExpressionParser.parseExpression(StandardExpressionParser.java:131)
-	at org.thymeleaf.standard.expression.StandardExpressionParser.parseExpression(StandardExpressionParser.java:62)
-	at org.thymeleaf.standard.expression.StandardExpressionParser.parseExpression(StandardExpressionParser.java:44)
-	at org.thymeleaf.engine.EngineEventUtils.parseAttributeExpression(EngineEventUtils.java:220)
-	at org.thymeleaf.engine.EngineEventUtils.computeAttributeExpression(EngineEventUtils.java:207)
-	at org.thymeleaf.standard.processor.AbstractStandardExpressionAttributeTagProcessor.doProcess(AbstractStandardExpressionAttributeTagProcessor.java:125)
-	at org.thymeleaf.processor.element.AbstractAttributeTagProcessor.doProcess(AbstractAttributeTagProcessor.java:74)
-	at org.thymeleaf.processor.element.AbstractElementTagProcessor.process(AbstractElementTagProcessor.java:95)
-	at org.thymeleaf.util.ProcessorConfigurationUtils$ElementTagProcessorWrapper.process(ProcessorConfigurationUtils.java:633)
-	at org.thymeleaf.engine.ProcessorTemplateHandler.handleOpenElement(ProcessorTemplateHandler.java:1314)
-	at org.thymeleaf.engine.OpenElementTag.beHandled(OpenElementTag.java:205)
-	at org.thymeleaf.engine.TemplateModel.process(TemplateModel.java:136)
-	at org.thymeleaf.engine.TemplateManager.process(TemplateManager.java:519)
-	at org.thymeleaf.util.LazyProcessingCharSequence.writeUnresolved(LazyProcessingCharSequence.java:85)
-	at org.thymeleaf.util.AbstractLazyCharSequence.write(AbstractLazyCharSequence.java:103)
-	at org.thymeleaf.engine.AbstractTextualTemplateEvent.writeContent(AbstractTextualTemplateEvent.java:224)
-	at org.thymeleaf.engine.Text.write(Text.java:78)
-	at org.thymeleaf.engine.OutputTemplateHandler.handleText(OutputTemplateHandler.java:71)
-	... 59 common frames omitted
-2020-04-27 00:10:25.884 [http-nio-8080-exec-2] ERROR o.a.c.c.C.[.[.[/blog].[dispatcherServlet] - Servlet.service() for servlet [dispatcherServlet] in context with path [/blog] threw exception [Request processing failed; nested exception is org.thymeleaf.exceptions.TemplateInputException: An error happened during template parsing (template: "class path resource [templates/blog.html]")] with root cause
-org.thymeleaf.exceptions.TemplateProcessingException: Could not parse as expression: "@{/blog/{id}(id=${blog.id}})}" (template: "blog" - line 666, col 21)
-	at org.thymeleaf.standard.expression.StandardExpressionParser.parseExpression(StandardExpressionParser.java:131)
-	at org.thymeleaf.standard.expression.StandardExpressionParser.parseExpression(StandardExpressionParser.java:62)
-	at org.thymeleaf.standard.expression.StandardExpressionParser.parseExpression(StandardExpressionParser.java:44)
-	at org.thymeleaf.engine.EngineEventUtils.parseAttributeExpression(EngineEventUtils.java:220)
-	at org.thymeleaf.engine.EngineEventUtils.computeAttributeExpression(EngineEventUtils.java:207)
-	at org.thymeleaf.standard.processor.AbstractStandardExpressionAttributeTagProcessor.doProcess(AbstractStandardExpressionAttributeTagProcessor.java:125)
-	at org.thymeleaf.processor.element.AbstractAttributeTagProcessor.doProcess(AbstractAttributeTagProcessor.java:74)
-	at org.thymeleaf.processor.element.AbstractElementTagProcessor.process(AbstractElementTagProcessor.java:95)
-	at org.thymeleaf.util.ProcessorConfigurationUtils$ElementTagProcessorWrapper.process(ProcessorConfigurationUtils.java:633)
-	at org.thymeleaf.engine.ProcessorTemplateHandler.handleOpenElement(ProcessorTemplateHandler.java:1314)
-	at org.thymeleaf.engine.OpenElementTag.beHandled(OpenElementTag.java:205)
-	at org.thymeleaf.engine.TemplateModel.process(TemplateModel.java:136)
-	at org.thymeleaf.engine.TemplateManager.process(TemplateManager.java:519)
-	at org.thymeleaf.util.LazyProcessingCharSequence.writeUnresolved(LazyProcessingCharSequence.java:85)
-	at org.thymeleaf.util.AbstractLazyCharSequence.write(AbstractLazyCharSequence.java:103)
-	at org.thymeleaf.engine.AbstractTextualTemplateEvent.writeContent(AbstractTextualTemplateEvent.java:224)
-	at org.thymeleaf.engine.Text.write(Text.java:78)
-	at org.thymeleaf.engine.OutputTemplateHandler.handleText(OutputTemplateHandler.java:71)
-	at org.thymeleaf.engine.ProcessorTemplateHandler.handleText(ProcessorTemplateHandler.java:587)
-	at org.thymeleaf.engine.TemplateHandlerAdapterMarkupHandler.handleText(TemplateHandlerAdapterMarkupHandler.java:218)
-	at org.thymeleaf.templateparser.markup.InlinedOutputExpressionMarkupHandler$InlineMarkupAdapterPreProcessorHandler.handleText(InlinedOutputExpressionMarkupHandler.java:232)
-	at org.thymeleaf.standard.inline.OutputExpressionInlinePreProcessorHandler.handleText(OutputExpressionInlinePreProcessorHandler.java:136)
-	at org.thymeleaf.templateparser.markup.InlinedOutputExpressionMarkupHandler.handleText(InlinedOutputExpressionMarkupHandler.java:80)
-	at org.attoparser.HtmlMarkupHandler.handleText(HtmlMarkupHandler.java:208)
-	at org.attoparser.AbstractChainedMarkupHandler.handleText(AbstractChainedMarkupHandler.java:203)
-	at org.attoparser.MarkupParser.parseBuffer(MarkupParser.java:557)
-	at org.attoparser.MarkupParser.parseDocument(MarkupParser.java:301)
-	at org.attoparser.MarkupParser.parse(MarkupParser.java:257)
-	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parse(AbstractMarkupTemplateParser.java:230)
-	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parseStandalone(AbstractMarkupTemplateParser.java:100)
-	at org.thymeleaf.engine.TemplateManager.parseAndProcess(TemplateManager.java:666)
-	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1098)
-	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1072)
-	at org.thymeleaf.spring5.view.ThymeleafView.renderFragment(ThymeleafView.java:362)
-	at org.thymeleaf.spring5.view.ThymeleafView.render(ThymeleafView.java:189)
-	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1373)
-	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1118)
-	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1057)
-	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943)
-	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
-	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634)
-	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
-	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
-	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
-	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
-	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
-	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
-	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
-	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
-	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
-	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
-	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
-	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
-	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:373)
-	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
-	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868)
-	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1594)
-	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
-	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
-	at java.lang.Thread.run(Thread.java:748)
-2020-04-27 00:10:25.888 [http-nio-8080-exec-2] ERROR o.s.b.a.w.s.e.ErrorMvcAutoConfiguration$StaticView - Cannot render error page for request [/blog/blog/0f7410eed4d0451398b2c2503355d2f2] and exception [An error happened during template parsing (template: "class path resource [templates/blog.html]")] as the response has already been committed. As a result, the response may have the wrong status code.
-2020-04-27 00:10:37.196 [http-nio-8080-exec-9] INFO  xyz.worldzhile.blog.aspect.LogAspect - doBefore : LogAspect.RequestLog(url=http://localhost:8080/blog/blog/0f7410eed4d0451398b2c2503355d2f2, ip=0:0:0:0:0:0:0:1, classMethod=xyz.worldzhile.blog.controller.IndexController.toBlog, args=[0f7410eed4d0451398b2c2503355d2f2, {}, {}])
-2020-04-27 00:10:37.202 [http-nio-8080-exec-9] INFO  xyz.worldzhile.blog.aspect.LogAspect - Result : blog
-2020-04-27 00:10:37.213 [http-nio-8080-exec-9] ERROR org.thymeleaf.TemplateEngine - [THYMELEAF][http-nio-8080-exec-9] Exception processing template "blog": An error happened during template parsing (template: "class path resource [templates/blog.html]")
-org.thymeleaf.exceptions.TemplateInputException: An error happened during template parsing (template: "class path resource [templates/blog.html]")
-	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parse(AbstractMarkupTemplateParser.java:241)
-	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parseStandalone(AbstractMarkupTemplateParser.java:100)
-	at org.thymeleaf.engine.TemplateManager.parseAndProcess(TemplateManager.java:666)
-	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1098)
-	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1072)
-	at org.thymeleaf.spring5.view.ThymeleafView.renderFragment(ThymeleafView.java:362)
-	at org.thymeleaf.spring5.view.ThymeleafView.render(ThymeleafView.java:189)
-	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1373)
-	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1118)
-	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1057)
-	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943)
-	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
-	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634)
-	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
-	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
-	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
-	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
-	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
-	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
-	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
-	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
-	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
-	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
-	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
-	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
-	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:373)
-	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
-	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868)
-	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1594)
-	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
-	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
-	at java.lang.Thread.run(Thread.java:748)
-Caused by: org.attoparser.ParseException: An error happened during template rendering
-	at org.attoparser.MarkupParser.parseDocument(MarkupParser.java:393)
-	at org.attoparser.MarkupParser.parse(MarkupParser.java:257)
-	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parse(AbstractMarkupTemplateParser.java:230)
-	... 48 common frames omitted
-Caused by: org.thymeleaf.exceptions.TemplateOutputException: An error happened during template rendering
-	at org.thymeleaf.engine.OutputTemplateHandler.handleText(OutputTemplateHandler.java:75)
-	at org.thymeleaf.engine.ProcessorTemplateHandler.handleText(ProcessorTemplateHandler.java:587)
-	at org.thymeleaf.engine.TemplateHandlerAdapterMarkupHandler.handleText(TemplateHandlerAdapterMarkupHandler.java:218)
-	at org.thymeleaf.templateparser.markup.InlinedOutputExpressionMarkupHandler$InlineMarkupAdapterPreProcessorHandler.handleText(InlinedOutputExpressionMarkupHandler.java:232)
-	at org.thymeleaf.standard.inline.OutputExpressionInlinePreProcessorHandler.handleText(OutputExpressionInlinePreProcessorHandler.java:136)
-	at org.thymeleaf.templateparser.markup.InlinedOutputExpressionMarkupHandler.handleText(InlinedOutputExpressionMarkupHandler.java:80)
-	at org.attoparser.HtmlMarkupHandler.handleText(HtmlMarkupHandler.java:208)
-	at org.attoparser.AbstractChainedMarkupHandler.handleText(AbstractChainedMarkupHandler.java:203)
-	at org.attoparser.MarkupParser.parseBuffer(MarkupParser.java:557)
-	at org.attoparser.MarkupParser.parseDocument(MarkupParser.java:301)
-	... 50 common frames omitted
-Caused by: org.thymeleaf.exceptions.TemplateProcessingException: Could not parse as expression: "@{/blog/{id}(id=${blog.id}})}" (template: "blog" - line 666, col 21)
-	at org.thymeleaf.standard.expression.StandardExpressionParser.parseExpression(StandardExpressionParser.java:131)
-	at org.thymeleaf.standard.expression.StandardExpressionParser.parseExpression(StandardExpressionParser.java:62)
-	at org.thymeleaf.standard.expression.StandardExpressionParser.parseExpression(StandardExpressionParser.java:44)
-	at org.thymeleaf.engine.EngineEventUtils.parseAttributeExpression(EngineEventUtils.java:220)
-	at org.thymeleaf.engine.EngineEventUtils.computeAttributeExpression(EngineEventUtils.java:207)
-	at org.thymeleaf.standard.processor.AbstractStandardExpressionAttributeTagProcessor.doProcess(AbstractStandardExpressionAttributeTagProcessor.java:125)
-	at org.thymeleaf.processor.element.AbstractAttributeTagProcessor.doProcess(AbstractAttributeTagProcessor.java:74)
-	at org.thymeleaf.processor.element.AbstractElementTagProcessor.process(AbstractElementTagProcessor.java:95)
-	at org.thymeleaf.util.ProcessorConfigurationUtils$ElementTagProcessorWrapper.process(ProcessorConfigurationUtils.java:633)
-	at org.thymeleaf.engine.ProcessorTemplateHandler.handleOpenElement(ProcessorTemplateHandler.java:1314)
-	at org.thymeleaf.engine.OpenElementTag.beHandled(OpenElementTag.java:205)
-	at org.thymeleaf.engine.TemplateModel.process(TemplateModel.java:136)
-	at org.thymeleaf.engine.TemplateManager.process(TemplateManager.java:519)
-	at org.thymeleaf.util.LazyProcessingCharSequence.writeUnresolved(LazyProcessingCharSequence.java:85)
-	at org.thymeleaf.util.AbstractLazyCharSequence.write(AbstractLazyCharSequence.java:103)
-	at org.thymeleaf.engine.AbstractTextualTemplateEvent.writeContent(AbstractTextualTemplateEvent.java:224)
-	at org.thymeleaf.engine.Text.write(Text.java:78)
-	at org.thymeleaf.engine.OutputTemplateHandler.handleText(OutputTemplateHandler.java:71)
-	... 59 common frames omitted
-2020-04-27 00:10:37.215 [http-nio-8080-exec-9] ERROR o.a.c.c.C.[.[.[/blog].[dispatcherServlet] - Servlet.service() for servlet [dispatcherServlet] in context with path [/blog] threw exception [Request processing failed; nested exception is org.thymeleaf.exceptions.TemplateInputException: An error happened during template parsing (template: "class path resource [templates/blog.html]")] with root cause
-org.thymeleaf.exceptions.TemplateProcessingException: Could not parse as expression: "@{/blog/{id}(id=${blog.id}})}" (template: "blog" - line 666, col 21)
-	at org.thymeleaf.standard.expression.StandardExpressionParser.parseExpression(StandardExpressionParser.java:131)
-	at org.thymeleaf.standard.expression.StandardExpressionParser.parseExpression(StandardExpressionParser.java:62)
-	at org.thymeleaf.standard.expression.StandardExpressionParser.parseExpression(StandardExpressionParser.java:44)
-	at org.thymeleaf.engine.EngineEventUtils.parseAttributeExpression(EngineEventUtils.java:220)
-	at org.thymeleaf.engine.EngineEventUtils.computeAttributeExpression(EngineEventUtils.java:207)
-	at org.thymeleaf.standard.processor.AbstractStandardExpressionAttributeTagProcessor.doProcess(AbstractStandardExpressionAttributeTagProcessor.java:125)
-	at org.thymeleaf.processor.element.AbstractAttributeTagProcessor.doProcess(AbstractAttributeTagProcessor.java:74)
-	at org.thymeleaf.processor.element.AbstractElementTagProcessor.process(AbstractElementTagProcessor.java:95)
-	at org.thymeleaf.util.ProcessorConfigurationUtils$ElementTagProcessorWrapper.process(ProcessorConfigurationUtils.java:633)
-	at org.thymeleaf.engine.ProcessorTemplateHandler.handleOpenElement(ProcessorTemplateHandler.java:1314)
-	at org.thymeleaf.engine.OpenElementTag.beHandled(OpenElementTag.java:205)
-	at org.thymeleaf.engine.TemplateModel.process(TemplateModel.java:136)
-	at org.thymeleaf.engine.TemplateManager.process(TemplateManager.java:519)
-	at org.thymeleaf.util.LazyProcessingCharSequence.writeUnresolved(LazyProcessingCharSequence.java:85)
-	at org.thymeleaf.util.AbstractLazyCharSequence.write(AbstractLazyCharSequence.java:103)
-	at org.thymeleaf.engine.AbstractTextualTemplateEvent.writeContent(AbstractTextualTemplateEvent.java:224)
-	at org.thymeleaf.engine.Text.write(Text.java:78)
-	at org.thymeleaf.engine.OutputTemplateHandler.handleText(OutputTemplateHandler.java:71)
-	at org.thymeleaf.engine.ProcessorTemplateHandler.handleText(ProcessorTemplateHandler.java:587)
-	at org.thymeleaf.engine.TemplateHandlerAdapterMarkupHandler.handleText(TemplateHandlerAdapterMarkupHandler.java:218)
-	at org.thymeleaf.templateparser.markup.InlinedOutputExpressionMarkupHandler$InlineMarkupAdapterPreProcessorHandler.handleText(InlinedOutputExpressionMarkupHandler.java:232)
-	at org.thymeleaf.standard.inline.OutputExpressionInlinePreProcessorHandler.handleText(OutputExpressionInlinePreProcessorHandler.java:136)
-	at org.thymeleaf.templateparser.markup.InlinedOutputExpressionMarkupHandler.handleText(InlinedOutputExpressionMarkupHandler.java:80)
-	at org.attoparser.HtmlMarkupHandler.handleText(HtmlMarkupHandler.java:208)
-	at org.attoparser.AbstractChainedMarkupHandler.handleText(AbstractChainedMarkupHandler.java:203)
-	at org.attoparser.MarkupParser.parseBuffer(MarkupParser.java:557)
-	at org.attoparser.MarkupParser.parseDocument(MarkupParser.java:301)
-	at org.attoparser.MarkupParser.parse(MarkupParser.java:257)
-	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parse(AbstractMarkupTemplateParser.java:230)
-	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parseStandalone(AbstractMarkupTemplateParser.java:100)
-	at org.thymeleaf.engine.TemplateManager.parseAndProcess(TemplateManager.java:666)
-	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1098)
-	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1072)
-	at org.thymeleaf.spring5.view.ThymeleafView.renderFragment(ThymeleafView.java:362)
-	at org.thymeleaf.spring5.view.ThymeleafView.render(ThymeleafView.java:189)
-	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1373)
-	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1118)
-	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1057)
-	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943)
-	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
-	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634)
-	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
-	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
-	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
-	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
-	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
-	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
-	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
-	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
-	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
-	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
-	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
-	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
-	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:373)
-	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
-	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868)
-	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1594)
-	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
-	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
-	at java.lang.Thread.run(Thread.java:748)
-2020-04-27 00:10:37.221 [http-nio-8080-exec-9] ERROR o.s.b.a.w.s.e.ErrorMvcAutoConfiguration$StaticView - Cannot render error page for request [/blog/blog/0f7410eed4d0451398b2c2503355d2f2] and exception [An error happened during template parsing (template: "class path resource [templates/blog.html]")] as the response has already been committed. As a result, the response may have the wrong status code.
-2020-04-27 00:11:23.873 [http-nio-8080-exec-3] INFO  xyz.worldzhile.blog.aspect.LogAspect - doBefore : LogAspect.RequestLog(url=http://localhost:8080/blog/blog/0f7410eed4d0451398b2c2503355d2f2, ip=0:0:0:0:0:0:0:1, classMethod=xyz.worldzhile.blog.controller.IndexController.toBlog, args=[0f7410eed4d0451398b2c2503355d2f2, {}, {}])
-2020-04-27 00:11:23.879 [http-nio-8080-exec-3] INFO  xyz.worldzhile.blog.aspect.LogAspect - Result : blog
-2020-04-27 00:12:46.817 [http-nio-8080-exec-9] INFO  xyz.worldzhile.blog.aspect.LogAspect - doBefore : LogAspect.RequestLog(url=http://localhost:8080/blog/index/1/6, ip=0:0:0:0:0:0:0:1, classMethod=xyz.worldzhile.blog.controller.IndexController.toIndex, args=[1, 6, {}])
-2020-04-27 00:12:46.870 [http-nio-8080-exec-9] INFO  xyz.worldzhile.blog.aspect.LogAspect - Result : index
-2020-04-27 00:12:47.655 [http-nio-8080-exec-7] INFO  xyz.worldzhile.blog.aspect.LogAspect - doBefore : LogAspect.RequestLog(url=http://localhost:8080/blog/types, ip=0:0:0:0:0:0:0:1, classMethod=xyz.worldzhile.blog.controller.IndexController.toTypes, args=[])
-2020-04-27 00:12:47.656 [http-nio-8080-exec-7] INFO  xyz.worldzhile.blog.aspect.LogAspect - Result : types
-2020-04-27 00:12:48.438 [http-nio-8080-exec-1] INFO  xyz.worldzhile.blog.aspect.LogAspect - doBefore : LogAspect.RequestLog(url=http://localhost:8080/blog/index/1/6, ip=0:0:0:0:0:0:0:1, classMethod=xyz.worldzhile.blog.controller.IndexController.toIndex, args=[1, 6, {}])
-2020-04-27 00:12:48.456 [http-nio-8080-exec-1] INFO  xyz.worldzhile.blog.aspect.LogAspect - Result : index
-2020-04-27 00:12:50.188 [http-nio-8080-exec-5] INFO  xyz.worldzhile.blog.aspect.LogAspect - doBefore : LogAspect.RequestLog(url=http://localhost:8080/blog/types, ip=0:0:0:0:0:0:0:1, classMethod=xyz.worldzhile.blog.controller.IndexController.toTypes, args=[])
-2020-04-27 00:12:50.188 [http-nio-8080-exec-5] INFO  xyz.worldzhile.blog.aspect.LogAspect - Result : types
-2020-04-27 00:12:50.933 [http-nio-8080-exec-3] INFO  xyz.worldzhile.blog.aspect.LogAspect - doBefore : LogAspect.RequestLog(url=http://localhost:8080/blog/tags, ip=0:0:0:0:0:0:0:1, classMethod=xyz.worldzhile.blog.controller.IndexController.toTags, args=[])
-2020-04-27 00:12:50.933 [http-nio-8080-exec-3] INFO  xyz.worldzhile.blog.aspect.LogAspect - Result : tags
-2020-04-27 00:12:51.865 [http-nio-8080-exec-7] INFO  xyz.worldzhile.blog.aspect.LogAspect - doBefore : LogAspect.RequestLog(url=http://localhost:8080/blog/archives, ip=0:0:0:0:0:0:0:1, classMethod=xyz.worldzhile.blog.controller.IndexController.toArchives, args=[])
-2020-04-27 00:12:51.865 [http-nio-8080-exec-7] INFO  xyz.worldzhile.blog.aspect.LogAspect - Result : archives
-2020-04-27 00:12:52.429 [http-nio-8080-exec-5] INFO  xyz.worldzhile.blog.aspect.LogAspect - doBefore : LogAspect.RequestLog(url=http://localhost:8080/blog/about, ip=0:0:0:0:0:0:0:1, classMethod=xyz.worldzhile.blog.controller.IndexController.toAbout, args=[])
-2020-04-27 00:12:52.430 [http-nio-8080-exec-5] INFO  xyz.worldzhile.blog.aspect.LogAspect - Result : about
-2020-04-27 00:12:53.248 [http-nio-8080-exec-4] INFO  xyz.worldzhile.blog.aspect.LogAspect - doBefore : LogAspect.RequestLog(url=http://localhost:8080/blog/index/1/6, ip=0:0:0:0:0:0:0:1, classMethod=xyz.worldzhile.blog.controller.IndexController.toIndex, args=[1, 6, {}])
-2020-04-27 00:12:53.265 [http-nio-8080-exec-4] INFO  xyz.worldzhile.blog.aspect.LogAspect - Result : index
-2020-04-27 00:12:55.236 [http-nio-8080-exec-8] INFO  xyz.worldzhile.blog.aspect.LogAspect - doBefore : LogAspect.RequestLog(url=http://localhost:8080/blog/types, ip=0:0:0:0:0:0:0:1, classMethod=xyz.worldzhile.blog.controller.IndexController.toTypes, args=[])
-2020-04-27 00:12:55.237 [http-nio-8080-exec-8] INFO  xyz.worldzhile.blog.aspect.LogAspect - Result : types
-2020-04-27 00:12:58.152 [http-nio-8080-exec-3] INFO  xyz.worldzhile.blog.aspect.LogAspect - doBefore : LogAspect.RequestLog(url=http://localhost:8080/blog/index/1/6, ip=0:0:0:0:0:0:0:1, classMethod=xyz.worldzhile.blog.controller.IndexController.toIndex, args=[1, 6, {}])
-2020-04-27 00:12:58.168 [http-nio-8080-exec-3] INFO  xyz.worldzhile.blog.aspect.LogAspect - Result : index
-2020-04-27 00:12:59.021 [http-nio-8080-exec-9] INFO  xyz.worldzhile.blog.aspect.LogAspect - doBefore : LogAspect.RequestLog(url=http://localhost:8080/blog/types, ip=0:0:0:0:0:0:0:1, classMethod=xyz.worldzhile.blog.controller.IndexController.toTypes, args=[])
-2020-04-27 00:12:59.021 [http-nio-8080-exec-9] INFO  xyz.worldzhile.blog.aspect.LogAspect - Result : types
-2020-04-27 00:12:59.644 [http-nio-8080-exec-3] INFO  xyz.worldzhile.blog.aspect.LogAspect - doBefore : LogAspect.RequestLog(url=http://localhost:8080/blog/index/1/6, ip=0:0:0:0:0:0:0:1, classMethod=xyz.worldzhile.blog.controller.IndexController.toIndex, args=[1, 6, {}])
-2020-04-27 00:12:59.659 [http-nio-8080-exec-3] INFO  xyz.worldzhile.blog.aspect.LogAspect - Result : index
-2020-04-27 00:13:48.331 [http-nio-8080-exec-9] INFO  xyz.worldzhile.blog.aspect.LogAspect - doBefore : LogAspect.RequestLog(url=http://localhost:8080/blog/blog/0f7410eed4d0451398b2c2503355d2f2, ip=0:0:0:0:0:0:0:1, classMethod=xyz.worldzhile.blog.controller.IndexController.toBlog, args=[0f7410eed4d0451398b2c2503355d2f2, {}, {}])
-2020-04-27 00:13:48.337 [http-nio-8080-exec-9] INFO  xyz.worldzhile.blog.aspect.LogAspect - Result : blog
-2020-04-27 00:48:33.649 [http-nio-8080-exec-5] INFO  xyz.worldzhile.blog.aspect.LogAspect - doBefore : LogAspect.RequestLog(url=http://localhost:8080/blog/index/1/6, ip=0:0:0:0:0:0:0:1, classMethod=xyz.worldzhile.blog.controller.IndexController.toIndex, args=[1, 6, {}])
-2020-04-27 00:48:33.686 [http-nio-8080-exec-5] INFO  xyz.worldzhile.blog.aspect.LogAspect - Result : index
-2020-04-27 00:48:38.438 [http-nio-8080-exec-7] INFO  xyz.worldzhile.blog.aspect.LogAspect - doBefore : LogAspect.RequestLog(url=http://localhost:8080/blog/types, ip=0:0:0:0:0:0:0:1, classMethod=xyz.worldzhile.blog.controller.IndexController.toTypes, args=[])
-2020-04-27 00:48:38.438 [http-nio-8080-exec-7] INFO  xyz.worldzhile.blog.aspect.LogAspect - Result : types
-2020-04-27 00:48:40.781 [http-nio-8080-exec-6] INFO  xyz.worldzhile.blog.aspect.LogAspect - doBefore : LogAspect.RequestLog(url=http://localhost:8080/blog/index/1/6, ip=0:0:0:0:0:0:0:1, classMethod=xyz.worldzhile.blog.controller.IndexController.toIndex, args=[1, 6, {}])
-2020-04-27 00:48:40.795 [http-nio-8080-exec-6] INFO  xyz.worldzhile.blog.aspect.LogAspect - Result : index
-2020-04-27 00:50:33.952 [http-nio-8080-exec-3] INFO  xyz.worldzhile.blog.aspect.LogAspect - doBefore : LogAspect.RequestLog(url=http://localhost:8080/blog/index/1/6, ip=0:0:0:0:0:0:0:1, classMethod=xyz.worldzhile.blog.controller.IndexController.toIndex, args=[1, 6, {}])
-2020-04-27 00:50:33.982 [http-nio-8080-exec-3] INFO  xyz.worldzhile.blog.aspect.LogAspect - Result : index
-2020-04-27 00:50:37.011 [http-nio-8080-exec-8] INFO  xyz.worldzhile.blog.aspect.LogAspect - doBefore : LogAspect.RequestLog(url=http://localhost:8080/blog/index/1/6, ip=0:0:0:0:0:0:0:1, classMethod=xyz.worldzhile.blog.controller.IndexController.toIndex, args=[1, 6, {}])
-2020-04-27 00:50:37.024 [http-nio-8080-exec-8] INFO  xyz.worldzhile.blog.aspect.LogAspect - Result : index
-2020-04-27 00:50:38.996 [http-nio-8080-exec-4] INFO  xyz.worldzhile.blog.aspect.LogAspect - doBefore : LogAspect.RequestLog(url=http://localhost:8080/blog/index/1/6, ip=0:0:0:0:0:0:0:1, classMethod=xyz.worldzhile.blog.controller.IndexController.toIndex, args=[1, 6, {}])
-2020-04-27 00:50:39.008 [http-nio-8080-exec-4] INFO  xyz.worldzhile.blog.aspect.LogAspect - Result : index
-2020-04-27 00:50:48.681 [restartedMain] INFO  xyz.worldzhile.blog.BlogApplication - Starting BlogApplication on WIN7-2020USUYFG with PID 8448 (D:\IdeaProjects\blog\target\classes started by Administrator in D:\IdeaProjects\blog)
-2020-04-27 00:50:48.683 [restartedMain] INFO  xyz.worldzhile.blog.BlogApplication - The following profiles are active: dev
-2020-04-27 00:50:48.722 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2020-04-27 00:50:48.722 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2020-04-27 00:50:50.625 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
-2020-04-27 00:50:50.645 [restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
-2020-04-27 00:50:50.645 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.33]
-2020-04-27 00:50:50.648 [restartedMain] INFO  org.apache.catalina.core.AprLifecycleListener - Loaded APR based Apache Tomcat Native library [1.2.23] using APR version [1.7.0].
-2020-04-27 00:50:50.648 [restartedMain] INFO  org.apache.catalina.core.AprLifecycleListener - APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
-2020-04-27 00:50:50.648 [restartedMain] INFO  org.apache.catalina.core.AprLifecycleListener - APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
-2020-04-27 00:50:50.656 [restartedMain] INFO  org.apache.catalina.core.AprLifecycleListener - OpenSSL successfully initialized [OpenSSL 1.1.1c  28 May 2019]
-2020-04-27 00:50:50.755 [restartedMain] INFO  o.a.c.c.ContainerBase.[Tomcat].[localhost].[/blog] - Initializing Spring embedded WebApplicationContext
-2020-04-27 00:50:50.755 [restartedMain] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 2033 ms
-2020-04-27 00:50:51.506 [restartedMain] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
-2020-04-27 00:50:51.601 [restartedMain] INFO  o.s.b.a.web.servlet.WelcomePageHandlerMapping - Adding welcome page template: index
-2020-04-27 00:50:51.985 [restartedMain] INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
-2020-04-27 00:50:52.053 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path '/blog'
-2020-04-27 00:50:52.056 [restartedMain] INFO  xyz.worldzhile.blog.BlogApplication - Started BlogApplication in 4.048 seconds (JVM running for 4.93)
-2020-04-27 00:50:56.905 [http-nio-8080-exec-2] INFO  org.apache.tomcat.util.http.parser.Cookie - A cookie header was received [1585748025] that contained an invalid cookie. That cookie will be ignored.
+2020-04-30 10:56:57.455 [restartedMain] INFO  xyz.worldzhile.blog.BlogApplication - Starting BlogApplication on WIN7-2020USUYFG with PID 1408 (D:\IdeaProjects\blog\target\classes started by Administrator in D:\IdeaProjects\blog)
+2020-04-30 10:56:57.463 [restartedMain] INFO  xyz.worldzhile.blog.BlogApplication - The following profiles are active: dev
+2020-04-30 10:56:57.514 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-04-30 10:56:57.515 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-04-30 10:56:58.880 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2020-04-30 10:56:58.887 [restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-04-30 10:56:58.887 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.33]
+2020-04-30 10:56:58.888 [restartedMain] INFO  org.apache.catalina.core.AprLifecycleListener - Loaded APR based Apache Tomcat Native library [1.2.23] using APR version [1.7.0].
+2020-04-30 10:56:58.889 [restartedMain] INFO  org.apache.catalina.core.AprLifecycleListener - APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2020-04-30 10:56:58.889 [restartedMain] INFO  org.apache.catalina.core.AprLifecycleListener - APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2020-04-30 10:56:58.896 [restartedMain] INFO  org.apache.catalina.core.AprLifecycleListener - OpenSSL successfully initialized [OpenSSL 1.1.1c  28 May 2019]
+2020-04-30 10:56:58.975 [restartedMain] INFO  o.a.c.c.ContainerBase.[Tomcat].[localhost].[/blog] - Initializing Spring embedded WebApplicationContext
+2020-04-30 10:56:58.975 [restartedMain] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1460 ms
+2020-04-30 10:56:59.910 [restartedMain] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-04-30 10:56:59.995 [restartedMain] INFO  o.s.b.a.web.servlet.WelcomePageHandlerMapping - Adding welcome page template: index
+2020-04-30 10:57:00.343 [restartedMain] INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2020-04-30 10:57:00.438 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path '/blog'
+2020-04-30 10:57:00.441 [restartedMain] INFO  xyz.worldzhile.blog.BlogApplication - Started BlogApplication in 3.484 seconds (JVM running for 4.25)
+2020-04-30 10:57:30.850 [http-nio-8080-exec-4] INFO  org.apache.tomcat.util.http.parser.Cookie - A cookie header was received [1585748025] that contained an invalid cookie. That cookie will be ignored.
  Note: further occurrences of this error will be logged at DEBUG level.
-2020-04-27 00:50:56.912 [http-nio-8080-exec-2] INFO  o.a.c.c.ContainerBase.[Tomcat].[localhost].[/blog] - Initializing Spring DispatcherServlet 'dispatcherServlet'
-2020-04-27 00:50:56.913 [http-nio-8080-exec-2] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
-2020-04-27 00:50:56.921 [http-nio-8080-exec-2] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 8 ms
-2020-04-27 00:50:56.950 [http-nio-8080-exec-2] INFO  xyz.worldzhile.blog.aspect.LogAspect - doBefore : LogAspect.RequestLog(url=http://localhost:8080/blog/index/1/6, ip=0:0:0:0:0:0:0:1, classMethod=xyz.worldzhile.blog.controller.IndexController.toIndex, args=[1, 6, {}])
-2020-04-27 00:50:57.036 [http-nio-8080-exec-2] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
-2020-04-27 00:50:57.489 [http-nio-8080-exec-2] INFO  xyz.worldzhile.blog.aspect.LogAspect - Result : index
-2020-04-27 00:51:00.069 [http-nio-8080-exec-9] INFO  xyz.worldzhile.blog.aspect.LogAspect - doBefore : LogAspect.RequestLog(url=http://localhost:8080/blog/blog/0f7410eed4d0451398b2c2503355d2f2, ip=0:0:0:0:0:0:0:1, classMethod=xyz.worldzhile.blog.controller.IndexController.toBlog, args=[0f7410eed4d0451398b2c2503355d2f2, {}, {}])
-2020-04-27 00:51:00.107 [http-nio-8080-exec-9] INFO  xyz.worldzhile.blog.aspect.LogAspect - Result : blog
-2020-04-27 00:51:13.502 [http-nio-8080-exec-5] INFO  xyz.worldzhile.blog.aspect.LogAspect - doBefore : LogAspect.RequestLog(url=http://localhost:8080/blog/index/1/6, ip=0:0:0:0:0:0:0:1, classMethod=xyz.worldzhile.blog.controller.IndexController.toIndex, args=[1, 6, {}])
-2020-04-27 00:51:13.522 [http-nio-8080-exec-5] INFO  xyz.worldzhile.blog.aspect.LogAspect - Result : index
-2020-04-27 00:51:47.288 [restartedMain] INFO  xyz.worldzhile.blog.BlogApplication - Starting BlogApplication on WIN7-2020USUYFG with PID 10048 (D:\IdeaProjects\blog\target\classes started by Administrator in D:\IdeaProjects\blog)
-2020-04-27 00:51:47.290 [restartedMain] INFO  xyz.worldzhile.blog.BlogApplication - The following profiles are active: dev
-2020-04-27 00:51:47.324 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2020-04-27 00:51:47.324 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2020-04-27 00:51:48.555 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
-2020-04-27 00:51:48.562 [restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
-2020-04-27 00:51:48.562 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.33]
-2020-04-27 00:51:48.563 [restartedMain] INFO  org.apache.catalina.core.AprLifecycleListener - Loaded APR based Apache Tomcat Native library [1.2.23] using APR version [1.7.0].
-2020-04-27 00:51:48.564 [restartedMain] INFO  org.apache.catalina.core.AprLifecycleListener - APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
-2020-04-27 00:51:48.564 [restartedMain] INFO  org.apache.catalina.core.AprLifecycleListener - APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
-2020-04-27 00:51:48.569 [restartedMain] INFO  org.apache.catalina.core.AprLifecycleListener - OpenSSL successfully initialized [OpenSSL 1.1.1c  28 May 2019]
-2020-04-27 00:51:48.638 [restartedMain] INFO  o.a.c.c.ContainerBase.[Tomcat].[localhost].[/blog] - Initializing Spring embedded WebApplicationContext
-2020-04-27 00:51:48.638 [restartedMain] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1313 ms
-2020-04-27 00:51:49.379 [restartedMain] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
-2020-04-27 00:51:49.507 [restartedMain] INFO  o.s.b.a.web.servlet.WelcomePageHandlerMapping - Adding welcome page template: index
-2020-04-27 00:51:49.924 [restartedMain] INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
-2020-04-27 00:51:50.002 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path '/blog'
-2020-04-27 00:51:50.006 [restartedMain] INFO  xyz.worldzhile.blog.BlogApplication - Started BlogApplication in 3.117 seconds (JVM running for 4.446)
-2020-04-27 00:51:56.045 [http-nio-8080-exec-1] INFO  org.apache.tomcat.util.http.parser.Cookie - A cookie header was received [1585748025] that contained an invalid cookie. That cookie will be ignored.
- Note: further occurrences of this error will be logged at DEBUG level.
-2020-04-27 00:51:56.052 [http-nio-8080-exec-1] INFO  o.a.c.c.ContainerBase.[Tomcat].[localhost].[/blog] - Initializing Spring DispatcherServlet 'dispatcherServlet'
-2020-04-27 00:51:56.052 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
-2020-04-27 00:51:56.063 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 11 ms
-2020-04-27 00:51:56.107 [http-nio-8080-exec-1] INFO  xyz.worldzhile.blog.aspect.LogAspect - doBefore : LogAspect.RequestLog(url=http://localhost:8080/blog/index/1/6, ip=0:0:0:0:0:0:0:1, classMethod=xyz.worldzhile.blog.controller.IndexController.toIndex, args=[1, 6, {}])
-2020-04-27 00:51:56.346 [http-nio-8080-exec-1] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
-2020-04-27 00:51:56.934 [http-nio-8080-exec-1] INFO  xyz.worldzhile.blog.aspect.LogAspect - Result : index
-2020-04-27 00:54:57.075 [main] INFO  xyz.worldzhile.blog.BlogApplicationTests - Starting BlogApplicationTests on WIN7-2020USUYFG with PID 10156 (started by Administrator in D:\IdeaProjects\blog)
-2020-04-27 00:54:57.076 [main] INFO  xyz.worldzhile.blog.BlogApplicationTests - The following profiles are active: dev
-2020-04-27 00:54:59.387 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
-2020-04-27 00:54:59.506 [main] INFO  o.s.b.a.web.servlet.WelcomePageHandlerMapping - Adding welcome page template: index
-2020-04-27 00:54:59.916 [main] INFO  xyz.worldzhile.blog.BlogApplicationTests - Started BlogApplicationTests in 3.298 seconds (JVM running for 4.192)
-2020-04-27 00:55:00.272 [SpringContextShutdownHook] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
-2020-04-27 00:55:00.274 [SpringContextShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-0} closing ...
-2020-04-27 00:55:08.237 [restartedMain] INFO  xyz.worldzhile.blog.BlogApplication - Starting BlogApplication on WIN7-2020USUYFG with PID 8852 (D:\IdeaProjects\blog\target\classes started by Administrator in D:\IdeaProjects\blog)
-2020-04-27 00:55:08.239 [restartedMain] INFO  xyz.worldzhile.blog.BlogApplication - The following profiles are active: dev
-2020-04-27 00:55:08.276 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2020-04-27 00:55:08.276 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2020-04-27 00:55:09.460 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
-2020-04-27 00:55:09.468 [restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
-2020-04-27 00:55:09.468 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.33]
-2020-04-27 00:55:09.470 [restartedMain] INFO  org.apache.catalina.core.AprLifecycleListener - Loaded APR based Apache Tomcat Native library [1.2.23] using APR version [1.7.0].
-2020-04-27 00:55:09.470 [restartedMain] INFO  org.apache.catalina.core.AprLifecycleListener - APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
-2020-04-27 00:55:09.470 [restartedMain] INFO  org.apache.catalina.core.AprLifecycleListener - APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
-2020-04-27 00:55:09.474 [restartedMain] INFO  org.apache.catalina.core.AprLifecycleListener - OpenSSL successfully initialized [OpenSSL 1.1.1c  28 May 2019]
-2020-04-27 00:55:09.541 [restartedMain] INFO  o.a.c.c.ContainerBase.[Tomcat].[localhost].[/blog] - Initializing Spring embedded WebApplicationContext
-2020-04-27 00:55:09.541 [restartedMain] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1264 ms
-2020-04-27 00:55:10.104 [restartedMain] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
-2020-04-27 00:55:10.173 [restartedMain] INFO  o.s.b.a.web.servlet.WelcomePageHandlerMapping - Adding welcome page template: index
-2020-04-27 00:55:10.474 [restartedMain] INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
-2020-04-27 00:55:10.526 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path '/blog'
-2020-04-27 00:55:10.529 [restartedMain] INFO  xyz.worldzhile.blog.BlogApplication - Started BlogApplication in 2.732 seconds (JVM running for 3.506)
-2020-04-27 00:55:14.923 [http-nio-8080-exec-1] INFO  org.apache.tomcat.util.http.parser.Cookie - A cookie header was received [1585748025] that contained an invalid cookie. That cookie will be ignored.
- Note: further occurrences of this error will be logged at DEBUG level.
-2020-04-27 00:55:14.929 [http-nio-8080-exec-1] INFO  o.a.c.c.ContainerBase.[Tomcat].[localhost].[/blog] - Initializing Spring DispatcherServlet 'dispatcherServlet'
-2020-04-27 00:55:14.929 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
-2020-04-27 00:55:14.941 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 12 ms
-2020-04-27 00:55:37.496 [http-nio-8080-exec-4] INFO  xyz.worldzhile.blog.aspect.LogAspect - doBefore : LogAspect.RequestLog(url=http://localhost:8080/blog/index/1/6, ip=0:0:0:0:0:0:0:1, classMethod=xyz.worldzhile.blog.controller.IndexController.toIndex, args=[1, 6, {}])
-2020-04-27 00:55:37.564 [http-nio-8080-exec-4] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
-2020-04-27 00:55:37.959 [http-nio-8080-exec-4] INFO  xyz.worldzhile.blog.aspect.LogAspect - Result : index
-2020-04-27 00:56:27.177 [http-nio-8080-exec-7] INFO  xyz.worldzhile.blog.aspect.LogAspect - doBefore : LogAspect.RequestLog(url=http://localhost:8080/blog/index/1/6, ip=0:0:0:0:0:0:0:1, classMethod=xyz.worldzhile.blog.controller.IndexController.toIndex, args=[1, 6, {}])
-2020-04-27 00:56:27.197 [http-nio-8080-exec-7] INFO  xyz.worldzhile.blog.aspect.LogAspect - Result : index
-2020-04-27 00:56:40.348 [http-nio-8080-exec-4] INFO  xyz.worldzhile.blog.aspect.LogAspect - doBefore : LogAspect.RequestLog(url=http://localhost:8080/blog/index/1/6, ip=0:0:0:0:0:0:0:1, classMethod=xyz.worldzhile.blog.controller.IndexController.toIndex, args=[1, 6, {}])
-2020-04-27 00:56:40.370 [http-nio-8080-exec-4] INFO  xyz.worldzhile.blog.aspect.LogAspect - Result : index
-2020-04-27 00:56:58.431 [http-nio-8080-exec-10] INFO  xyz.worldzhile.blog.aspect.LogAspect - doBefore : LogAspect.RequestLog(url=http://localhost:8080/blog/index/1/6, ip=0:0:0:0:0:0:0:1, classMethod=xyz.worldzhile.blog.controller.IndexController.toIndex, args=[1, 6, {}])
-2020-04-27 00:56:58.456 [http-nio-8080-exec-10] INFO  xyz.worldzhile.blog.aspect.LogAspect - Result : index
-2020-04-27 00:59:06.454 [http-nio-8080-exec-1] INFO  xyz.worldzhile.blog.aspect.LogAspect - doBefore : LogAspect.RequestLog(url=http://localhost:8080/blog/index/1/6, ip=0:0:0:0:0:0:0:1, classMethod=xyz.worldzhile.blog.controller.IndexController.toIndex, args=[1, 6, {}])
-2020-04-27 00:59:06.476 [http-nio-8080-exec-1] INFO  xyz.worldzhile.blog.aspect.LogAspect - Result : index
-2020-04-27 00:59:13.491 [http-nio-8080-exec-8] INFO  xyz.worldzhile.blog.aspect.LogAspect - doBefore : LogAspect.RequestLog(url=http://localhost:8080/blog/types, ip=0:0:0:0:0:0:0:1, classMethod=xyz.worldzhile.blog.controller.IndexController.toTypes, args=[])
-2020-04-27 00:59:13.492 [http-nio-8080-exec-8] INFO  xyz.worldzhile.blog.aspect.LogAspect - Result : types
-2020-04-27 00:59:15.370 [http-nio-8080-exec-6] INFO  xyz.worldzhile.blog.aspect.LogAspect - doBefore : LogAspect.RequestLog(url=http://localhost:8080/blog/tags, ip=0:0:0:0:0:0:0:1, classMethod=xyz.worldzhile.blog.controller.IndexController.toTags, args=[])
-2020-04-27 00:59:15.370 [http-nio-8080-exec-6] INFO  xyz.worldzhile.blog.aspect.LogAspect - Result : tags
-2020-04-27 00:59:16.849 [http-nio-8080-exec-1] INFO  xyz.worldzhile.blog.aspect.LogAspect - doBefore : LogAspect.RequestLog(url=http://localhost:8080/blog/archives, ip=0:0:0:0:0:0:0:1, classMethod=xyz.worldzhile.blog.controller.IndexController.toArchives, args=[])
-2020-04-27 00:59:16.851 [http-nio-8080-exec-1] INFO  xyz.worldzhile.blog.aspect.LogAspect - Result : archives
-2020-04-27 00:59:18.339 [http-nio-8080-exec-3] INFO  xyz.worldzhile.blog.aspect.LogAspect - doBefore : LogAspect.RequestLog(url=http://localhost:8080/blog/about, ip=0:0:0:0:0:0:0:1, classMethod=xyz.worldzhile.blog.controller.IndexController.toAbout, args=[])
-2020-04-27 00:59:18.339 [http-nio-8080-exec-3] INFO  xyz.worldzhile.blog.aspect.LogAspect - Result : about
-2020-04-27 00:59:20.801 [http-nio-8080-exec-2] INFO  xyz.worldzhile.blog.aspect.LogAspect - doBefore : LogAspect.RequestLog(url=http://localhost:8080/blog/index/1/6, ip=0:0:0:0:0:0:0:1, classMethod=xyz.worldzhile.blog.controller.IndexController.toIndex, args=[1, 6, {}])
-2020-04-27 00:59:20.818 [http-nio-8080-exec-2] INFO  xyz.worldzhile.blog.aspect.LogAspect - Result : index
-2020-04-27 00:59:27.137 [http-nio-8080-exec-4] INFO  xyz.worldzhile.blog.aspect.LogAspect - doBefore : LogAspect.RequestLog(url=http://localhost:8080/blog/blog/0f7410eed4d0451398b2c2503355d2f2, ip=0:0:0:0:0:0:0:1, classMethod=xyz.worldzhile.blog.controller.IndexController.toBlog, args=[0f7410eed4d0451398b2c2503355d2f2, {}, {}])
-2020-04-27 00:59:27.177 [http-nio-8080-exec-4] INFO  xyz.worldzhile.blog.aspect.LogAspect - Result : blog
-2020-04-27 01:00:45.989 [http-nio-8080-exec-9] INFO  xyz.worldzhile.blog.aspect.LogAspect - doBefore : LogAspect.RequestLog(url=http://localhost:8080/blog/blog/0f7410eed4d0451398b2c2503355d2f2, ip=0:0:0:0:0:0:0:1, classMethod=xyz.worldzhile.blog.controller.IndexController.toBlog, args=[0f7410eed4d0451398b2c2503355d2f2, {}, {}])
-2020-04-27 01:00:46.010 [http-nio-8080-exec-9] INFO  xyz.worldzhile.blog.aspect.LogAspect - Result : blog
-2020-04-27 01:02:55.103 [http-nio-8080-exec-6] INFO  xyz.worldzhile.blog.aspect.LogAspect - doBefore : LogAspect.RequestLog(url=http://localhost:8080/blog/index/1/6, ip=0:0:0:0:0:0:0:1, classMethod=xyz.worldzhile.blog.controller.IndexController.toIndex, args=[1, 6, {}])
-2020-04-27 01:02:55.127 [http-nio-8080-exec-6] INFO  xyz.worldzhile.blog.aspect.LogAspect - Result : index
-2020-04-27 01:02:58.894 [http-nio-8080-exec-3] INFO  xyz.worldzhile.blog.aspect.LogAspect - doBefore : LogAspect.RequestLog(url=http://localhost:8080/blog/types, ip=0:0:0:0:0:0:0:1, classMethod=xyz.worldzhile.blog.controller.IndexController.toTypes, args=[])
-2020-04-27 01:02:58.894 [http-nio-8080-exec-3] INFO  xyz.worldzhile.blog.aspect.LogAspect - Result : types
-2020-04-27 01:03:01.639 [http-nio-8080-exec-6] INFO  xyz.worldzhile.blog.aspect.LogAspect - doBefore : LogAspect.RequestLog(url=http://localhost:8080/blog/types, ip=0:0:0:0:0:0:0:1, classMethod=xyz.worldzhile.blog.controller.IndexController.toTypes, args=[])
-2020-04-27 01:03:01.639 [http-nio-8080-exec-6] INFO  xyz.worldzhile.blog.aspect.LogAspect - Result : types
-2020-04-27 01:03:02.799 [http-nio-8080-exec-10] INFO  xyz.worldzhile.blog.aspect.LogAspect - doBefore : LogAspect.RequestLog(url=http://localhost:8080/blog/types, ip=0:0:0:0:0:0:0:1, classMethod=xyz.worldzhile.blog.controller.IndexController.toTypes, args=[])
-2020-04-27 01:03:02.800 [http-nio-8080-exec-10] INFO  xyz.worldzhile.blog.aspect.LogAspect - Result : types
-2020-04-27 01:03:03.342 [http-nio-8080-exec-4] INFO  xyz.worldzhile.blog.aspect.LogAspect - doBefore : LogAspect.RequestLog(url=http://localhost:8080/blog/types, ip=0:0:0:0:0:0:0:1, classMethod=xyz.worldzhile.blog.controller.IndexController.toTypes, args=[])
-2020-04-27 01:03:03.342 [http-nio-8080-exec-4] INFO  xyz.worldzhile.blog.aspect.LogAspect - Result : types
-2020-04-27 01:03:03.625 [http-nio-8080-exec-7] INFO  xyz.worldzhile.blog.aspect.LogAspect - doBefore : LogAspect.RequestLog(url=http://localhost:8080/blog/types, ip=0:0:0:0:0:0:0:1, classMethod=xyz.worldzhile.blog.controller.IndexController.toTypes, args=[])
-2020-04-27 01:03:03.626 [http-nio-8080-exec-7] INFO  xyz.worldzhile.blog.aspect.LogAspect - Result : types
-2020-04-27 01:03:04.044 [http-nio-8080-exec-10] INFO  xyz.worldzhile.blog.aspect.LogAspect - doBefore : LogAspect.RequestLog(url=http://localhost:8080/blog/types, ip=0:0:0:0:0:0:0:1, classMethod=xyz.worldzhile.blog.controller.IndexController.toTypes, args=[])
-2020-04-27 01:03:04.044 [http-nio-8080-exec-10] INFO  xyz.worldzhile.blog.aspect.LogAspect - Result : types
-2020-04-27 01:03:04.214 [http-nio-8080-exec-9] INFO  xyz.worldzhile.blog.aspect.LogAspect - doBefore : LogAspect.RequestLog(url=http://localhost:8080/blog/types, ip=0:0:0:0:0:0:0:1, classMethod=xyz.worldzhile.blog.controller.IndexController.toTypes, args=[])
-2020-04-27 01:03:04.214 [http-nio-8080-exec-9] INFO  xyz.worldzhile.blog.aspect.LogAspect - Result : types
-2020-04-27 01:03:04.715 [http-nio-8080-exec-5] INFO  xyz.worldzhile.blog.aspect.LogAspect - doBefore : LogAspect.RequestLog(url=http://localhost:8080/blog/tags, ip=0:0:0:0:0:0:0:1, classMethod=xyz.worldzhile.blog.controller.IndexController.toTags, args=[])
-2020-04-27 01:03:04.715 [http-nio-8080-exec-5] INFO  xyz.worldzhile.blog.aspect.LogAspect - Result : tags
-2020-04-27 01:03:05.384 [http-nio-8080-exec-4] INFO  xyz.worldzhile.blog.aspect.LogAspect - doBefore : LogAspect.RequestLog(url=http://localhost:8080/blog/archives, ip=0:0:0:0:0:0:0:1, classMethod=xyz.worldzhile.blog.controller.IndexController.toArchives, args=[])
-2020-04-27 01:03:05.384 [http-nio-8080-exec-4] INFO  xyz.worldzhile.blog.aspect.LogAspect - Result : archives
-2020-04-27 01:03:06.109 [http-nio-8080-exec-1] INFO  xyz.worldzhile.blog.aspect.LogAspect - doBefore : LogAspect.RequestLog(url=http://localhost:8080/blog/about, ip=0:0:0:0:0:0:0:1, classMethod=xyz.worldzhile.blog.controller.IndexController.toAbout, args=[])
-2020-04-27 01:03:06.110 [http-nio-8080-exec-1] INFO  xyz.worldzhile.blog.aspect.LogAspect - Result : about
-2020-04-27 01:03:07.021 [http-nio-8080-exec-5] INFO  xyz.worldzhile.blog.aspect.LogAspect - doBefore : LogAspect.RequestLog(url=http://localhost:8080/blog/archives, ip=0:0:0:0:0:0:0:1, classMethod=xyz.worldzhile.blog.controller.IndexController.toArchives, args=[])
-2020-04-27 01:03:07.022 [http-nio-8080-exec-5] INFO  xyz.worldzhile.blog.aspect.LogAspect - Result : archives
-2020-04-27 01:03:07.693 [http-nio-8080-exec-6] INFO  xyz.worldzhile.blog.aspect.LogAspect - doBefore : LogAspect.RequestLog(url=http://localhost:8080/blog/tags, ip=0:0:0:0:0:0:0:1, classMethod=xyz.worldzhile.blog.controller.IndexController.toTags, args=[])
-2020-04-27 01:03:07.693 [http-nio-8080-exec-6] INFO  xyz.worldzhile.blog.aspect.LogAspect - Result : tags
-2020-04-27 01:03:08.167 [http-nio-8080-exec-7] INFO  xyz.worldzhile.blog.aspect.LogAspect - doBefore : LogAspect.RequestLog(url=http://localhost:8080/blog/types, ip=0:0:0:0:0:0:0:1, classMethod=xyz.worldzhile.blog.controller.IndexController.toTypes, args=[])
-2020-04-27 01:03:08.167 [http-nio-8080-exec-7] INFO  xyz.worldzhile.blog.aspect.LogAspect - Result : types
-2020-04-27 01:03:08.526 [http-nio-8080-exec-2] INFO  xyz.worldzhile.blog.aspect.LogAspect - doBefore : LogAspect.RequestLog(url=http://localhost:8080/blog/tags, ip=0:0:0:0:0:0:0:1, classMethod=xyz.worldzhile.blog.controller.IndexController.toTags, args=[])
-2020-04-27 01:03:08.527 [http-nio-8080-exec-2] INFO  xyz.worldzhile.blog.aspect.LogAspect - Result : tags
-2020-04-27 01:03:08.891 [http-nio-8080-exec-10] INFO  xyz.worldzhile.blog.aspect.LogAspect - doBefore : LogAspect.RequestLog(url=http://localhost:8080/blog/archives, ip=0:0:0:0:0:0:0:1, classMethod=xyz.worldzhile.blog.controller.IndexController.toArchives, args=[])
-2020-04-27 01:03:08.891 [http-nio-8080-exec-10] INFO  xyz.worldzhile.blog.aspect.LogAspect - Result : archives
-2020-04-27 01:03:09.367 [http-nio-8080-exec-4] INFO  xyz.worldzhile.blog.aspect.LogAspect - doBefore : LogAspect.RequestLog(url=http://localhost:8080/blog/about, ip=0:0:0:0:0:0:0:1, classMethod=xyz.worldzhile.blog.controller.IndexController.toAbout, args=[])
-2020-04-27 01:03:09.367 [http-nio-8080-exec-4] INFO  xyz.worldzhile.blog.aspect.LogAspect - Result : about
-2020-04-27 01:04:19.487 [http-nio-8080-exec-7] INFO  xyz.worldzhile.blog.aspect.LogAspect - doBefore : LogAspect.RequestLog(url=http://localhost:8080/blog/about, ip=0:0:0:0:0:0:0:1, classMethod=xyz.worldzhile.blog.controller.IndexController.toAbout, args=[])
-2020-04-27 01:04:19.487 [http-nio-8080-exec-7] INFO  xyz.worldzhile.blog.aspect.LogAspect - Result : about
-2020-04-27 01:04:26.970 [http-nio-8080-exec-1] INFO  xyz.worldzhile.blog.aspect.LogAspect - doBefore : LogAspect.RequestLog(url=http://localhost:8080/blog/archives, ip=0:0:0:0:0:0:0:1, classMethod=xyz.worldzhile.blog.controller.IndexController.toArchives, args=[])
-2020-04-27 01:04:26.970 [http-nio-8080-exec-1] INFO  xyz.worldzhile.blog.aspect.LogAspect - Result : archives
-2020-04-27 01:04:28.115 [http-nio-8080-exec-8] INFO  xyz.worldzhile.blog.aspect.LogAspect - doBefore : LogAspect.RequestLog(url=http://localhost:8080/blog/tags, ip=0:0:0:0:0:0:0:1, classMethod=xyz.worldzhile.blog.controller.IndexController.toTags, args=[])
-2020-04-27 01:04:28.115 [http-nio-8080-exec-8] INFO  xyz.worldzhile.blog.aspect.LogAspect - Result : tags
-2020-04-27 01:04:31.620 [http-nio-8080-exec-4] INFO  xyz.worldzhile.blog.aspect.LogAspect - doBefore : LogAspect.RequestLog(url=http://localhost:8080/blog/types, ip=0:0:0:0:0:0:0:1, classMethod=xyz.worldzhile.blog.controller.IndexController.toTypes, args=[])
-2020-04-27 01:04:31.620 [http-nio-8080-exec-4] INFO  xyz.worldzhile.blog.aspect.LogAspect - Result : types
-2020-04-27 01:04:34.740 [http-nio-8080-exec-3] INFO  xyz.worldzhile.blog.aspect.LogAspect - doBefore : LogAspect.RequestLog(url=http://localhost:8080/blog/types, ip=0:0:0:0:0:0:0:1, classMethod=xyz.worldzhile.blog.controller.IndexController.toTypes, args=[])
-2020-04-27 01:04:34.741 [http-nio-8080-exec-3] INFO  xyz.worldzhile.blog.aspect.LogAspect - Result : types
-2020-04-27 01:04:36.235 [http-nio-8080-exec-8] INFO  xyz.worldzhile.blog.aspect.LogAspect - doBefore : LogAspect.RequestLog(url=http://localhost:8080/blog/types, ip=0:0:0:0:0:0:0:1, classMethod=xyz.worldzhile.blog.controller.IndexController.toTypes, args=[])
-2020-04-27 01:04:36.235 [http-nio-8080-exec-8] INFO  xyz.worldzhile.blog.aspect.LogAspect - Result : types
-2020-04-27 01:04:37.186 [http-nio-8080-exec-9] INFO  xyz.worldzhile.blog.aspect.LogAspect - doBefore : LogAspect.RequestLog(url=http://localhost:8080/blog/index/1/6, ip=0:0:0:0:0:0:0:1, classMethod=xyz.worldzhile.blog.controller.IndexController.toIndex, args=[1, 6, {}])
-2020-04-27 01:04:37.202 [http-nio-8080-exec-9] INFO  xyz.worldzhile.blog.aspect.LogAspect - Result : index
-2020-04-27 01:04:39.305 [http-nio-8080-exec-3] INFO  xyz.worldzhile.blog.aspect.LogAspect - doBefore : LogAspect.RequestLog(url=http://localhost:8080/blog/index/1/6, ip=0:0:0:0:0:0:0:1, classMethod=xyz.worldzhile.blog.controller.IndexController.toIndex, args=[1, 6, {}])
-2020-04-27 01:04:39.324 [http-nio-8080-exec-3] INFO  xyz.worldzhile.blog.aspect.LogAspect - Result : index
-2020-04-27 01:04:40.899 [http-nio-8080-exec-9] INFO  xyz.worldzhile.blog.aspect.LogAspect - doBefore : LogAspect.RequestLog(url=http://localhost:8080/blog/index/1/6, ip=0:0:0:0:0:0:0:1, classMethod=xyz.worldzhile.blog.controller.IndexController.toIndex, args=[1, 6, {}])
-2020-04-27 01:04:40.914 [http-nio-8080-exec-9] INFO  xyz.worldzhile.blog.aspect.LogAspect - Result : index
-2020-04-27 01:04:41.763 [http-nio-8080-exec-7] INFO  xyz.worldzhile.blog.aspect.LogAspect - doBefore : LogAspect.RequestLog(url=http://localhost:8080/blog/types, ip=0:0:0:0:0:0:0:1, classMethod=xyz.worldzhile.blog.controller.IndexController.toTypes, args=[])
-2020-04-27 01:04:41.764 [http-nio-8080-exec-7] INFO  xyz.worldzhile.blog.aspect.LogAspect - Result : types
-2020-04-27 01:04:42.661 [http-nio-8080-exec-10] INFO  xyz.worldzhile.blog.aspect.LogAspect - doBefore : LogAspect.RequestLog(url=http://localhost:8080/blog/tags, ip=0:0:0:0:0:0:0:1, classMethod=xyz.worldzhile.blog.controller.IndexController.toTags, args=[])
-2020-04-27 01:04:42.661 [http-nio-8080-exec-10] INFO  xyz.worldzhile.blog.aspect.LogAspect - Result : tags
-2020-04-27 01:04:43.466 [http-nio-8080-exec-5] INFO  xyz.worldzhile.blog.aspect.LogAspect - doBefore : LogAspect.RequestLog(url=http://localhost:8080/blog/archives, ip=0:0:0:0:0:0:0:1, classMethod=xyz.worldzhile.blog.controller.IndexController.toArchives, args=[])
-2020-04-27 01:04:43.466 [http-nio-8080-exec-5] INFO  xyz.worldzhile.blog.aspect.LogAspect - Result : archives
-2020-04-27 01:04:44.065 [http-nio-8080-exec-1] INFO  xyz.worldzhile.blog.aspect.LogAspect - doBefore : LogAspect.RequestLog(url=http://localhost:8080/blog/about, ip=0:0:0:0:0:0:0:1, classMethod=xyz.worldzhile.blog.controller.IndexController.toAbout, args=[])
-2020-04-27 01:04:44.065 [http-nio-8080-exec-1] INFO  xyz.worldzhile.blog.aspect.LogAspect - Result : about
-2020-04-27 01:04:46.181 [http-nio-8080-exec-4] INFO  xyz.worldzhile.blog.aspect.LogAspect - doBefore : LogAspect.RequestLog(url=http://localhost:8080/blog/archives, ip=0:0:0:0:0:0:0:1, classMethod=xyz.worldzhile.blog.controller.IndexController.toArchives, args=[])
-2020-04-27 01:04:46.181 [http-nio-8080-exec-4] INFO  xyz.worldzhile.blog.aspect.LogAspect - Result : archives
-2020-04-27 01:04:46.597 [http-nio-8080-exec-8] INFO  xyz.worldzhile.blog.aspect.LogAspect - doBefore : LogAspect.RequestLog(url=http://localhost:8080/blog/tags, ip=0:0:0:0:0:0:0:1, classMethod=xyz.worldzhile.blog.controller.IndexController.toTags, args=[])
-2020-04-27 01:04:46.597 [http-nio-8080-exec-8] INFO  xyz.worldzhile.blog.aspect.LogAspect - Result : tags
-2020-04-27 01:04:47.506 [http-nio-8080-exec-9] INFO  xyz.worldzhile.blog.aspect.LogAspect - doBefore : LogAspect.RequestLog(url=http://localhost:8080/blog/types, ip=0:0:0:0:0:0:0:1, classMethod=xyz.worldzhile.blog.controller.IndexController.toTypes, args=[])
-2020-04-27 01:04:47.507 [http-nio-8080-exec-9] INFO  xyz.worldzhile.blog.aspect.LogAspect - Result : types
-2020-04-27 01:04:48.073 [http-nio-8080-exec-6] INFO  xyz.worldzhile.blog.aspect.LogAspect - doBefore : LogAspect.RequestLog(url=http://localhost:8080/blog/index/1/6, ip=0:0:0:0:0:0:0:1, classMethod=xyz.worldzhile.blog.controller.IndexController.toIndex, args=[1, 6, {}])
-2020-04-27 01:04:48.085 [http-nio-8080-exec-6] INFO  xyz.worldzhile.blog.aspect.LogAspect - Result : index
-2020-04-27 01:04:48.597 [http-nio-8080-exec-7] INFO  xyz.worldzhile.blog.aspect.LogAspect - doBefore : LogAspect.RequestLog(url=http://localhost:8080/blog/index/1/6, ip=0:0:0:0:0:0:0:1, classMethod=xyz.worldzhile.blog.controller.IndexController.toIndex, args=[1, 6, {}])
-2020-04-27 01:04:48.618 [http-nio-8080-exec-7] INFO  xyz.worldzhile.blog.aspect.LogAspect - Result : index
-2020-04-27 01:04:49.821 [http-nio-8080-exec-8] INFO  xyz.worldzhile.blog.aspect.LogAspect - doBefore : LogAspect.RequestLog(url=http://localhost:8080/blog/index/1/6, ip=0:0:0:0:0:0:0:1, classMethod=xyz.worldzhile.blog.controller.IndexController.toIndex, args=[1, 6, {}])
-2020-04-27 01:04:49.838 [http-nio-8080-exec-8] INFO  xyz.worldzhile.blog.aspect.LogAspect - Result : index
-2020-04-27 01:04:50.798 [http-nio-8080-exec-2] INFO  xyz.worldzhile.blog.aspect.LogAspect - doBefore : LogAspect.RequestLog(url=http://localhost:8080/blog/blog/0f7410eed4d0451398b2c2503355d2f2, ip=0:0:0:0:0:0:0:1, classMethod=xyz.worldzhile.blog.controller.IndexController.toBlog, args=[0f7410eed4d0451398b2c2503355d2f2, {}, {}])
-2020-04-27 01:04:50.811 [http-nio-8080-exec-2] INFO  xyz.worldzhile.blog.aspect.LogAspect - Result : blog
-2020-04-27 01:04:53.301 [http-nio-8080-exec-9] INFO  xyz.worldzhile.blog.aspect.LogAspect - doBefore : LogAspect.RequestLog(url=http://localhost:8080/blog/index/1/6, ip=0:0:0:0:0:0:0:1, classMethod=xyz.worldzhile.blog.controller.IndexController.toIndex, args=[1, 6, {}])
-2020-04-27 01:04:53.317 [http-nio-8080-exec-9] INFO  xyz.worldzhile.blog.aspect.LogAspect - Result : index
-2020-04-27 01:09:16.320 [http-nio-8080-exec-9] INFO  xyz.worldzhile.blog.aspect.LogAspect - doBefore : LogAspect.RequestLog(url=http://localhost:8080/blog/index/1/6, ip=0:0:0:0:0:0:0:1, classMethod=xyz.worldzhile.blog.controller.IndexController.toIndex, args=[1, 6, {}])
-2020-04-27 01:09:16.345 [http-nio-8080-exec-9] INFO  xyz.worldzhile.blog.aspect.LogAspect - Result : index
-2020-04-27 01:09:18.139 [http-nio-8080-exec-2] INFO  xyz.worldzhile.blog.aspect.LogAspect - doBefore : LogAspect.RequestLog(url=http://localhost:8080/blog/tags, ip=0:0:0:0:0:0:0:1, classMethod=xyz.worldzhile.blog.controller.IndexController.toTags, args=[])
-2020-04-27 01:09:18.141 [http-nio-8080-exec-2] INFO  xyz.worldzhile.blog.aspect.LogAspect - Result : tags
-2020-04-27 01:09:18.936 [http-nio-8080-exec-5] INFO  xyz.worldzhile.blog.aspect.LogAspect - doBefore : LogAspect.RequestLog(url=http://localhost:8080/blog/archives, ip=0:0:0:0:0:0:0:1, classMethod=xyz.worldzhile.blog.controller.IndexController.toArchives, args=[])
-2020-04-27 01:09:18.937 [http-nio-8080-exec-5] INFO  xyz.worldzhile.blog.aspect.LogAspect - Result : archives
-2020-04-27 01:09:19.908 [http-nio-8080-exec-3] INFO  xyz.worldzhile.blog.aspect.LogAspect - doBefore : LogAspect.RequestLog(url=http://localhost:8080/blog/about, ip=0:0:0:0:0:0:0:1, classMethod=xyz.worldzhile.blog.controller.IndexController.toAbout, args=[])
-2020-04-27 01:09:19.909 [http-nio-8080-exec-3] INFO  xyz.worldzhile.blog.aspect.LogAspect - Result : about
-2020-04-27 01:09:21.985 [http-nio-8080-exec-2] INFO  xyz.worldzhile.blog.aspect.LogAspect - doBefore : LogAspect.RequestLog(url=http://localhost:8080/blog/about, ip=0:0:0:0:0:0:0:1, classMethod=xyz.worldzhile.blog.controller.IndexController.toAbout, args=[])
-2020-04-27 01:09:21.985 [http-nio-8080-exec-2] INFO  xyz.worldzhile.blog.aspect.LogAspect - Result : about
-2020-04-27 01:09:22.474 [http-nio-8080-exec-6] INFO  xyz.worldzhile.blog.aspect.LogAspect - doBefore : LogAspect.RequestLog(url=http://localhost:8080/blog/about, ip=0:0:0:0:0:0:0:1, classMethod=xyz.worldzhile.blog.controller.IndexController.toAbout, args=[])
-2020-04-27 01:09:22.475 [http-nio-8080-exec-6] INFO  xyz.worldzhile.blog.aspect.LogAspect - Result : about
-2020-04-27 01:09:23.804 [http-nio-8080-exec-1] INFO  xyz.worldzhile.blog.aspect.LogAspect - doBefore : LogAspect.RequestLog(url=http://localhost:8080/blog/about, ip=0:0:0:0:0:0:0:1, classMethod=xyz.worldzhile.blog.controller.IndexController.toAbout, args=[])
-2020-04-27 01:09:23.805 [http-nio-8080-exec-1] INFO  xyz.worldzhile.blog.aspect.LogAspect - Result : about
-2020-04-27 01:09:24.438 [http-nio-8080-exec-2] INFO  xyz.worldzhile.blog.aspect.LogAspect - doBefore : LogAspect.RequestLog(url=http://localhost:8080/blog/archives, ip=0:0:0:0:0:0:0:1, classMethod=xyz.worldzhile.blog.controller.IndexController.toArchives, args=[])
-2020-04-27 01:09:24.439 [http-nio-8080-exec-2] INFO  xyz.worldzhile.blog.aspect.LogAspect - Result : archives
-2020-04-27 01:09:25.023 [http-nio-8080-exec-4] INFO  xyz.worldzhile.blog.aspect.LogAspect - doBefore : LogAspect.RequestLog(url=http://localhost:8080/blog/about, ip=0:0:0:0:0:0:0:1, classMethod=xyz.worldzhile.blog.controller.IndexController.toAbout, args=[])
-2020-04-27 01:09:25.024 [http-nio-8080-exec-4] INFO  xyz.worldzhile.blog.aspect.LogAspect - Result : about
-2020-04-27 01:09:27.726 [http-nio-8080-exec-5] INFO  xyz.worldzhile.blog.aspect.LogAspect - doBefore : LogAspect.RequestLog(url=http://localhost:8080/blog/archives, ip=0:0:0:0:0:0:0:1, classMethod=xyz.worldzhile.blog.controller.IndexController.toArchives, args=[])
-2020-04-27 01:09:27.727 [http-nio-8080-exec-5] INFO  xyz.worldzhile.blog.aspect.LogAspect - Result : archives
-2020-04-27 01:09:28.263 [http-nio-8080-exec-10] INFO  xyz.worldzhile.blog.aspect.LogAspect - doBefore : LogAspect.RequestLog(url=http://localhost:8080/blog/about, ip=0:0:0:0:0:0:0:1, classMethod=xyz.worldzhile.blog.controller.IndexController.toAbout, args=[])
-2020-04-27 01:09:28.263 [http-nio-8080-exec-10] INFO  xyz.worldzhile.blog.aspect.LogAspect - Result : about
-2020-04-27 01:11:06.993 [http-nio-8080-exec-2] INFO  xyz.worldzhile.blog.aspect.LogAspect - doBefore : LogAspect.RequestLog(url=http://localhost:8080/blog/about, ip=0:0:0:0:0:0:0:1, classMethod=xyz.worldzhile.blog.controller.IndexController.toAbout, args=[])
-2020-04-27 01:11:06.994 [http-nio-8080-exec-2] INFO  xyz.worldzhile.blog.aspect.LogAspect - Result : about
-2020-04-27 01:11:22.867 [http-nio-8080-exec-10] INFO  xyz.worldzhile.blog.aspect.LogAspect - doBefore : LogAspect.RequestLog(url=http://localhost:8080/blog/about, ip=0:0:0:0:0:0:0:1, classMethod=xyz.worldzhile.blog.controller.IndexController.toAbout, args=[])
-2020-04-27 01:11:22.867 [http-nio-8080-exec-10] INFO  xyz.worldzhile.blog.aspect.LogAspect - Result : about
-2020-04-27 01:11:32.600 [http-nio-8080-exec-1] INFO  xyz.worldzhile.blog.aspect.LogAspect - doBefore : LogAspect.RequestLog(url=http://localhost:8080/blog/about, ip=0:0:0:0:0:0:0:1, classMethod=xyz.worldzhile.blog.controller.IndexController.toAbout, args=[])
-2020-04-27 01:11:32.600 [http-nio-8080-exec-1] INFO  xyz.worldzhile.blog.aspect.LogAspect - Result : about
-2020-04-27 01:11:50.739 [http-nio-8080-exec-3] INFO  xyz.worldzhile.blog.aspect.LogAspect - doBefore : LogAspect.RequestLog(url=http://localhost:8080/blog/about, ip=0:0:0:0:0:0:0:1, classMethod=xyz.worldzhile.blog.controller.IndexController.toAbout, args=[])
-2020-04-27 01:11:50.739 [http-nio-8080-exec-3] INFO  xyz.worldzhile.blog.aspect.LogAspect - Result : about
-2020-04-27 01:13:17.684 [http-nio-8080-exec-3] INFO  xyz.worldzhile.blog.aspect.LogAspect - doBefore : LogAspect.RequestLog(url=http://localhost:8080/blog/admin/index, ip=0:0:0:0:0:0:0:1, classMethod=xyz.worldzhile.blog.controller.AdminController.getIndex, args=[])
-2020-04-27 01:13:17.689 [http-nio-8080-exec-3] INFO  xyz.worldzhile.blog.aspect.LogAspect - Result : admin/index
-2020-04-27 01:13:20.592 [http-nio-8080-exec-3] INFO  xyz.worldzhile.blog.aspect.LogAspect - doBefore : LogAspect.RequestLog(url=http://localhost:8080/blog/admin/blogs/1/6, ip=0:0:0:0:0:0:0:1, classMethod=xyz.worldzhile.blog.controller.BlogController.getBlogs, args=[1, 6, {}, {}])
-2020-04-27 01:13:20.614 [http-nio-8080-exec-3] INFO  xyz.worldzhile.blog.aspect.LogAspect - Result : admin/blogs
-2020-04-27 01:13:22.577 [http-nio-8080-exec-8] INFO  xyz.worldzhile.blog.aspect.LogAspect - doBefore : LogAspect.RequestLog(url=http://localhost:8080/blog/admin/blogs/1/6, ip=0:0:0:0:0:0:0:1, classMethod=xyz.worldzhile.blog.controller.BlogController.getBlogs, args=[1, 6, {}, {}])
-2020-04-27 01:13:22.588 [http-nio-8080-exec-8] INFO  xyz.worldzhile.blog.aspect.LogAspect - Result : admin/blogs
-2020-04-27 01:13:22.989 [http-nio-8080-exec-1] INFO  xyz.worldzhile.blog.aspect.LogAspect - doBefore : LogAspect.RequestLog(url=http://localhost:8080/blog/admin/types/1/6, ip=0:0:0:0:0:0:0:1, classMethod=xyz.worldzhile.blog.controller.TypeController.getTypes, args=[1, 6, {}])
-2020-04-27 01:13:22.994 [http-nio-8080-exec-1] INFO  xyz.worldzhile.blog.aspect.LogAspect - Result : admin/types
-2020-04-27 01:13:23.783 [http-nio-8080-exec-6] INFO  xyz.worldzhile.blog.aspect.LogAspect - doBefore : LogAspect.RequestLog(url=http://localhost:8080/blog/admin/blogs/1/6, ip=0:0:0:0:0:0:0:1, classMethod=xyz.worldzhile.blog.controller.BlogController.getBlogs, args=[1, 6, {}, {}])
-2020-04-27 01:13:23.793 [http-nio-8080-exec-6] INFO  xyz.worldzhile.blog.aspect.LogAspect - Result : admin/blogs
-2020-04-27 01:13:25.727 [http-nio-8080-exec-2] INFO  xyz.worldzhile.blog.aspect.LogAspect - doBefore : LogAspect.RequestLog(url=http://localhost:8080/blog/admin/blog-input, ip=0:0:0:0:0:0:0:1, classMethod=xyz.worldzhile.blog.controller.BlogController.getBloginput, args=[{}])
-2020-04-27 01:13:25.731 [http-nio-8080-exec-2] INFO  xyz.worldzhile.blog.aspect.LogAspect - Result : admin/blog-input
-2020-04-27 01:15:42.936 [http-nio-8080-exec-2] INFO  xyz.worldzhile.blog.aspect.LogAspect - doBefore : LogAspect.RequestLog(url=http://localhost:8080/blog/index/1/6, ip=0:0:0:0:0:0:0:1, classMethod=xyz.worldzhile.blog.controller.IndexController.toIndex, args=[1, 6, {}])
-2020-04-27 01:15:42.954 [http-nio-8080-exec-2] INFO  xyz.worldzhile.blog.aspect.LogAspect - Result : index
-2020-04-27 01:15:44.142 [http-nio-8080-exec-6] INFO  xyz.worldzhile.blog.aspect.LogAspect - doBefore : LogAspect.RequestLog(url=http://localhost:8080/blog/blog/0f7410eed4d0451398b2c2503355d2f2, ip=0:0:0:0:0:0:0:1, classMethod=xyz.worldzhile.blog.controller.IndexController.toBlog, args=[0f7410eed4d0451398b2c2503355d2f2, {}, {}])
-2020-04-27 01:15:44.147 [http-nio-8080-exec-6] INFO  xyz.worldzhile.blog.aspect.LogAspect - Result : blog
-2020-04-27 02:11:20.443 [http-nio-8080-exec-8] INFO  xyz.worldzhile.blog.aspect.LogAspect - doBefore : LogAspect.RequestLog(url=http://localhost:8080/blog/admin/blog-input, ip=0:0:0:0:0:0:0:1, classMethod=xyz.worldzhile.blog.controller.BlogController.saveBloginput, args=[Blog(id=null, title=JUC介绍 以及JUC中的锁框架, content=# Java JUC 简介
-> 在Java 5.0 提供了java.util.concurrent（简称JUC ）包，在此包中增加了在并发编程中很常用的实用工具类。
-用于定义类似于线程的自定义子系统，包括线程池、异步IO 和轻量级任务框架。提供可调的、灵活的线程池。还提供了设计用于多线程上下文中的Collection 实现（JUC集合）
-
-#### 锁结构
-![锁](https://img-blog.csdnimg.cn/20181128162808800.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L211bGluc2VuNzc=,size_16,color_FFFFFF,t_70 "锁")
-
-#### 下面这个图更方便理解：
-![](https://img-blog.csdnimg.cn/20181128163703289.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L211bGluc2VuNzc=,size_16,color_FFFFFF,t_70)
-
-在本篇文章之前，我们已经对并发机制中出现的很多的常见知识点进行了总结，今天我们来回顾一下有哪些是JUC包中的。
-
-1. #volatile关键字：
-> 当多个线程共享某一个变量的时候，可以实现内存可见性（内存中的数据可见），相较于Synchronized是一个轻量级的同步机制。但是Volatile不保证原子性和有序性还有一个互斥性。
-2. #JUC中提供的原子变量类：
-**包括AtomicInteger等Atomic家族类。查看源码即可知道，其中的变量都是用volatile修饰保证内存可见性，通过CAS算法保证数据的原子性。
-CAS：三个参数：V( 内存中的值) A 预估值 B更新值 当且仅当V==A时，将B更新值赋给V，否则不做任何操作**。
-1. 
-	1 ConcurrentHashMap锁分段机制
-	 	java5.0在JUC包中提供了多种并发容器来改进同步容器的性能；
-		concurrentHashMap同步容器是java5增加的一个线程安全的哈希表，对多线程的操作介于HashMap和HashTable之间，内部采用了“锁分段”机制代替了HashTable的独占锁，进而提高性能。
-		 此包还提供了设计用于多线程上下文中的Collection实现：ConcurrentHashMap、ConcurrentSkipListMap、ConcurrentSkipListSet、CopyOnWriteArrayList和CopyOnWriteArraySet。当期望许多线程访问一个给定collection时， ConcurrentHashMap通常优于同步的HashMap，ConcurrentSkipListMap通常优于同步的TreeMap.当期望的读数和遍历远远大于列表的更新数时，CopyOnWriteArrList优于同步的ArrayList
-	2
-	CountDownLatch：闭锁，在完成某些运算时，只有其他所有的线程的运算全部完成，当前运算才算执行。
-CountDownLatch 一个同步辅助类，在完成一组正在其他线程中执行的操作之前，它允许一个或多个线程一直等待。
-闭锁可以延迟线程的进度直到其达到终止状态，闭锁可以用来确保某些活动直到其他活动都完成才继续执行：
-	-  确保某个计算在其需要的所有资源都被初始化之后才继续执行
-	- 确保某个服务在其依赖的所有其他服务都已经启动之后才启动
-	- 等待直到某个操作所有参与者都准备就绪在继续执行
-　以下代码是用通过闭锁计算10线程执行的时间
-
-1. #线程池
-	*线程池：提供了一个线程队列，队列中保存着所有等待状态的线程，避免了创建与销毁额外开销，提高了响应的速度。*
-	Java.util.concurrent.Executor: 负责线程的使用与调度的根接口；
-	 线程池的体系结构：
-	- java.util.concurrent.Executor : 负责线程的使用与调度的根接口
-	-  ExecutorService 子接口: 线程池的主要接口
-		工具类 : Executors
-		- ExecutorService newFixedThreadPool() : 创建固定大小的线程池
-		-  ExecutorService newCachedThreadPool() : 缓存线程池，线程池的数量不固定，可以根据需求自动的更改数量。
-		- ExecutorService newSingleThreadExecutor() : 创建单个线程池。线程池中只有一个线程
-		- ScheduledExecutorService newScheduledThreadPool() : 创建固定大小的线程，可以延迟或定时的执行任务。
-		
-1. Lock：Lock同步锁
-　 用于解决多线程安全问题的方式。
-　 synchronized：隐式锁，同步代码块、同步方法。
-　 Jdk1.5后：同步锁Lock，是一种显式锁 ，需要通过lock()方式上锁，必须通过unlock方法进行释放锁；
-
-1. 实现Callable接口：
-创建执行线程的方式三：实现Callble接口。相较于实现Runnable接口的方式，方法可以有返回值，并且可以抛出异常
-
-public class TestCallable {
-
-    public static void main(String[] args) {
-        ThreadDemo td = new ThreadDemo();
-        // 1.执行Callable方式,需要FutureTask实现类的支持,用于接收运算结果。
-        FutureTask<Integer> result = new FutureTask<Integer>(td);
-        new Thread(result).start();
-
-        // 2.接收线程运算后的结果
-        try {
-           Integer sum =  result.get();
-           System.out.println(sum);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        } catch (ExecutionException e) {
-            e.printStackTrace();
-        }
-    }
-}
-
-class ThreadDemo implements Callable<Integer>{
-
-    @Override
-    public Integer call() throws Exception {
-        int sum = 0;
-        for(int i = 0; i<=100;i++){
-            System.out.println(i);
-            sum+=i;
-        }
-        return sum;
-    }
-}
-
-
-/*
- * 生产者消费者案例：
- */
-public class TestProductorAndConsumerForLock {
-
-    public static void main(String[] args) {
-        Clerk clerk = new Clerk();
-
-        Productor pro = new Productor(clerk);
-        Consumer con = new Consumer(clerk);
-
-        new Thread(pro, "生产者 A").start();
-        new Thread(con, "消费者 B").start();
-
-//       new Thread(pro, "生产者 C").start();
-//       new Thread(con, "消费者 D").start();
-    }
-
-}
-
-class Clerk {
-    private int product = 0;
-
-    private Lock lock = new ReentrantLock();
-    private Condition condition = lock.newCondition();
-
-    // 进货
-    public void get() {
-        lock.lock();
-
-        try {
-            if (product >= 1) { // 为了避免虚假唤醒，应该总是使用在循环中。
-                System.out.println("产品已满！");
-
-                try {
-                    condition.await();
-                } catch (InterruptedException e) {
-                }
-
-            }
-            System.out.println(Thread.currentThread().getName() + " : "
-                    + ++product);
-
-            condition.signalAll();
-        } finally {
-            lock.unlock();
-        }
-
-    }
-
-    // 卖货
-    public void sale() {
-        lock.lock();
-
-        try {
-            if (product <= 0) {
-                System.out.println("缺货！");
-
-                try {
-                    condition.await();
-                } catch (InterruptedException e) {
-                }
-            }
-
-            System.out.println(Thread.currentThread().getName() + " : "
-                    + --product);
-
-            condition.signalAll();
-
-        } finally {
-            lock.unlock();
-        }
-    }
-}
-
-// 生产者
-class Productor implements Runnable {
-
-    private Clerk clerk;
-
-    public Productor(Clerk clerk) {
-        this.clerk = clerk;
-    }
-
-    @Override
-    public void run() {
-        for (int i = 0; i < 20; i++) {
-            try {
-                Thread.sleep(200);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
-
-            clerk.get();
-        }
-    }
-}
-
-// 消费者
-class Consumer implements Runnable {
-
-    private Clerk clerk;
-
-    public Consumer(Clerk clerk) {
-        this.clerk = clerk;
-    }
-
-    @Override
-    public void run() {
-        for (int i = 0; i < 20; i++) {
-            clerk.sale();
-        }
-    }
-
-}
-
-# 读写锁
-
-
-# 线程按序交替
-# ForkJoinPool分支/合并框架工作窃取
-	 ##1
-
-
-, firstPicture=https://i.picsum.photos/id/795/800/450.jpg, flag=原创, views=null, appreciation=false, shareStatement=false, commentabled=false, published=true, recommend=false, createTime=null, updateTime=null, description=在此包中增加了在并发编程中很常用的实用工具类。
-用于定义类似于线程的自定义子系统，包括线程池、异步IO 和轻量级任务框架。, blog_typeid=967a96ae84a64cb2b0f0c73c2caea249, blog_userid=null, type=null, tags=null, user=null, comments=null), [46c897f2e63e4d33a3dc89ca4b0724f2], {blog=Blog(id=null, title=JUC介绍 以及JUC中的锁框架, content=# Java JUC 简介
-> 在Java 5.0 提供了java.util.concurrent（简称JUC ）包，在此包中增加了在并发编程中很常用的实用工具类。
-用于定义类似于线程的自定义子系统，包括线程池、异步IO 和轻量级任务框架。提供可调的、灵活的线程池。还提供了设计用于多线程上下文中的Collection 实现（JUC集合）
-
-#### 锁结构
-![锁](https://img-blog.csdnimg.cn/20181128162808800.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L211bGluc2VuNzc=,size_16,color_FFFFFF,t_70 "锁")
-
-#### 下面这个图更方便理解：
-![](https://img-blog.csdnimg.cn/20181128163703289.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L211bGluc2VuNzc=,size_16,color_FFFFFF,t_70)
-
-在本篇文章之前，我们已经对并发机制中出现的很多的常见知识点进行了总结，今天我们来回顾一下有哪些是JUC包中的。
-
-1. #volatile关键字：
-> 当多个线程共享某一个变量的时候，可以实现内存可见性（内存中的数据可见），相较于Synchronized是一个轻量级的同步机制。但是Volatile不保证原子性和有序性还有一个互斥性。
-2. #JUC中提供的原子变量类：
-**包括AtomicInteger等Atomic家族类。查看源码即可知道，其中的变量都是用volatile修饰保证内存可见性，通过CAS算法保证数据的原子性。
-CAS：三个参数：V( 内存中的值) A 预估值 B更新值 当且仅当V==A时，将B更新值赋给V，否则不做任何操作**。
-1. 
-	1 ConcurrentHashMap锁分段机制
-	 	java5.0在JUC包中提供了多种并发容器来改进同步容器的性能；
-		concurrentHashMap同步容器是java5增加的一个线程安全的哈希表，对多线程的操作介于HashMap和HashTable之间，内部采用了“锁分段”机制代替了HashTable的独占锁，进而提高性能。
-		 此包还提供了设计用于多线程上下文中的Collection实现：ConcurrentHashMap、ConcurrentSkipListMap、ConcurrentSkipListSet、CopyOnWriteArrayList和CopyOnWriteArraySet。当期望许多线程访问一个给定collection时， ConcurrentHashMap通常优于同步的HashMap，ConcurrentSkipListMap通常优于同步的TreeMap.当期望的读数和遍历远远大于列表的更新数时，CopyOnWriteArrList优于同步的ArrayList
-	2
-	CountDownLatch：闭锁，在完成某些运算时，只有其他所有的线程的运算全部完成，当前运算才算执行。
-CountDownLatch 一个同步辅助类，在完成一组正在其他线程中执行的操作之前，它允许一个或多个线程一直等待。
-闭锁可以延迟线程的进度直到其达到终止状态，闭锁可以用来确保某些活动直到其他活动都完成才继续执行：
-	-  确保某个计算在其需要的所有资源都被初始化之后才继续执行
-	- 确保某个服务在其依赖的所有其他服务都已经启动之后才启动
-	- 等待直到某个操作所有参与者都准备就绪在继续执行
-　以下代码是用通过闭锁计算10线程执行的时间
-
-1. #线程池
-	*线程池：提供了一个线程队列，队列中保存着所有等待状态的线程，避免了创建与销毁额外开销，提高了响应的速度。*
-	Java.util.concurrent.Executor: 负责线程的使用与调度的根接口；
-	 线程池的体系结构：
-	- java.util.concurrent.Executor : 负责线程的使用与调度的根接口
-	-  ExecutorService 子接口: 线程池的主要接口
-		工具类 : Executors
-		- ExecutorService newFixedThreadPool() : 创建固定大小的线程池
-		-  ExecutorService newCachedThreadPool() : 缓存线程池，线程池的数量不固定，可以根据需求自动的更改数量。
-		- ExecutorService newSingleThreadExecutor() : 创建单个线程池。线程池中只有一个线程
-		- ScheduledExecutorService newScheduledThreadPool() : 创建固定大小的线程，可以延迟或定时的执行任务。
-		
-1. Lock：Lock同步锁
-　 用于解决多线程安全问题的方式。
-　 synchronized：隐式锁，同步代码块、同步方法。
-　 Jdk1.5后：同步锁Lock，是一种显式锁 ，需要通过lock()方式上锁，必须通过unlock方法进行释放锁；
-
-1. 实现Callable接口：
-创建执行线程的方式三：实现Callble接口。相较于实现Runnable接口的方式，方法可以有返回值，并且可以抛出异常
-
-public class TestCallable {
-
-    public static void main(String[] args) {
-        ThreadDemo td = new ThreadDemo();
-        // 1.执行Callable方式,需要FutureTask实现类的支持,用于接收运算结果。
-        FutureTask<Integer> result = new FutureTask<Integer>(td);
-        new Thread(result).start();
-
-        // 2.接收线程运算后的结果
-        try {
-           Integer sum =  result.get();
-           System.out.println(sum);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        } catch (ExecutionException e) {
-            e.printStackTrace();
-        }
-    }
-}
-
-class ThreadDemo implements Callable<Integer>{
-
-    @Override
-    public Integer call() throws Exception {
-        int sum = 0;
-        for(int i = 0; i<=100;i++){
-            System.out.println(i);
-            sum+=i;
-        }
-        return sum;
-    }
-}
-
-
-/*
- * 生产者消费者案例：
- */
-public class TestProductorAndConsumerForLock {
-
-    public static void main(String[] args) {
-        Clerk clerk = new Clerk();
-
-        Productor pro = new Productor(clerk);
-        Consumer con = new Consumer(clerk);
-
-        new Thread(pro, "生产者 A").start();
-        new Thread(con, "消费者 B").start();
-
-//       new Thread(pro, "生产者 C").start();
-//       new Thread(con, "消费者 D").start();
-    }
-
-}
-
-class Clerk {
-    private int product = 0;
-
-    private Lock lock = new ReentrantLock();
-    private Condition condition = lock.newCondition();
-
-    // 进货
-    public void get() {
-        lock.lock();
-
-        try {
-            if (product >= 1) { // 为了避免虚假唤醒，应该总是使用在循环中。
-                System.out.println("产品已满！");
-
-                try {
-                    condition.await();
-                } catch (InterruptedException e) {
-                }
-
-            }
-            System.out.println(Thread.currentThread().getName() + " : "
-                    + ++product);
-
-            condition.signalAll();
-        } finally {
-            lock.unlock();
-        }
-
-    }
-
-    // 卖货
-    public void sale() {
-        lock.lock();
-
-        try {
-            if (product <= 0) {
-                System.out.println("缺货！");
-
-                try {
-                    condition.await();
-                } catch (InterruptedException e) {
-                }
-            }
-
-            System.out.println(Thread.currentThread().getName() + " : "
-                    + --product);
-
-            condition.signalAll();
-
-        } finally {
-            lock.unlock();
-        }
-    }
-}
-
-// 生产者
-class Productor implements Runnable {
-
-    private Clerk clerk;
-
-    public Productor(Clerk clerk) {
-        this.clerk = clerk;
-    }
-
-    @Override
-    public void run() {
-        for (int i = 0; i < 20; i++) {
-            try {
-                Thread.sleep(200);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
-
-            clerk.get();
-        }
-    }
-}
-
-// 消费者
-class Consumer implements Runnable {
-
-    private Clerk clerk;
-
-    public Consumer(Clerk clerk) {
-        this.clerk = clerk;
-    }
-
-    @Override
-    public void run() {
-        for (int i = 0; i < 20; i++) {
-            clerk.sale();
-        }
-    }
-
-}
-
-# 读写锁
-
-
-# 线程按序交替
-# ForkJoinPool分支/合并框架工作窃取
-	 ##1
-
-
-, firstPicture=https://i.picsum.photos/id/795/800/450.jpg, flag=原创, views=null, appreciation=false, shareStatement=false, commentabled=false, published=true, recommend=false, createTime=null, updateTime=null, description=在此包中增加了在并发编程中很常用的实用工具类。
-用于定义类似于线程的自定义子系统，包括线程池、异步IO 和轻量级任务框架。, blog_typeid=967a96ae84a64cb2b0f0c73c2caea249, blog_userid=null, type=null, tags=null, user=null, comments=null), org.springframework.validation.BindingResult.blog=org.springframework.validation.BeanPropertyBindingResult: 0 errors}, {}, org.apache.catalina.session.StandardSessionFacade@129ea946])
-2020-04-27 02:11:20.477 [http-nio-8080-exec-8] INFO  xyz.worldzhile.blog.aspect.LogAspect - Result : redirect:/admin/blogs/1/6
-2020-04-27 02:11:20.492 [http-nio-8080-exec-4] INFO  xyz.worldzhile.blog.aspect.LogAspect - doBefore : LogAspect.RequestLog(url=http://localhost:8080/blog/admin/blogs/1/6;jsessionid=50072A174AB9005027B156028F321031, ip=0:0:0:0:0:0:0:1, classMethod=xyz.worldzhile.blog.controller.BlogController.getBlogs, args=[1, 6, {message=博客新增成功}, {}])
-2020-04-27 02:11:20.502 [http-nio-8080-exec-4] INFO  xyz.worldzhile.blog.aspect.LogAspect - Result : admin/blogs
-2020-04-27 02:11:23.164 [http-nio-8080-exec-6] INFO  xyz.worldzhile.blog.aspect.LogAspect - doBefore : LogAspect.RequestLog(url=http://localhost:8080/blog/admin/blog-editor/f31ab295ee044f76ad6f9431021cc281, ip=0:0:0:0:0:0:0:1, classMethod=xyz.worldzhile.blog.controller.BlogController.getBlogditor, args=[f31ab295ee044f76ad6f9431021cc281, {}])
-2020-04-27 02:11:23.171 [http-nio-8080-exec-6] INFO  xyz.worldzhile.blog.aspect.LogAspect - Result : admin/blog-input
-2020-04-27 02:11:26.805 [http-nio-8080-exec-6] INFO  xyz.worldzhile.blog.aspect.LogAspect - doBefore : LogAspect.RequestLog(url=http://localhost:8080/blog/admin/blogs/1/6, ip=0:0:0:0:0:0:0:1, classMethod=xyz.worldzhile.blog.controller.BlogController.getBlogs, args=[1, 6, {}, {}])
-2020-04-27 02:11:26.817 [http-nio-8080-exec-6] INFO  xyz.worldzhile.blog.aspect.LogAspect - Result : admin/blogs
-2020-04-27 02:11:32.359 [http-nio-8080-exec-5] INFO  xyz.worldzhile.blog.aspect.LogAspect - doBefore : LogAspect.RequestLog(url=http://localhost:8080/blog/index/1/6, ip=0:0:0:0:0:0:0:1, classMethod=xyz.worldzhile.blog.controller.IndexController.toIndex, args=[1, 6, {}])
-2020-04-27 02:11:32.376 [http-nio-8080-exec-5] INFO  xyz.worldzhile.blog.aspect.LogAspect - Result : index
-2020-04-27 02:11:34.628 [http-nio-8080-exec-1] INFO  xyz.worldzhile.blog.aspect.LogAspect - doBefore : LogAspect.RequestLog(url=http://localhost:8080/blog/blog/f31ab295ee044f76ad6f9431021cc281, ip=0:0:0:0:0:0:0:1, classMethod=xyz.worldzhile.blog.controller.IndexController.toBlog, args=[f31ab295ee044f76ad6f9431021cc281, {}, {}])
-2020-04-27 02:11:34.639 [http-nio-8080-exec-1] INFO  xyz.worldzhile.blog.aspect.LogAspect - Result : blog
-2020-04-27 02:12:01.450 [http-nio-8080-exec-7] INFO  xyz.worldzhile.blog.aspect.LogAspect - doBefore : LogAspect.RequestLog(url=http://localhost:8080/blog/index/1/6, ip=0:0:0:0:0:0:0:1, classMethod=xyz.worldzhile.blog.controller.IndexController.toIndex, args=[1, 6, {}])
-2020-04-27 02:12:01.467 [http-nio-8080-exec-7] INFO  xyz.worldzhile.blog.aspect.LogAspect - Result : index
-2020-04-27 02:12:03.870 [http-nio-8080-exec-8] INFO  xyz.worldzhile.blog.aspect.LogAspect - doBefore : LogAspect.RequestLog(url=http://localhost:8080/blog/blog/f31ab295ee044f76ad6f9431021cc281, ip=0:0:0:0:0:0:0:1, classMethod=xyz.worldzhile.blog.controller.IndexController.toBlog, args=[f31ab295ee044f76ad6f9431021cc281, {}, {}])
-2020-04-27 02:12:03.879 [http-nio-8080-exec-8] INFO  xyz.worldzhile.blog.aspect.LogAspect - Result : blog
-2020-04-27 02:12:36.663 [http-nio-8080-exec-6] INFO  xyz.worldzhile.blog.aspect.LogAspect - doBefore : LogAspect.RequestLog(url=http://localhost:8080/blog/index/1/6, ip=0:0:0:0:0:0:0:1, classMethod=xyz.worldzhile.blog.controller.IndexController.toIndex, args=[1, 6, {}])
-2020-04-27 02:12:36.679 [http-nio-8080-exec-6] INFO  xyz.worldzhile.blog.aspect.LogAspect - Result : index
-2020-04-27 02:12:39.797 [http-nio-8080-exec-3] INFO  xyz.worldzhile.blog.aspect.LogAspect - doBefore : LogAspect.RequestLog(url=http://localhost:8080/blog/blog/0f7410eed4d0451398b2c2503355d2f2, ip=0:0:0:0:0:0:0:1, classMethod=xyz.worldzhile.blog.controller.IndexController.toBlog, args=[0f7410eed4d0451398b2c2503355d2f2, {}, {}])
-2020-04-27 02:12:39.803 [http-nio-8080-exec-3] INFO  xyz.worldzhile.blog.aspect.LogAspect - Result : blog
-2020-04-27 02:14:30.326 [http-nio-8080-exec-9] INFO  xyz.worldzhile.blog.aspect.LogAspect - doBefore : LogAspect.RequestLog(url=http://localhost:8080/blog/blog/0f7410eed4d0451398b2c2503355d2f2, ip=0:0:0:0:0:0:0:1, classMethod=xyz.worldzhile.blog.controller.IndexController.toBlog, args=[0f7410eed4d0451398b2c2503355d2f2, {}, {}])
-2020-04-27 02:14:30.336 [http-nio-8080-exec-9] INFO  xyz.worldzhile.blog.aspect.LogAspect - Result : blog
-2020-04-27 02:14:49.396 [http-nio-8080-exec-4] INFO  xyz.worldzhile.blog.aspect.LogAspect - doBefore : LogAspect.RequestLog(url=http://localhost:8080/blog/index/1/6, ip=0:0:0:0:0:0:0:1, classMethod=xyz.worldzhile.blog.controller.IndexController.toIndex, args=[1, 6, {}])
-2020-04-27 02:14:49.408 [http-nio-8080-exec-4] INFO  xyz.worldzhile.blog.aspect.LogAspect - Result : index
+2020-04-30 10:58:48.360 [Thread-11] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2020-04-30 10:58:48.361 [Thread-11] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-0} closing ...
+2020-04-30 10:58:49.209 [restartedMain] INFO  xyz.worldzhile.blog.BlogApplication - Starting BlogApplication on WIN7-2020USUYFG with PID 1408 (D:\IdeaProjects\blog\target\classes started by Administrator in D:\IdeaProjects\blog)
+2020-04-30 10:58:49.210 [restartedMain] INFO  xyz.worldzhile.blog.BlogApplication - The following profiles are active: dev
+2020-04-30 10:58:49.715 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2020-04-30 10:58:49.716 [restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-04-30 10:58:49.716 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.33]
+2020-04-30 10:58:49.716 [restartedMain] INFO  org.apache.catalina.core.AprLifecycleListener - Loaded APR based Apache Tomcat Native library [1.2.23] using APR version [1.7.0].
+2020-04-30 10:58:49.716 [restartedMain] INFO  org.apache.catalina.core.AprLifecycleListener - APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2020-04-30 10:58:49.716 [restartedMain] INFO  org.apache.catalina.core.AprLifecycleListener - APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2020-04-30 10:58:49.716 [restartedMain] INFO  org.apache.catalina.core.AprLifecycleListener - OpenSSL successfully initialized [OpenSSL 1.1.1c  28 May 2019]
+2020-04-30 10:58:49.738 [restartedMain] INFO  o.a.c.c.ContainerBase.[Tomcat].[localhost].[/blog] - Initializing Spring embedded WebApplicationContext
+2020-04-30 10:58:49.738 [restartedMain] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 520 ms
+2020-04-30 10:58:50.169 [restartedMain] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-04-30 10:58:50.211 [restartedMain] INFO  o.s.b.a.web.servlet.WelcomePageHandlerMapping - Adding welcome page template: index
+2020-04-30 10:58:50.497 [restartedMain] INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2020-04-30 10:58:50.526 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path '/blog'
+2020-04-30 10:58:50.526 [restartedMain] INFO  xyz.worldzhile.blog.BlogApplication - Started BlogApplication in 1.358 seconds (JVM running for 114.333)
+2020-04-30 10:58:50.527 [restartedMain] INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+2020-04-30 10:58:54.623 [Thread-18] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2020-04-30 10:58:54.623 [Thread-18] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-0} closing ...
+2020-04-30 10:58:55.209 [restartedMain] INFO  xyz.worldzhile.blog.BlogApplication - Starting BlogApplication on WIN7-2020USUYFG with PID 1408 (D:\IdeaProjects\blog\target\classes started by Administrator in D:\IdeaProjects\blog)
+2020-04-30 10:58:55.210 [restartedMain] INFO  xyz.worldzhile.blog.BlogApplication - The following profiles are active: dev
+2020-04-30 10:58:55.627 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2020-04-30 10:58:55.628 [restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-04-30 10:58:55.628 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.33]
+2020-04-30 10:58:55.628 [restartedMain] INFO  org.apache.catalina.core.AprLifecycleListener - Loaded APR based Apache Tomcat Native library [1.2.23] using APR version [1.7.0].
+2020-04-30 10:58:55.629 [restartedMain] INFO  org.apache.catalina.core.AprLifecycleListener - APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2020-04-30 10:58:55.629 [restartedMain] INFO  org.apache.catalina.core.AprLifecycleListener - APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2020-04-30 10:58:55.629 [restartedMain] INFO  org.apache.catalina.core.AprLifecycleListener - OpenSSL successfully initialized [OpenSSL 1.1.1c  28 May 2019]
+2020-04-30 10:58:55.651 [restartedMain] INFO  o.a.c.c.ContainerBase.[Tomcat].[localhost].[/blog] - Initializing Spring embedded WebApplicationContext
+2020-04-30 10:58:55.652 [restartedMain] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 440 ms
+2020-04-30 10:58:56.049 [restartedMain] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-04-30 10:58:56.090 [restartedMain] INFO  o.s.b.a.web.servlet.WelcomePageHandlerMapping - Adding welcome page template: index
+2020-04-30 10:58:56.410 [restartedMain] INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2020-04-30 10:58:56.442 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path '/blog'
+2020-04-30 10:58:56.443 [restartedMain] INFO  xyz.worldzhile.blog.BlogApplication - Started BlogApplication in 1.261 seconds (JVM running for 120.25)
+2020-04-30 10:58:56.444 [restartedMain] INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+2020-04-30 10:59:00.267 [Thread-23] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2020-04-30 10:59:00.268 [Thread-23] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-0} closing ...
+2020-04-30 10:59:00.629 [restartedMain] INFO  xyz.worldzhile.blog.BlogApplication - Starting BlogApplication on WIN7-2020USUYFG with PID 1408 (D:\IdeaProjects\blog\target\classes started by Administrator in D:\IdeaProjects\blog)
+2020-04-30 10:59:00.629 [restartedMain] INFO  xyz.worldzhile.blog.BlogApplication - The following profiles are active: dev
+2020-04-30 10:59:01.081 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2020-04-30 10:59:01.082 [restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-04-30 10:59:01.082 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.33]
+2020-04-30 10:59:01.083 [restartedMain] INFO  org.apache.catalina.core.AprLifecycleListener - Loaded APR based Apache Tomcat Native library [1.2.23] using APR version [1.7.0].
+2020-04-30 10:59:01.083 [restartedMain] INFO  org.apache.catalina.core.AprLifecycleListener - APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2020-04-30 10:59:01.083 [restartedMain] INFO  org.apache.catalina.core.AprLifecycleListener - APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2020-04-30 10:59:01.083 [restartedMain] INFO  org.apache.catalina.core.AprLifecycleListener - OpenSSL successfully initialized [OpenSSL 1.1.1c  28 May 2019]
+2020-04-30 10:59:01.103 [restartedMain] INFO  o.a.c.c.ContainerBase.[Tomcat].[localhost].[/blog] - Initializing Spring embedded WebApplicationContext
+2020-04-30 10:59:01.103 [restartedMain] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 472 ms
+2020-04-30 10:59:01.438 [restartedMain] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-04-30 10:59:01.479 [restartedMain] INFO  o.s.b.a.web.servlet.WelcomePageHandlerMapping - Adding welcome page template: index
+2020-04-30 10:59:01.759 [restartedMain] INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2020-04-30 10:59:01.789 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path '/blog'
+2020-04-30 10:59:01.789 [restartedMain] INFO  xyz.worldzhile.blog.BlogApplication - Started BlogApplication in 1.187 seconds (JVM running for 125.596)
+2020-04-30 10:59:01.790 [restartedMain] INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+2020-04-30 10:59:06.684 [http-nio-8080-exec-2] INFO  o.a.c.c.ContainerBase.[Tomcat].[localhost].[/blog] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-04-30 10:59:06.686 [http-nio-8080-exec-2] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2020-04-30 10:59:06.700 [http-nio-8080-exec-2] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 14 ms
+2020-04-30 10:59:06.716 [http-nio-8080-exec-2] INFO  xyz.worldzhile.blog.aspect.LogAspect - doBefore : LogAspect.RequestLog(url=http://localhost:8080/blog/, ip=0:0:0:0:0:0:0:1, classMethod=xyz.worldzhile.blog.controller.IndexController.toIndex, args=[])
+2020-04-30 10:59:06.721 [http-nio-8080-exec-2] INFO  xyz.worldzhile.blog.aspect.LogAspect - Result : redirect:/index/1/6
+2020-04-30 10:59:06.750 [http-nio-8080-exec-3] INFO  xyz.worldzhile.blog.aspect.LogAspect - doBefore : LogAspect.RequestLog(url=http://localhost:8080/blog/index/1/6, ip=0:0:0:0:0:0:0:1, classMethod=xyz.worldzhile.blog.controller.IndexController.toIndex, args=[1, 6, {}])
+2020-04-30 10:59:06.807 [http-nio-8080-exec-3] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2020-04-30 10:59:07.412 [http-nio-8080-exec-3] INFO  xyz.worldzhile.blog.aspect.LogAspect - Result : index
+2020-04-30 10:59:08.024 [http-nio-8080-exec-6] INFO  xyz.worldzhile.blog.aspect.LogAspect - doBefore : LogAspect.RequestLog(url=http://localhost:8080/blog/hotBlogs, ip=0:0:0:0:0:0:0:1, classMethod=xyz.worldzhile.blog.controller.IndexController.toHotBlogs, args=[{}])
+2020-04-30 10:59:08.027 [http-nio-8080-exec-6] INFO  xyz.worldzhile.blog.aspect.LogAspect - Result : common::hotBlogList
+2020-04-30 10:59:15.506 [http-nio-8080-exec-7] INFO  xyz.worldzhile.blog.aspect.LogAspect - doBefore : LogAspect.RequestLog(url=http://localhost:8080/blog/index, ip=0:0:0:0:0:0:0:1, classMethod=xyz.worldzhile.blog.controller.IndexController.toIndex, args=[])
+2020-04-30 10:59:15.507 [http-nio-8080-exec-7] INFO  xyz.worldzhile.blog.aspect.LogAspect - Result : redirect:/index/1/6
+2020-04-30 10:59:15.513 [http-nio-8080-exec-1] INFO  xyz.worldzhile.blog.aspect.LogAspect - doBefore : LogAspect.RequestLog(url=http://localhost:8080/blog/index/1/6, ip=0:0:0:0:0:0:0:1, classMethod=xyz.worldzhile.blog.controller.IndexController.toIndex, args=[1, 6, {}])
+2020-04-30 10:59:15.538 [http-nio-8080-exec-1] INFO  xyz.worldzhile.blog.aspect.LogAspect - Result : index
+2020-04-30 11:01:10.923 [http-nio-8080-exec-10] INFO  xyz.worldzhile.blog.aspect.LogAspect - doBefore : LogAspect.RequestLog(url=http://localhost:8080/blog/, ip=0:0:0:0:0:0:0:1, classMethod=xyz.worldzhile.blog.controller.IndexController.toIndex, args=[])
+2020-04-30 11:01:10.923 [http-nio-8080-exec-10] INFO  xyz.worldzhile.blog.aspect.LogAspect - Result : redirect:/index/1/6
+2020-04-30 11:01:11.145 [http-nio-8080-exec-10] INFO  xyz.worldzhile.blog.aspect.LogAspect - doBefore : LogAspect.RequestLog(url=http://localhost:8080/blog/hotBlogs, ip=127.0.0.1, classMethod=xyz.worldzhile.blog.controller.IndexController.toHotBlogs, args=[{}])
+2020-04-30 11:01:11.155 [http-nio-8080-exec-10] INFO  xyz.worldzhile.blog.aspect.LogAspect - Result : common::hotBlogList
+2020-04-30 11:01:20.225 [http-nio-8080-exec-10] INFO  xyz.worldzhile.blog.aspect.LogAspect - doBefore : LogAspect.RequestLog(url=http://localhost:8080/blog/index/1/6, ip=0:0:0:0:0:0:0:1, classMethod=xyz.worldzhile.blog.controller.IndexController.toIndex, args=[1, 6, {}])
+2020-04-30 11:01:20.244 [http-nio-8080-exec-10] INFO  xyz.worldzhile.blog.aspect.LogAspect - Result : index
+2020-04-30 11:01:20.356 [http-nio-8080-exec-8] INFO  xyz.worldzhile.blog.aspect.LogAspect - doBefore : LogAspect.RequestLog(url=http://localhost:8080/blog/hotBlogs, ip=0:0:0:0:0:0:0:1, classMethod=xyz.worldzhile.blog.controller.IndexController.toHotBlogs, args=[{}])
+2020-04-30 11:01:20.360 [http-nio-8080-exec-8] INFO  xyz.worldzhile.blog.aspect.LogAspect - Result : common::hotBlogList
+2020-04-30 11:02:12.346 [Thread-28] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2020-04-30 11:02:12.347 [Thread-28] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closing ...
+2020-04-30 11:02:12.349 [Thread-28] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+2020-04-30 11:02:12.677 [restartedMain] INFO  xyz.worldzhile.blog.BlogApplication - Starting BlogApplication on WIN7-2020USUYFG with PID 1408 (D:\IdeaProjects\blog\target\classes started by Administrator in D:\IdeaProjects\blog)
+2020-04-30 11:02:12.678 [restartedMain] INFO  xyz.worldzhile.blog.BlogApplication - The following profiles are active: dev
+2020-04-30 11:02:13.029 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2020-04-30 11:02:13.030 [restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-04-30 11:02:13.030 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.33]
+2020-04-30 11:02:13.030 [restartedMain] INFO  org.apache.catalina.core.AprLifecycleListener - Loaded APR based Apache Tomcat Native library [1.2.23] using APR version [1.7.0].
+2020-04-30 11:02:13.030 [restartedMain] INFO  org.apache.catalina.core.AprLifecycleListener - APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2020-04-30 11:02:13.031 [restartedMain] INFO  org.apache.catalina.core.AprLifecycleListener - APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2020-04-30 11:02:13.031 [restartedMain] INFO  org.apache.catalina.core.AprLifecycleListener - OpenSSL successfully initialized [OpenSSL 1.1.1c  28 May 2019]
+2020-04-30 11:02:13.052 [restartedMain] INFO  o.a.c.c.ContainerBase.[Tomcat].[localhost].[/blog] - Initializing Spring embedded WebApplicationContext
+2020-04-30 11:02:13.053 [restartedMain] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 374 ms
+2020-04-30 11:02:13.373 [restartedMain] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-04-30 11:02:13.410 [restartedMain] INFO  o.s.b.a.web.servlet.WelcomePageHandlerMapping - Adding welcome page template: index
+2020-04-30 11:02:13.665 [restartedMain] INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2020-04-30 11:02:13.695 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path '/blog'
+2020-04-30 11:02:13.696 [restartedMain] INFO  xyz.worldzhile.blog.BlogApplication - Started BlogApplication in 1.043 seconds (JVM running for 317.499)
+2020-04-30 11:02:13.697 [restartedMain] INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+2020-04-30 11:02:21.114 [http-nio-8080-exec-4] INFO  o.a.c.c.ContainerBase.[Tomcat].[localhost].[/blog] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-04-30 11:02:21.115 [http-nio-8080-exec-4] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2020-04-30 11:02:21.126 [http-nio-8080-exec-4] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 11 ms
+2020-04-30 11:02:21.133 [http-nio-8080-exec-4] INFO  xyz.worldzhile.blog.aspect.LogAspect - doBefore : LogAspect.RequestLog(url=http://localhost:8080/blog/index/1/6, ip=0:0:0:0:0:0:0:1, classMethod=xyz.worldzhile.blog.controller.IndexController.toIndex, args=[1, 6, {}])
+2020-04-30 11:02:21.141 [http-nio-8080-exec-4] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-2} inited
+2020-04-30 11:02:21.825 [http-nio-8080-exec-4] INFO  xyz.worldzhile.blog.aspect.LogAspect - Result : index
+2020-04-30 11:02:22.013 [http-nio-8080-exec-5] INFO  xyz.worldzhile.blog.aspect.LogAspect - doBefore : LogAspect.RequestLog(url=http://localhost:8080/blog/hotBlogs, ip=0:0:0:0:0:0:0:1, classMethod=xyz.worldzhile.blog.controller.IndexController.toHotBlogs, args=[{}])
+2020-04-30 11:02:22.047 [http-nio-8080-exec-5] INFO  xyz.worldzhile.blog.aspect.LogAspect - Result : common::hotBlogList
+2020-04-30 11:02:28.885 [http-nio-8080-exec-6] INFO  org.apache.coyote.http11.Http11Processor - Error parsing HTTP request header
+ Note: further occurrences of HTTP request parsing errors will be logged at DEBUG level.
+java.lang.IllegalArgumentException: Invalid character found in the request target. The valid characters are defined in RFC 7230 and RFC 3986
+	at org.apache.coyote.http11.Http11InputBuffer.parseRequestLine(Http11InputBuffer.java:488) ~[tomcat-embed-core-9.0.33.jar:9.0.33]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:260) ~[tomcat-embed-core-9.0.33.jar:9.0.33]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) [tomcat-embed-core-9.0.33.jar:9.0.33]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868) [tomcat-embed-core-9.0.33.jar:9.0.33]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1594) [tomcat-embed-core-9.0.33.jar:9.0.33]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-9.0.33.jar:9.0.33]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [na:1.8.0_231]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [na:1.8.0_231]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.33.jar:9.0.33]
+	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_231]
+2020-04-30 11:03:54.687 [http-nio-8080-exec-8] INFO  xyz.worldzhile.blog.aspect.LogAspect - doBefore : LogAspect.RequestLog(url=http://localhost:8080/blog/index/1/6, ip=0:0:0:0:0:0:0:1, classMethod=xyz.worldzhile.blog.controller.IndexController.toIndex, args=[1, 6, {}])
+2020-04-30 11:03:54.980 [http-nio-8080-exec-8] INFO  xyz.worldzhile.blog.aspect.LogAspect - Result : index
+2020-04-30 11:03:55.095 [http-nio-8080-exec-2] INFO  xyz.worldzhile.blog.aspect.LogAspect - doBefore : LogAspect.RequestLog(url=http://localhost:8080/blog/hotBlogs, ip=0:0:0:0:0:0:0:1, classMethod=xyz.worldzhile.blog.controller.IndexController.toHotBlogs, args=[{}])
+2020-04-30 11:03:55.128 [http-nio-8080-exec-2] INFO  xyz.worldzhile.blog.aspect.LogAspect - Result : common::hotBlogList
+2020-04-30 11:04:22.729 [Thread-33] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2020-04-30 11:04:22.729 [Thread-33] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-2} closing ...
+2020-04-30 11:04:22.730 [Thread-33] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-2} closed
+2020-04-30 11:04:23.054 [restartedMain] INFO  xyz.worldzhile.blog.BlogApplication - Starting BlogApplication on WIN7-2020USUYFG with PID 1408 (D:\IdeaProjects\blog\target\classes started by Administrator in D:\IdeaProjects\blog)
+2020-04-30 11:04:23.054 [restartedMain] INFO  xyz.worldzhile.blog.BlogApplication - The following profiles are active: dev
+2020-04-30 11:04:23.435 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2020-04-30 11:04:23.436 [restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-04-30 11:04:23.436 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.33]
+2020-04-30 11:04:23.437 [restartedMain] INFO  org.apache.catalina.core.AprLifecycleListener - Loaded APR based Apache Tomcat Native library [1.2.23] using APR version [1.7.0].
+2020-04-30 11:04:23.437 [restartedMain] INFO  org.apache.catalina.core.AprLifecycleListener - APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2020-04-30 11:04:23.437 [restartedMain] INFO  org.apache.catalina.core.AprLifecycleListener - APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2020-04-30 11:04:23.437 [restartedMain] INFO  org.apache.catalina.core.AprLifecycleListener - OpenSSL successfully initialized [OpenSSL 1.1.1c  28 May 2019]
+2020-04-30 11:04:23.460 [restartedMain] INFO  o.a.c.c.ContainerBase.[Tomcat].[localhost].[/blog] - Initializing Spring embedded WebApplicationContext
+2020-04-30 11:04:23.461 [restartedMain] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 404 ms
+2020-04-30 11:04:23.785 [restartedMain] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-04-30 11:04:23.825 [restartedMain] INFO  o.s.b.a.web.servlet.WelcomePageHandlerMapping - Adding welcome page template: index
+2020-04-30 11:04:24.079 [restartedMain] INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2020-04-30 11:04:24.110 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path '/blog'
+2020-04-30 11:04:24.111 [restartedMain] INFO  xyz.worldzhile.blog.BlogApplication - Started BlogApplication in 1.082 seconds (JVM running for 447.911)
+2020-04-30 11:04:24.112 [restartedMain] INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged

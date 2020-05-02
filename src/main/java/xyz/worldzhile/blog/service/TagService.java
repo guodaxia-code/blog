@@ -5,6 +5,7 @@ import xyz.worldzhile.blog.domain.Tag;
 import xyz.worldzhile.blog.domain.Type;
 import xyz.worldzhile.blog.util.PageBean;
 
+import java.util.HashMap;
 import java.util.List;
 
 
@@ -27,4 +28,6 @@ public interface TagService {
 
 
     List<Tag> indexShow(int tagShowCount);
+
+    HashMap getAllWithTagID(String tagid, PageBean page);
 }

@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>标签新增</title>
     <meta id="viewport" name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1,user-scalable=no">
+    <link rel="icon"   th:href="@{/images/favicon.ico}">
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css"/>
     <link rel="stylesheet" type="text/css"  href="../../static/css/index.css" th:href="@{/css/index.css}">
 <!--    markdown css-->
@@ -108,6 +109,8 @@
         $(".message .close").on('click',function () {
             $(this).closest('.message').transition('fade');
         })
+        // footer 最新博客
+        $("#hotBlogs-container").load("/blog/hotBlogs");
 
     </script>
 

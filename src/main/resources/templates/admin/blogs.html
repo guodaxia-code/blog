@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>博客管理</title>
     <meta id="viewport" name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1,user-scalable=no">
+    <link rel="icon"   th:href="@{/images/favicon.ico}">
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css"/>
 <!--    单前目录的../../  指resources-->
     <link rel="stylesheet" type="text/css"  href="../../static/css/index.css" th:href="@{/css/index.css}">
@@ -230,7 +231,8 @@
             }
         }
 
-
+        // footer 最新博客
+        $("#hotBlogs-container").load("/blog/hotBlogs");
 
     </script>
 

@@ -17,9 +17,15 @@ public class Comment {
     private String content;
     private String avatar;
     private Date createTime;
+//    管理员评论字段 我的评论
+    private boolean my;
 
 
+
+
+    private String blogid;
     private Blog blog;
+    private String parentCommentid;
     private Comment parentComment;
     private List<Comment> replyComments;
 

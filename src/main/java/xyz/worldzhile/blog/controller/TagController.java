@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import xyz.worldzhile.blog.domain.Tag;
-import xyz.worldzhile.blog.domain.Type;
 import xyz.worldzhile.blog.service.TagService;
 import xyz.worldzhile.blog.util.PageBean;
 import xyz.worldzhile.blog.util.UuidUtil;
@@ -26,7 +25,7 @@ public class TagController {
     @GetMapping("tags/{page}/{pageCount}")
     public String getTags(@PathVariable Integer page, @PathVariable Integer pageCount, Model model){
 
-        PageBean<Tag> pageBean = new PageBean<Tag>(page,pageCount);
+        PageBean<Tag> pageBean = new PageBean(page,pageCount);
         List<Tag> tags = tagService.listTag(pageBean);
         pageBean.setList(tags);
         model.addAttribute("page",pageBean);
@@ -64,7 +63,6 @@ public class TagController {
     public String getTageditor(@PathVariable String id,Model model){
         Tag tag = tagService.getTag(id);
         model.addAttribute("tag",tag);
-        System.out.println(tag);
         return  "admin/tag-input";
     }
 
